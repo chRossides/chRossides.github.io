@@ -1,0 +1,5 @@
+<!-- _includes/include_markdown.html -->
+{% capture include_content %}
+{% include {{ include.file }} %}
+{% endcapture %}
+{{ include_content | markdownify }}

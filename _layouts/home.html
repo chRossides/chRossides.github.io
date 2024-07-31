@@ -9,7 +9,21 @@ layout: base
 
   {{ content }}
 
+  {% include include_markdown.html file="home_content.md" %}
 
+  <div class="gallery">
+    <img src="{{ '/assets/pictures/IMG_20180827_164424.jpg' | relative_url }}" alt="Image">
+    <img src="{{ '/assets/pictures/IMG_20180827_164538.jpg' | relative_url }}" alt="Image">
+    <img src="{{ '/assets/pictures/IMG_20180904_085146.jpg' | relative_url }}" alt="Image">
+    <img src="{{ '/assets/pictures/Logo print.png' | relative_url }}" alt="Image">
+    <img src="{{ '/assets/pictures/P1330754.jpg' | relative_url }}" alt="Image">
+    <img src="{{ '/assets/pictures/P1330899.JPG' | relative_url }}" alt="Image">
+    <img src="{{ '/assets/pictures/image.jpg' | relative_url }}" alt="Image">
+    <img src="{{ '/assets/pictures/P1330438.jpg' | relative_url }}" alt="Image">
+    <img src="{{ '/assets/pictures/P1330767.jpg' | relative_url }}" alt="Image">
+  </div>
+
+<!-- 
   {% if site.paginate %}
     {% assign posts = paginator.posts %}
   {% else %}
@@ -54,7 +68,7 @@ layout: base
         {%- endif %}
         </ul>
       </div>
-    {%- endif %}
+    {%- endif %} -->
 
   {%- endif -%}
 
