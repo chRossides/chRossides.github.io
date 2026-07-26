@@ -128,6 +128,12 @@ Researched 26 July 2026; **the family confirms this is a single flag of ours, do
 **Appearance 1 — Nicosia, Saturday 28 June 2014.** Raised over a building in the heart of Nicosia on the Saturday afternoon before Greece played Costa Rica in the World Cup last 16. A **12-person crew took about six hours** in extreme heat. Organised by **Χριστόφορος Τορναρίτης**, a former football administrator/agent, who is quoted giving the specification directly: *"τὸ ἐμβαδόν τῆς σημαίας εἶναι 1.650 τετραγωνικὰ μέτρα καὶ τὸ βάρος της 280 κιλά"*. Greek media described it as *"τη μεγαλύτερη ελληνική σημαία που κατασκευάστηκε ποτέ"* — the largest Greek flag ever constructed. **Neither article names the manufacturer.**
 - https://www.iefimerida.gr/news/161199/η-μεγαλύτερη-ελληνική-σημαία-για-χάρη-της-εθνικής-ομάδας-γαλανόλευκη-1650-τετραγωνικών-β
 - https://oladeka.com/2014/06/blog-post_29-14/
+- https://www.voria.gr/article/kupros-kali-epituxia-ellada-me-ti-megaluteri-simaia-stin-istoria-vid — *"η μεγαλύτερη σε διαστάσεις ελληνική σημαία που κατασκευάστηκε ποτέ"*
+- https://www.fumara.gr/οι-κύπριοι-εύχονται-καλή-τύχη-στην-εθν/
+
+All four 2014 articles were fetched and read in full. **None names the manufacturer** — the omission is systematic across every giant-flag story found, not specific to us.
+
+**Χριστόφορος Τορναρίτης is readily contactable** — born 1966 in Nicosia, businessman (Eurofood Manufacturers, Raquel Ltd), President of Olympiakos Nicosia 1999–2004 and of the Cyprus Chess Federation 2008–2021. Personal site https://christofertornaritis.com · Facebook https://www.facebook.com/TornaritisChristoforos/ · profile at https://www.24sports.com.cy/gr/beautiful-people/bp-kypros/xristoforos-tornaritis-i-istoria-tis-zois-toy-mesa-apo-tria-stories
 
 **Appearance 2 — GSP Stadium, Nicosia.** APOEL's organised supporters have unfurled the flag across the entire south stand (πέταλο). The best-documented such occasion in the press is **28 October 2024**, during APOEL–Anorthosis (matchday 8, APOEL won 2-0) for the 28 October national holiday — but ⚠️ **the family has not confirmed that specific date**, and the flag may have been displayed there more than once, so do not pin the GSP appearance to a single fixture in public copy. None of the 2024 coverage republished the dimensions, which is why the two events read as unrelated in the press.
 - https://www.24sports.com.cy/gr/sports/podosfairo/kypros/a-katigoria/apoel/apoel-terastia-elliniki-simaia-sto-petalo-vid
