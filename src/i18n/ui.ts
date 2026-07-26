@@ -51,9 +51,9 @@ export function telHref(phone: string): string {
 export const ui = {
   el: {
     meta: {
-      title: 'Χαρ. Ρωσσίδης ΛΤΔ - Σημαίες, Λάβαρα & Κεντήματα στην Κύπρο από το 1938',
+      title: 'Σημαίες, Λάβαρα & Κεντήματα Λευκωσία | Χαρ. Ρωσσίδης ΛΤΔ',
       description:
-        'Χειροποίητες εθνικές και προσωποποιημένες σημαίες, λάβαρα παρελάσεων και κεντήματα στη Λευκωσία. Κάθε διάσταση, χωρίς ελάχιστη ποσότητα. Ζητήστε δωρεάν προσφορά.',
+        'Χειροποίητες εθνικές και προσωποποιημένες σημαίες, λάβαρα παρελάσεων και κεντήματα στη Λευκωσία από το 1938. Κάθε διάσταση, χωρίς ελάχιστη ποσότητα.',
     },
     nav: {
       products: 'Προϊόντα',
@@ -176,9 +176,9 @@ export const ui = {
   },
   en: {
     meta: {
-      title: 'Char. Rossides LTD - Flags, Banners & Embroidery in Cyprus since 1938',
+      title: 'Flags, Banners & Embroidery Cyprus | Char. Rossides LTD',
       description:
-        'Handmade national and custom flags, parade banners and embroidery in Nicosia, Cyprus. Any size, no minimum order. Request a free quote.',
+        'Handmade national and custom flags, parade banners and embroidery in Nicosia, Cyprus since 1938. Any size, no minimum order. Call us for a quote.',
     },
     nav: {
       products: 'Products',
