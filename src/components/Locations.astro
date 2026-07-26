@@ -11,14 +11,14 @@ const cards = [
   {
     label: t.shop,
     street: lang === 'el' ? site.addressShop.street : site.addressShop.streetEn,
-    postal: site.addressShop.postal,
+    cityLine: site.addressShop.cityLine[lang],
     phones: [site.phoneShop],
     map: site.mapShop,
   },
   {
     label: t.factory,
     street: lang === 'el' ? site.addressFactory.street : site.addressFactory.streetEn,
-    postal: site.addressFactory.postal,
+    cityLine: site.addressFactory.cityLine[lang],
     phones: [site.phoneFactory, site.phoneFactory2],
     map: site.mapFactory,
   },
@@ -36,7 +36,7 @@ const cards = [
         </div>
         <div class="street">{c.street}</div>
         <div class="detail">
-          {c.postal} {lang === 'el' ? 'Λευκωσία' : 'Nicosia'}, {t.country}<br />
+          {c.cityLine}<br />
           {c.phones.map((p, i) => (
             <>
               <a href={telHref(p)}>☎ {p}</a>

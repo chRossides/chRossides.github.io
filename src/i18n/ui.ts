@@ -1,10 +1,13 @@
 export type Lang = 'el' | 'en';
 
+/** Dialling prefix. Used for tel: links and structured data only, never displayed. */
+const COUNTRY_CODE = '+357';
+
 export const site = {
   domain: 'https://www.chrossides.com',
-  phoneShop: '+357 22 764662',
-  phoneFactory: '+357 22 432481',
-  phoneFactory2: '+357 22 347982',
+  phoneShop: '22 764662',
+  phoneFactory: '22 432481',
+  phoneFactory2: '22 347982',
   contactPerson: { el: 'Ελένη Ρωσσίδου', en: 'Eleni Rossidou' },
   factoryPersons: { el: 'Μιχάλης & Νίκος Ρωσσίδης', en: 'Michalis & Nicos Rossides' },
   mapShop: 'https://maps.app.goo.gl/9boKTNLgHSPWGbFd7',
@@ -12,18 +15,37 @@ export const site = {
   geoShop: { lat: 35.1684522, lng: 33.3695678 },
   geoFactory: { lat: 35.182648, lng: 33.379283 },
   sameAs: [
+    'https://www.facebook.com/profile.php?id=100052710947198',
     'https://maps.app.goo.gl/qAVz1GjbH3xVna6X6',
     'https://maps.app.goo.gl/Yv9PHi2cpyBMbLbt8',
     'https://www.tradekey.com/company/Charalambos-Rossides-Ltd-714536.html',
     'https://www.cyprusmanufacturers.com/listings/name/charalambos-rossides',
     'https://www.oncyprus.com/charalambos_rossides',
   ],
-  addressShop: { street: 'Πινδάρου 5Β', streetEn: 'Pindarou 5B', postal: '1060', city: { el: 'Λευκωσία', en: 'Nicosia' } },
-  addressFactory: { street: 'Νικολάου Ιωάννου 3, Καϊμακλί', streetEn: 'Nikolaou Ioannou 3, Kaimakli', postal: '1036', city: { el: 'Λευκωσία', en: 'Nicosia' } },
+  addressShop: {
+    street: 'Πινδάρου 5Β',
+    streetEn: 'Pindarou 5B',
+    postal: '1060',
+    city: { el: 'Λευκωσία', en: 'Nicosia' },
+    // Locality line worded to match the Google Maps listing, for NAP consistency.
+    cityLine: { el: 'Λευκωσία 1060, Κύπρος', en: 'Nicosia, Lefkosia 1060, Cyprus' },
+  },
+  addressFactory: {
+    street: 'Νικολάου Ιωάννου 3, Καϊμακλί',
+    streetEn: 'Nikolaou Ioannou 3, Kaimakli',
+    postal: '1036',
+    city: { el: 'Λευκωσία', en: 'Nicosia' },
+    cityLine: { el: 'Λευκωσία 1036, Κύπρος', en: 'Nicosia, Lefkosia 1036, Cyprus' },
+  },
 };
 
+/** Full international form - for tel: links and structured data, not for display. */
+export function telIntl(phone: string): string {
+  return `${COUNTRY_CODE} ${phone}`;
+}
+
 export function telHref(phone: string): string {
-  return `tel:${phone.replace(/ /g, '')}`;
+  return `tel:${COUNTRY_CODE}${phone.replace(/ /g, '')}`;
 }
 
 export const ui = {
@@ -261,7 +283,7 @@ export const ui = {
         },
         {
           q: 'How do I get a quote?',
-          a: "With one phone call to +357 22 764662 (shop) or +357 22 432481 (factory). Tell us what you need and we'll give you a price and delivery time.",
+          a: "With one phone call to 22 764662 (shop) or 22 432481 (factory). Tell us what you need and we'll give you a price and delivery time.",
         },
       ],
     },

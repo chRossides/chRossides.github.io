@@ -7,7 +7,7 @@ import '@fontsource/commissioner/700.css';
 import '@fontsource/commissioner/800.css';
 import '@fontsource/commissioner/900.css';
 import '../styles/global.css';
-import { site, ui, type Lang } from '../i18n/ui';
+import { site, telIntl, ui, type Lang } from '../i18n/ui';
 import ogImage from '../assets/hero-flag.jpg';
 
 interface Props {
@@ -61,14 +61,14 @@ const jsonLd = {
       contactPoint: [
         {
           '@type': 'ContactPoint',
-          telephone: site.phoneShop,
+          telephone: telIntl(site.phoneShop),
           contactType: 'sales',
           name: site.contactPerson[lang],
           availableLanguage: ['el', 'en'],
         },
         {
           '@type': 'ContactPoint',
-          telephone: site.phoneFactory,
+          telephone: telIntl(site.phoneFactory),
           contactType: 'sales',
           name: site.factoryPersons[lang],
           availableLanguage: ['el', 'en'],
@@ -81,7 +81,7 @@ const jsonLd = {
       name: `${orgName} - ${lang === 'el' ? 'Κατάστημα' : 'Store'}`,
       parentOrganization: { '@id': `${site.domain}/#business` },
       url: site.domain,
-      telephone: site.phoneShop,
+      telephone: telIntl(site.phoneShop),
       address: postalAddress(site.addressShop),
       geo: { '@type': 'GeoCoordinates', latitude: site.geoShop.lat, longitude: site.geoShop.lng },
       hasMap: site.mapShop,
@@ -93,7 +93,7 @@ const jsonLd = {
       name: `${orgName} - ${lang === 'el' ? 'Εργοστάσιο' : 'Factory'}`,
       parentOrganization: { '@id': `${site.domain}/#business` },
       url: site.domain,
-      telephone: [site.phoneFactory, site.phoneFactory2],
+      telephone: [telIntl(site.phoneFactory), telIntl(site.phoneFactory2)],
       address: postalAddress(site.addressFactory),
       geo: { '@type': 'GeoCoordinates', latitude: site.geoFactory.lat, longitude: site.geoFactory.lng },
       hasMap: site.mapFactory,
