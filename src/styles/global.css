@@ -12,8 +12,8 @@
   --border: #eceff3;
   --border-soft: #e7ebf1;
   --border-input: #d9dfe8;
-  --font-display: 'Archivo', sans-serif;
-  --font-body: 'Libre Franklin', sans-serif;
+  --font-display: 'Commissioner', sans-serif;
+  --font-body: 'Source Sans 3', sans-serif;
   /* Grows on wide screens so content never exceeds ~1220px, centered. */
   --pad-x: max(clamp(24px, 6vw, 110px), calc((100vw - 1220px) / 2));
 }
