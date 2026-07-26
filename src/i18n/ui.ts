@@ -132,7 +132,7 @@ export const ui = {
         },
         {
           q: 'Φτιάχνετε εκκλησιαστικά λάβαρα και λάβαρα παρελάσεων;',
-          a: 'Ναι, είναι από τις ειδικότητές μας. Χειροποίητα βελούδινα λάβαρα με κέντημα, ολοκληρωμένα με ιστό, σταυρό ή σφαίρα.',
+          a: 'Ναι, είναι από τις ειδικότητές μας. Χειροποίητα βελούδινα λάβαρα, ολοκληρωμένα με ιστό, σταυρό ή σφαίρα.',
         },
         {
           q: 'Πώς θα πάρω προσφορά;',
@@ -257,7 +257,7 @@ export const ui = {
         },
         {
           q: 'Do you make church and parade banners?',
-          a: 'Yes, they are one of our specialties. Handmade velvet banners with embroidery, finished with a pole, cross or sphere finial.',
+          a: 'Yes, they are one of our specialties. Handmade velvet banners, finished with a pole, cross or sphere finial.',
         },
         {
           q: 'How do I get a quote?',
