@@ -55,11 +55,14 @@ You are rated **4.6 (store)** and **5.0 (factory)** — better than most competi
 
 Ask satisfied customers to leave a Google review right after delivery — a school secretary, a church committee, a club official. A dozen genuine reviews at that rating would make you very hard to displace in Nicosia. Reviews mentioning specific products ("church banner", "school flag") also help you surface for those searches.
 
-## 3. Register with the search engines
+## 3. Register with the search engines — ✅ DONE (26 July 2026)
 
-- **Google Search Console** — https://search.google.com/search-console. Verify the `www.chrossides.com` property (DNS TXT record is easiest) and submit `https://www.chrossides.com/sitemap-index.xml`.
-- **Bing Webmaster Tools** — https://www.bing.com/webmasters. It can import directly from Search Console in one click. This matters beyond Bing itself: Bing's index feeds ChatGPT and Copilot answers, so it directly affects whether AI assistants can find and recommend you.
-- **Bing Places** — https://www.bingplaces.com — add both locations.
+- **Google Search Console** — verified as a **Domain property** (`chrossides.com`) via a DNS TXT record at GoDaddy. Sitemap submitted, **10 URLs discovered**. Indexing requested for both homepages.
+  - ⚠️ **Never delete the `google-site-verification=h1_20Nm5...` TXT record** at GoDaddy — Google re-checks it and will unverify the property if it disappears.
+- **Bing Webmaster Tools** — imported from Search Console, sitemap submitted, URLs submitted. The homepage already reports **"Indexed successfully"**, with JSON-LD and OpenGraph markup detected. This is the registration that matters for AI assistants: ChatGPT and Copilot draw on Bing's web index.
+- **Bing Places** — *deliberately skipped.* It is the local-listing product (Bing's answer to a Google Business Profile), not a website-indexing tool, and it does not affect whether the site is indexed or whether AI assistants can find it. Bing's share of search in Cyprus is very small, and Cyprus support could not even be confirmed. Revisit only if there is spare time.
+
+**Check back in 1–2 weeks:** Search Console → Performance (which queries you appear for) and Pages (what got indexed). Reports are empty for the first few days — that is normal, and resubmitting the sitemap does nothing.
 
 ## 4. Fix the directory listings
 
