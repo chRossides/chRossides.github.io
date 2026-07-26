@@ -19,34 +19,76 @@ const t = ui[lang];
 const canonical = new URL(lang === 'el' ? '/' : '/en/', site.domain).href;
 const alternate = new URL(lang === 'el' ? '/en/' : '/', site.domain).href;
 
+const orgName = lang === 'el' ? 'Χαρ. Ρωσσίδης ΛΤΔ' : 'Charalambos Rossides LTD';
+const orgAltName = lang === 'el' ? 'Charalambos Rossides LTD' : 'Χαρ. Ρωσσίδης ΛΤΔ';
+
+function postalAddress(addr: typeof site.addressShop) {
+  return {
+    '@type': 'PostalAddress',
+    streetAddress: lang === 'el' ? addr.street : addr.streetEn,
+    postalCode: addr.postal,
+    addressLocality: addr.city[lang],
+    addressCountry: 'CY',
+  };
+}
+
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  '@id': `${site.domain}/#business`,
-  name: lang === 'el' ? 'Χαρ. Ρωσσίδης ΛΤΔ' : 'Charalambos Rossides LTD',
-  alternateName: lang === 'el' ? 'Charalambos Rossides LTD' : 'Χαρ. Ρωσσίδης ΛΤΔ',
-  description: t.meta.description,
-  url: site.domain,
-  telephone: site.phoneShop,
-  foundingDate: '1938',
-  image: new URL(ogImage.src, site.domain).href,
-  address: [
+  '@graph': [
     {
-      '@type': 'PostalAddress',
-      streetAddress: lang === 'el' ? site.addressShop.street : site.addressShop.streetEn,
-      postalCode: site.addressShop.postal,
-      addressLocality: site.addressShop.city[lang],
-      addressCountry: 'CY',
+      '@type': 'Organization',
+      '@id': `${site.domain}/#business`,
+      name: orgName,
+      alternateName: orgAltName,
+      description: t.meta.description,
+      url: site.domain,
+      logo: new URL('/android-chrome-512x512.png', site.domain).href,
+      image: new URL(ogImage.src, site.domain).href,
+      foundingDate: '1938',
+      areaServed: { '@type': 'Country', name: 'Cyprus' },
+      sameAs: site.sameAs,
+      contactPoint: [
+        {
+          '@type': 'ContactPoint',
+          telephone: site.phoneShop,
+          contactType: 'sales',
+          name: site.contactPerson[lang],
+          availableLanguage: ['el', 'en'],
+        },
+        {
+          '@type': 'ContactPoint',
+          telephone: site.phoneFactory,
+          contactType: 'sales',
+          name: site.factoryPersons[lang],
+          availableLanguage: ['el', 'en'],
+        },
+      ],
     },
     {
-      '@type': 'PostalAddress',
-      streetAddress: lang === 'el' ? site.addressFactory.street : site.addressFactory.streetEn,
-      postalCode: site.addressFactory.postal,
-      addressLocality: site.addressFactory.city[lang],
-      addressCountry: 'CY',
+      '@type': 'LocalBusiness',
+      '@id': `${site.domain}/#store`,
+      name: `${orgName} - ${lang === 'el' ? 'Κατάστημα' : 'Store'}`,
+      parentOrganization: { '@id': `${site.domain}/#business` },
+      url: site.domain,
+      telephone: site.phoneShop,
+      address: postalAddress(site.addressShop),
+      geo: { '@type': 'GeoCoordinates', latitude: site.geoShop.lat, longitude: site.geoShop.lng },
+      hasMap: site.mapShop,
+      image: new URL(ogImage.src, site.domain).href,
+    },
+    {
+      '@type': 'LocalBusiness',
+      '@id': `${site.domain}/#factory`,
+      name: `${orgName} - ${lang === 'el' ? 'Εργοστάσιο' : 'Factory'}`,
+      parentOrganization: { '@id': `${site.domain}/#business` },
+      url: site.domain,
+      telephone: [site.phoneFactory, site.phoneFactory2],
+      address: postalAddress(site.addressFactory),
+      geo: { '@type': 'GeoCoordinates', latitude: site.geoFactory.lat, longitude: site.geoFactory.lng },
+      hasMap: site.mapFactory,
+      image: new URL(ogImage.src, site.domain).href,
     },
   ],
-  areaServed: { '@type': 'Country', name: 'Cyprus' },
 };
 ---
 
@@ -74,7 +116,10 @@ const jsonLd = {
     <meta property="og:description" content={t.meta.description} />
     <meta property="og:image" content={new URL(ogImage.src, site.domain).href} />
     <meta property="og:locale" content={lang === 'el' ? 'el_GR' : 'en_GB'} />
+    <meta property="og:site_name" content={lang === 'el' ? 'Χαρ. Ρωσσίδης ΛΤΔ' : 'Charalambos Rossides LTD'} />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={t.meta.title} />
+    <meta name="twitter:description" content={t.meta.description} />
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
   <body>

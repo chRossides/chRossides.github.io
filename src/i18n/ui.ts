@@ -9,6 +9,15 @@ export const site = {
   factoryPersons: { el: 'Μιχάλης & Νίκος Ρωσσίδης', en: 'Michalis & Nicos Rossides' },
   mapShop: 'https://maps.app.goo.gl/9boKTNLgHSPWGbFd7',
   mapFactory: 'https://maps.app.goo.gl/6h57PwGUxxAqyt8V8',
+  geoShop: { lat: 35.1684522, lng: 33.3695678 },
+  geoFactory: { lat: 35.182648, lng: 33.379283 },
+  sameAs: [
+    'https://maps.app.goo.gl/qAVz1GjbH3xVna6X6',
+    'https://maps.app.goo.gl/Yv9PHi2cpyBMbLbt8',
+    'https://www.tradekey.com/company/Charalambos-Rossides-Ltd-714536.html',
+    'https://www.cyprusmanufacturers.com/listings/name/charalambos-rossides',
+    'https://www.oncyprus.com/charalambos_rossides',
+  ],
   addressShop: { street: 'Πινδάρου 5Β', streetEn: 'Pindarou 5B', postal: '1060', city: { el: 'Λευκωσία', en: 'Nicosia' } },
   addressFactory: { street: 'Νικολάου Ιωάννου 3, Καϊμακλί', streetEn: 'Nikolaou Ioannou 3, Kaimakli', postal: '1036', city: { el: 'Λευκωσία', en: 'Nicosia' } },
 };
