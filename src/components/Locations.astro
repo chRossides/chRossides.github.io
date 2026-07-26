@@ -1,5 +1,5 @@
 ---
-import { site, ui, type Lang } from '../i18n/ui';
+import { site, telHref, ui, type Lang } from '../i18n/ui';
 
 interface Props {
   lang: Lang;
@@ -12,13 +12,15 @@ const cards = [
     label: t.shop,
     street: lang === 'el' ? site.addressShop.street : site.addressShop.streetEn,
     postal: site.addressShop.postal,
-    phone: site.phoneShop,
+    phones: [site.phoneShop],
+    map: site.mapShop,
   },
   {
     label: t.factory,
     street: lang === 'el' ? site.addressFactory.street : site.addressFactory.streetEn,
     postal: site.addressFactory.postal,
-    phone: site.phoneFactory,
+    phones: [site.phoneFactory, site.phoneFactory2],
+    map: site.mapFactory,
   },
 ];
 ---
@@ -28,11 +30,19 @@ const cards = [
   <div class="grid">
     {cards.map((c) => (
       <div class="card">
-        <div class="label">{c.label}</div>
+        <div class="head">
+          <div class="label">{c.label}</div>
+          <a class="map" href={c.map} target="_blank" rel="noopener">{t.map}</a>
+        </div>
         <div class="street">{c.street}</div>
         <div class="detail">
           {c.postal} {lang === 'el' ? 'Λευκωσία' : 'Nicosia'}, {t.country}<br />
-          <a href={`tel:${c.phone.replace(/ /g, '')}`}>☎ {c.phone}</a>
+          {c.phones.map((p, i) => (
+            <>
+              <a href={telHref(p)}>☎ {p}</a>
+              {i < c.phones.length - 1 && <span class="sep"> · </span>}
+            </>
+          ))}
         </div>
       </div>
     ))}
@@ -63,13 +73,22 @@ const cards = [
     border-radius: 12px;
     padding: 30px;
   }
+  .head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
   .label {
     font-family: var(--font-display);
     font-weight: 700;
     font-size: 13px;
     letter-spacing: 0.1em;
     color: var(--orange);
-    margin-bottom: 12px;
+  }
+  .map {
+    font-size: 13px;
+    font-weight: 600;
   }
   .street {
     font-size: 18px;

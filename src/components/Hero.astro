@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import { ui, type Lang } from '../i18n/ui';
+import { site, telHref, ui, type Lang } from '../i18n/ui';
 import heroImg from '../assets/hero-flag.jpg';
 
 interface Props {
@@ -20,7 +20,7 @@ const t = ui[lang].hero;
       {t.pills.map((p) => <a href="#products">{p}</a>)}
     </div>
     <div class="ctas">
-      <a class="btn btn-primary" href="#quote">{t.ctaQuote}</a>
+      <a class="btn btn-primary" href={telHref(site.phoneShop)}>{t.ctaCall}</a>
       <a class="btn btn-outline" href="#products">{t.ctaProducts}</a>
     </div>
   </div>

@@ -21,9 +21,9 @@ Pushes to `master` trigger `.github/workflows/deploy.yml`, which builds the site
 
 One-time repo setting: **Settings → Pages → Source** must be set to **GitHub Actions** (not "Deploy from a branch").
 
-## Quote form
+## Quotes
 
-The quote form posts to Formspree. The endpoint lives in `src/config.ts` — replace `YOUR_FORM_ID` with the real form ID from https://formspree.io (free tier is sufficient). Until then, submissions fail gracefully with the error message shown to the visitor.
+The site is phone-first: all quote CTAs are click-to-call `tel:` links to the shop and factory numbers (no form backend, no JavaScript).
 
 ## Content
 
