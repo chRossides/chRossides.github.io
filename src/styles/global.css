@@ -14,7 +14,8 @@
   --border-input: #d9dfe8;
   --font-display: 'Archivo', sans-serif;
   --font-body: 'Libre Franklin', sans-serif;
-  --pad-x: clamp(24px, 6vw, 110px);
+  /* Grows on wide screens so content never exceeds ~1220px, centered. */
+  --pad-x: max(clamp(24px, 6vw, 110px), calc((100vw - 1220px) / 2));
 }
 
 * {
