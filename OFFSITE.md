@@ -47,7 +47,7 @@ So the fundamentals are right. Three things to fix:
 2. **Make the store's category specific.** "Store" tells Google nothing. Change the primary category to **Flag store** or **Flag manufacturer**, and add secondaries for embroidery and — if it is a real revenue line — army surplus/hunting.
 3. **Add more photos to both.** One photo each is thin, and photos are one of the strongest engagement signals Google measures. The velvet banners, embroidered badges, the flags coming off the printer, the workshop itself. The same images already used on the website work fine.
 
-Also worth adding on both: a short business description mentioning 1938, handmade in Cyprus, and no minimum order.
+4. **Add a business description to each profile** — ready to copy-paste in [the appendix below](#appendix--google-business-profile-descriptions).
 
 ## 2. Build on the reviews you already have
 
@@ -108,3 +108,58 @@ Tell me any of these and I will implement them:
 - **Photos of finished work**, especially banners for named organisations → the category pages have room for more.
 - **Any 1938 evidence or family history** → a proper "Our story" page, which is currently the site's biggest content gap.
 - **Whether the army/hunting retail line should be on the site** — several directories list it, but the website does not mention it at all.
+
+---
+
+# Appendix — Google Business Profile descriptions
+
+Ready to paste into the "Description" field of each profile (Edit profile → About → Business description).
+
+**Before you paste, three rules Google enforces:**
+- **750 characters maximum.** All four below fit (683–739).
+- **Only the first ~250 characters show** before Google truncates with "more" — so the important part is front-loaded in each.
+- **No links, phone numbers, HTML or promotional offers.** Google rejects or strips them.
+
+Each profile takes one description. Use the **Greek** version as the primary — that is what local customers search in, and Google translates it for other locales. If you prefer English on the factory profile because it is the one export enquiries land on, that is a reasonable split.
+
+---
+
+### Store profile — Greek
+
+```
+Η Χαρ. Ρωσσίδης ΛΤΔ κατασκευάζει χειροποίητες σημαίες στη Λευκωσία από το 1938. Στο κατάστημά μας στην Πινδάρου θα βρείτε εθνικές σημαίες όλων των χωρών, σημαίες με το λογότυπό σας, βελούδινα λάβαρα παρελάσεων και εκκλησιαστικά λάβαρα, κεντητά διακριτικά και εμβλήματα, επιτραπέζιες σημαίες, σημαιοστολισμό, ιστούς και εξαρτήματα.
+
+Όλα κατασκευάζονται στο δικό μας εργαστήριο στην Κύπρο, σε οποιαδήποτε διάσταση και χωρίς ελάχιστη ποσότητα - από ένα τεμάχιο μέχρι ολόκληρη παραγγελία για σχολείο, εκκλησία, σύλλογο ή δήμο. Φέρτε μας το σχέδιο ή το λογότυπό σας και θα σας συμβουλεύσουμε για διαστάσεις, υλικά και φινίρισμα, με τιμή και χρόνο παράδοσης πριν δεσμευτείτε. Τρεις γενιές της ίδιας οικογένειας, με την ίδια χειροποίητη ποιότητα.
+```
+
+### Store profile — English
+
+```
+Charalambos Rossides LTD has been making flags by hand in Nicosia since 1938. At our shop on Pindarou you can order national flags of any country, custom flags printed with your logo, velvet parade and church banners, embroidered badges and insignia, table flags, bunting, flag poles and fittings.
+
+Everything is made in our own workshop in Cyprus, in any size and with no minimum order - from a single flag to a full order for a school, church, club or municipality. Bring or send us your design and we will advise you on sizes, materials and finishing, and give you a price and delivery time before you commit. Three generations of the same family, still making everything by hand.
+```
+
+### Factory profile — Greek
+
+```
+Το εργοστάσιο της Χαρ. Ρωσσίδης ΛΤΔ στο Καϊμακλί, όπου κατασκευάζουμε σημαίες και λάβαρα από το 1938. Εδώ τυπώνουμε ψηφιακά σημαίες σε ύφασμα πολυεστέρα, κατασκευάζουμε χειροποίητα βελούδινα λάβαρα παρελάσεων και εκκλησιαστικά λάβαρα, και κεντάμε διακριτικά, εμβλήματα και σήματα.
+
+Παράγουμε τοπικά, σε κάθε διάσταση και ποσότητα, χωρίς ελάχιστη ποσότητα. Η κατά παραγγελία κατασκευή είναι η ειδικότητά μας: στείλτε μας το έμβλημα, τα χρώματα και τις διαστάσεις σας και το φτιάχνουμε από την αρχή, ολοκληρωμένο με ιστό, σταυρό ή σφαίρα. Κατασκευάζουμε επίσης πηλήκια και στρατιωτικά αξεσουάρ, αθλητικές σημαίες και σημαιοστολισμό, για συλλόγους, σχολεία, εκκλησίες, δήμους και σώματα ασφαλείας.
+```
+
+### Factory profile — English
+
+```
+The manufacturing workshop of Charalambos Rossides LTD in Kaimakli, making flags and banners in Nicosia since 1938. Here we digitally print flags on polyester fabric, hand-make velvet parade and church banners, and embroider badges, emblems and insignia.
+
+We produce locally, in any size and quantity, with no minimum order. Custom work is our speciality: send us your emblem, colours and dimensions and we will make it from scratch, finished with a pole, cross or sphere as required. We also make kepis and military accessories, sports flags and bunting, for clubs, schools, churches, municipalities and the security forces. Family-run for three generations.
+```
+
+---
+
+**Optional additions**, only if the facts are right — tell me and I will fold them in:
+
+- **Army / hunting retail** at the shop. Several directories list this but the website does not mention it. If it is a real line, add to the store description: *"Στο κατάστημα θα βρείτε επίσης στρατιωτικά είδη και είδη κυνηγιού."* / *"Our shop also stocks army and hunting goods."*
+- **The 1938 claim.** Every version above leads with it, matching what the profiles already say. If the family would rather be cautious (the limited company dates from 1983 — see [profile.md](profile.md)), the safe alternative is *"οικογενειακή βιοτεχνία με ιστορία από το 1938"* / *"a family workshop with roots going back to 1938"*.
+- Deliberately **not** included: the word "δωρεάν"/"free", any delivery promise beyond Cyprus, and any claim that the parade banners are embroidered.
