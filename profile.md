@@ -119,23 +119,43 @@ An 87-year-old family workshop with three generations, hand-embroidering church 
 
 Equally, **no named customer is publicly verifiable.** The site's "trusted by schools, churches, municipalities" is currently unsubstantiated. Permission to name even five real customers would be a step-change in credibility.
 
-### The APOEL giant-flag claim — researched 26 July 2026
+### The giant Greek flag — our most valuable untold story
 
-The family reports having made the largest Greek flag, displayed at the GSP Stadium for APOEL. **Nineteen searches across Greek and English media, club and ultras sources found no article that credits Charalambos Rossides Ltd with any flag, for APOEL or anyone else.** No giant-flag coverage anywhere names its manufacturer — Cypriot media consistently credit the fans or the organiser, never the workshop that sewed it. That is an absence of published credit, **not** evidence against the family's account.
+Researched 26 July 2026; **the family confirms this is a single flag of ours, documented in the press on two separate occasions a decade apart.**
 
-Three genuinely distinct, well-documented events exist, and they are easy to conflate. Establishing **which one** is ours determines what evidence to chase:
+**Specification** (from the 2014 coverage) — **1,650 m², 280 kg**, cost around **€4,000**. For scale, that is larger than every other Greek flag found in this research, including the Guinness-registered one.
 
-| Candidate | What is documented | Maker named? |
-|---|---|---|
-| **A. APOEL fans' flag covering the GSP south stand, 28 Oct 2024** | Covered the whole πέταλο during APOEL–Anorthosis on the 28 October holiday. Video coverage on 24sports.com.cy, iefimerida.gr, aek365.org. **No dimensions published.** | No |
-| **B. 1,650 m² flag on a Nicosia building, June 2014** | **1,650 m², 280 kg, ~€4,000**, hung by a 12-person crew over ~6 hours for Greece vs Costa Rica (World Cup last-16). Described in Greek media as *"τη μεγαλύτερη ελληνική σημαία που κατασκευάστηκε ποτέ"*. Initiated by **Χριστόφορος Τορναρίτης**. Not APOEL, not GSP. | No |
-| **C. "World's largest, craned into Karaiskaki", claimed 2020** | A radio remark by Νίκος Φλέκας (Γαλανόλευκος Φάρος) that "τα παιδιά του ΑΠΟΕΛ" made possibly a 100×40 m flag. Hedged, unverified, and the stadium named is Karaiskaki in Piraeus. | No |
+**Appearance 1 — Nicosia, June 2014.** Hung over a building in central Nicosia for Greece vs Costa Rica in the World Cup last 16. It took a **12-person crew about six hours** in a heatwave. Organised by **Χριστόφορος Τορναρίτης**. Greek media described it as *"τη μεγαλύτερη ελληνική σημαία που κατασκευάστηκε ποτέ"* — the largest Greek flag ever constructed.
+- https://www.iefimerida.gr/news/161199/η-μεγαλύτερη-ελληνική-σημαία-για-χάρη-της-εθνικής-ομάδας-γαλανόλευκη-1650-τετραγωνικών-β
+- https://oladeka.com/2014/06/blog-post_29-14/
 
-**Candidate B is the most promising.** It carries an explicit "largest ever constructed" claim in the press, has a hard, quotable figure (1,650 m²), and **Τορναρίτης is a named, findable person who would know who sewed it.** One phone call could settle it.
+**Appearance 2 — GSP Stadium, 28 October 2024.** APOEL's organised supporters unfurled it across the entire south stand (πέταλο) for the 28 October national holiday, at APOEL–Anorthosis (APOEL won 2-0). Widely covered on video. No dimensions were republished, which is why the two events read as unrelated in the press.
+- https://www.24sports.com.cy/gr/sports/podosfairo/kypros/a-katigoria/apoel/apoel-terastia-elliniki-simaia-sto-petalo-vid
+- https://www.iefimerida.gr/spor/kypros-opadoi-apoel-sikosan-elliniki-simaia
+- https://www.aek365.org/a-1018283/mia-gigantia-ellhnikh-shmaia-upswsan-oi-filoi-tou-apoel-video.htm
+- https://www.kerkida.net/eidiseis/a-katigoria/apoel/binteo-kerkida-eisodos-sto-ntermpi-me-mia-terastia-elliniki-simaia-apo-toys-portokali *(headline only — the page returns 403 to automated fetches)*
 
-**Caution on the wording "largest Greek flag ever".** The only Greek-flag record actually registered with Guinness (2001, Didymoteicho, 593 m²) is credited to **Damos**, a Greek manufacturer — not to us. Other contenders include Santorini 2021 (1,500 m²) and Alexandroupoli 2024 (600 m²). So an unqualified "we made the largest Greek flag in the world" is contestable and would be risky on the website. *"We made the 1,650 m² flag flown over Nicosia in 2014"* — if evidenced — is specific, impressive and unassailable.
+**Unrelated, do not conflate:** a 2020 radio remark by Νίκος Φλέκας claiming "τα παιδιά του ΑΠΟΕΛ" made a ~100×40 m flag craned into Karaiskaki in Piraeus. Hedged, unverified, different stadium. The family confirms it is not ours. https://www.tothemaonline.com/Article/252113/ta-paidia-toy-apoel-eftiaxan-th-megalyterh-ellhnikh-shmaia-ston-kosmo-–-eihe-mpei-me-gerano-hhhtiko
 
-**To make this publishable, get one of:** a dated workshop photo, the invoice or order record, confirmation from Τορναρίτης or the APOEL supporters' group, or the flag's actual dimensions from the family's own records.
+#### The attribution gap
+
+**No published source names the manufacturer.** Nineteen searches across Greek and English media, club and ultras channels found no article crediting Charalambos Rossides Ltd. This is not evidence against the account — *no* giant-flag coverage anywhere names its maker; Cypriot media credit the organiser or the fans, never the workshop that sewed it. But it means the claim currently rests on family testimony alone.
+
+**To make it publishable, obtain any one of:** a dated workshop photograph, the 2014 invoice or order record, or written confirmation from **Χριστόφορος Τορναρίτης** — a named, findable person who commissioned it and would know exactly who made it. A single phone call could convert this from testimony into a citable fact.
+
+#### How to word it safely
+
+| Claim | Verdict |
+|---|---|
+| "We made the largest Greek flag in the world" | **Risky.** Contestable and unregistered. |
+| "We made the flag the Greek press called the largest ever constructed" | **Safe** — attributes the superlative to the press, which did print it. |
+| "We made the 1,650 m², 280 kg flag flown over Nicosia in 2014 and across the GSP stand in 2024" | **Safest and strongest.** Specific, verifiable, unrepeatable by any competitor. |
+
+For context on why the bare superlative is risky, the competing documented flags are all *smaller*, but one is officially registered and credited elsewhere: Didymoteicho 2001, **593 m², Guinness-registered, credited to Damos** (a Greek manufacturer) — https://damos.gr/flag/?lang=en · Santorini 2021, 1,500 m² — https://www.in.gr/2021/03/22/greece/25i-martiou-terastia-elliniki-simaia-gia-rekor-gkines/ · Alexandroupoli 2024, 600 m² — https://www.in.gr/2024/05/13/greece/megalyteri-simaia-tis-elladas-tha-ypsothei-stin-aleksandroupoli-poios-o-logos/
+
+#### Why this matters more than anything else in this dossier
+
+This is the single strongest marketing asset the business has. It is concrete, numerical, photogenic, tied to two nationally significant occasions, and **impossible for any competitor to claim**. It answers "can they handle a big job?" more convincingly than any amount of copy. It belongs on the website, in the Google Business descriptions, and at the centre of the press pitch described above — a story that leads with "the workshop behind the 1,650 m² flag" gets picked up far more readily than "family business since 1938".
 
 ---
 

@@ -91,8 +91,10 @@ Not one of the eight directory listings found links to the website, and most fil
 
 **No journalist has ever written about this business.** Nothing exists in philenews, Politis, Cyprus Mail, in-cyprus, Sigmalive or anywhere else. An 87-year-old family workshop, three generations, still hand-making church banners in Kaimakli, is a genuinely good story that no competitor can copy.
 
+- **Lead with the giant flag, not the founding date.** The 1,650 m² / 280 kg Greek flag you made — flown over Nicosia in June 2014 and unfurled across the GSP south stand on 28 October 2024 — is a far stronger hook than "family business since 1938". It is concrete, photogenic and impossible for a competitor to claim. Full detail and every source link is in [profile.md](profile.md).
+- **One phone call could make it citable.** No article names the manufacturer of that flag. **Χριστόφορος Τορναρίτης** organised the 2014 display and would know who made it; written confirmation from him, or a dated workshop photo or the 2014 invoice, turns family testimony into a fact a journalist can print.
 - Pitch it to Cypriot media **4–6 weeks before a parade season** (25 March, 1 April, 1 October, 28 October), when flags are already in the news.
-- What makes it publishable: old photographs, the founder's story, the handwork itself, the continuity from 1938 to today.
+- What else makes it publishable: old photographs, the founder's story, the handwork itself, the continuity from 1938 to today.
 - Every article that results is both a customer-facing story and a high-quality backlink.
 
 Related: **confirm the 1938 date and find something that evidences it** (a photo, an old invoice, a licence). See the founding-year discussion in profile.md — the limited company only dates from 1983, so it is worth being able to back the heritage claim if anyone asks.
