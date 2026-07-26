@@ -38,3 +38,47 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  # Tell Bing (and other IndexNow participants) that the site changed, so they
+  # recrawl within minutes instead of waiting for their own schedule.
+  # The key is public by design: it is validated against the matching file in public/.
+  indexnow:
+    needs: deploy
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    env:
+      HOST: www.chrossides.com
+      INDEXNOW_KEY: 30e6698977e07ef5d30fcb3505b15aa4
+    steps:
+      - name: Submit sitemap URLs to IndexNow
+        run: |
+          set -euo pipefail
+
+          # The CDN can lag the deployment by a few seconds.
+          for attempt in $(seq 1 10); do
+            if curl -sf "https://$HOST/sitemap-0.xml" -o sitemap.xml; then break; fi
+            echo "Sitemap not served yet (attempt $attempt); waiting."
+            sleep 10
+          done
+
+          urls=$(grep -o '<loc>[^<]*' sitemap.xml | sed 's|<loc>||')
+          echo "Submitting $(printf '%s\n' "$urls" | grep -c .) URLs:"
+          printf '%s\n' "$urls"
+
+          payload=$(printf '%s\n' "$urls" | jq -R . | jq -s \
+            --arg host "$HOST" \
+            --arg key "$INDEXNOW_KEY" \
+            --arg keyLocation "https://$HOST/$INDEXNOW_KEY.txt" \
+            '{host: $host, key: $key, keyLocation: $keyLocation, urlList: .}')
+
+          code=$(curl -sS -X POST https://api.indexnow.org/indexnow \
+            -H 'Content-Type: application/json; charset=utf-8' \
+            --data "$payload" -o response.txt -w '%{http_code}')
+
+          echo "IndexNow responded HTTP $code"
+          cat response.txt || true
+          # 200 = accepted, 202 = accepted while the key is still being validated.
+          case "$code" in
+            200|202) echo "Submitted successfully." ;;
+            *) echo "IndexNow rejected the submission."; exit 1 ;;
+          esac

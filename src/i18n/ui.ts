@@ -16,6 +16,7 @@ export const site = {
   geoFactory: { lat: 35.182648, lng: 33.379283 },
   sameAs: [
     'https://www.facebook.com/profile.php?id=100052710947198',
+    'https://www.instagram.com/chrossides_ltd/',
     'https://maps.app.goo.gl/qAVz1GjbH3xVna6X6',
     'https://maps.app.goo.gl/Yv9PHi2cpyBMbLbt8',
     'https://www.tradekey.com/company/Charalambos-Rossides-Ltd-714536.html',
