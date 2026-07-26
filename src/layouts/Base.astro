@@ -12,12 +12,23 @@ import ogImage from '../assets/hero-flag.jpg';
 
 interface Props {
   lang: Lang;
+  title?: string;
+  description?: string;
+  /** Path of this page, e.g. '/proionta/ethnikes-simaies/'. Defaults to the landing page. */
+  path?: string;
+  /** Path of this page's other-language twin. Defaults to the landing page. */
+  altPath?: string;
 }
 
 const { lang } = Astro.props;
 const t = ui[lang];
-const canonical = new URL(lang === 'el' ? '/' : '/en/', site.domain).href;
-const alternate = new URL(lang === 'el' ? '/en/' : '/', site.domain).href;
+const path = Astro.props.path ?? (lang === 'el' ? '/' : '/en/');
+const altPath = Astro.props.altPath ?? (lang === 'el' ? '/en/' : '/');
+const pageTitle = Astro.props.title ?? t.meta.title;
+const pageDescription = Astro.props.description ?? t.meta.description;
+const canonical = new URL(path, site.domain).href;
+const alternate = new URL(altPath, site.domain).href;
+const xDefault = new URL(lang === 'el' ? path : altPath, site.domain).href;
 
 const orgName = lang === 'el' ? 'Χαρ. Ρωσσίδης ΛΤΔ' : 'Charalambos Rossides LTD';
 const orgAltName = lang === 'el' ? 'Charalambos Rossides LTD' : 'Χαρ. Ρωσσίδης ΛΤΔ';
@@ -97,12 +108,12 @@ const jsonLd = {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{t.meta.title}</title>
-    <meta name="description" content={t.meta.description} />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
     <link rel="canonical" href={canonical} />
     <link rel="alternate" hreflang={lang === 'el' ? 'en' : 'el'} href={alternate} />
     <link rel="alternate" hreflang={lang} href={canonical} />
-    <link rel="alternate" hreflang="x-default" href={new URL('/', site.domain).href} />
+    <link rel="alternate" hreflang="x-default" href={xDefault} />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -112,14 +123,14 @@ const jsonLd = {
     <meta name="theme-color" content="#15265E" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
-    <meta property="og:title" content={t.meta.title} />
-    <meta property="og:description" content={t.meta.description} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
     <meta property="og:image" content={new URL(ogImage.src, site.domain).href} />
     <meta property="og:locale" content={lang === 'el' ? 'el_GR' : 'en_GB'} />
     <meta property="og:site_name" content={lang === 'el' ? 'Χαρ. Ρωσσίδης ΛΤΔ' : 'Charalambos Rossides LTD'} />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={t.meta.title} />
-    <meta name="twitter:description" content={t.meta.description} />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
   <body>

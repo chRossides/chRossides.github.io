@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import { ui, type Lang } from '../i18n/ui';
+import { categories, categoryPath } from '../i18n/categories';
 import nationalImg from '../assets/national-flags.jpg';
 import logoImg from '../assets/logo-print.jpg';
 import paradeImg from '../assets/parade-banners.jpg';
@@ -26,7 +27,7 @@ const images = [nationalImg, logoImg, paradeImg, embroideryImg];
 
   <div class="grid">
     {t.categories.map((c, i) => (
-      <div class="tile">
+      <a class="tile" href={categoryPath(categories[i]!, lang)}>
         <Image src={images[i]!} alt={c.title} widths={[480, 760]} sizes="(max-width: 700px) 100vw, 25vw" />
         <div class="shade"></div>
         <div class="text">
@@ -34,7 +35,7 @@ const images = [nationalImg, logoImg, paradeImg, embroideryImg];
           <div class="name">{c.title}</div>
           <div class="desc">{c.desc}</div>
         </div>
-      </div>
+      </a>
     ))}
   </div>
 
@@ -90,11 +91,15 @@ const images = [nationalImg, logoImg, paradeImg, embroideryImg];
     gap: 18px;
   }
   .tile {
+    display: block;
     position: relative;
     border-radius: 14px;
     overflow: hidden;
     height: 250px;
     background: var(--navy);
+  }
+  .tile:hover .name {
+    color: var(--orange-light);
   }
   .tile img {
     position: absolute;

@@ -7,6 +7,7 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = ui[lang].nav;
+const home = lang === 'el' ? '/' : '/en/';
 const switchHref = lang === 'el' ? '/en/' : '/';
 const switchLabel = lang === 'el' ? 'EN' : 'ΕΛ';
 ---
@@ -17,10 +18,10 @@ const switchLabel = lang === 'el' ? 'EN' : 'ΕΛ';
     <span class="wordmark">ROSSIDES<span class="dot">.</span></span>
   </a>
   <nav class="links" aria-label="Main">
-    <a href="#products">{t.products}</a>
-    <a href="#process">{t.process}</a>
-    <a href="#about">{t.about}</a>
-    <a href="#contact">{t.contact}</a>
+    <a href={`${home}#products`}>{t.products}</a>
+    <a href={`${home}#process`}>{t.process}</a>
+    <a href={`${home}#about`}>{t.about}</a>
+    <a href={`${home}#contact`}>{t.contact}</a>
     <a class="cta" href="#quote">{t.cta}</a>
     <a class="lang" href={switchHref} aria-label={lang === 'el' ? 'English version' : 'Ελληνική έκδοση'}>{switchLabel}</a>
   </nav>
