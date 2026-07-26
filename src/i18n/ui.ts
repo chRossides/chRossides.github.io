@@ -106,6 +106,40 @@ export const ui = {
       callAction: 'Καλέστε τώρα',
       hint: 'Έχετε πρόχειρα: διαστάσεις, ποσότητα και - αν υπάρχει - το λογότυπό σας.',
     },
+    faq: {
+      kicker: 'ΣΥΧΝΕΣ ΕΡΩΤΗΣΕΙΣ',
+      title: 'Ό,τι θέλετε να ρωτήσετε',
+      items: [
+        {
+          q: 'Υπάρχει ελάχιστη ποσότητα παραγγελίας;',
+          a: 'Όχι. Κατασκευάζουμε από ένα μοναδικό τεμάχιο μέχρι μεγάλες ποσότητες, πάντα στην ίδια χειροποίητη ποιότητα.',
+        },
+        {
+          q: 'Πόσος χρόνος χρειάζεται για μια παραγγελία;',
+          a: 'Εξαρτάται από το προϊόν και την ποσότητα. Με την προσφορά θα σας δώσουμε συγκεκριμένο χρόνο παράδοσης, πριν δεσμευτείτε.',
+        },
+        {
+          q: 'Σε ποιες διαστάσεις και υλικά φτιάχνετε σημαίες;',
+          a: 'Σε οποιαδήποτε διάσταση χρειάζεστε. Οι σημαίες τυπώνονται ψηφιακά σε ύφασμα πολυεστέρα, ενώ τα λάβαρα κατασκευάζονται από βελούδο.',
+        },
+        {
+          q: 'Τι αρχείο χρειάζεστε για σημαία με λογότυπο;',
+          a: 'Ιδανικά διανυσματικό αρχείο (EPS, PDF, SVG) ή εικόνα υψηλής ανάλυσης (PNG). Αν έχετε μόνο μια απλή φωτογραφία του σχεδίου, καλέστε μας για να σας συμβουλεύσουμε.',
+        },
+        {
+          q: 'Πού παραδίδετε;',
+          a: 'Παραδίδουμε παραγγελίες σε όλη την Κύπρο.',
+        },
+        {
+          q: 'Φτιάχνετε εκκλησιαστικά λάβαρα και λάβαρα παρελάσεων;',
+          a: 'Ναι, είναι από τις ειδικότητές μας. Χειροποίητα βελούδινα λάβαρα με κέντημα, ολοκληρωμένα με ιστό, σταυρό ή σφαίρα.',
+        },
+        {
+          q: 'Πώς θα πάρω προσφορά;',
+          a: 'Με ένα τηλεφώνημα στο 22 764662 (κατάστημα) ή στο 22 432481 (εργοστάσιο). Πείτε μας τι χρειάζεστε και θα σας δώσουμε τιμή και χρόνο παράδοσης.',
+        },
+      ],
+    },
     locations: {
       title: 'Επισκεφθείτε μας στη Λευκωσία',
       shop: 'ΚΑΤΑΣΤΗΜΑ',
@@ -196,6 +230,40 @@ export const ui = {
       factoryLabel: 'FACTORY',
       callAction: 'Call now',
       hint: 'Have ready: dimensions, quantity and - if you have one - your logo.',
+    },
+    faq: {
+      kicker: 'FAQ',
+      title: 'Anything you want to ask',
+      items: [
+        {
+          q: 'Is there a minimum order quantity?',
+          a: 'No. We make anything from a single piece to large quantities, always to the same handmade standard.',
+        },
+        {
+          q: 'How long does an order take?',
+          a: "It depends on the product and quantity. Your quote includes a specific delivery time, before you commit.",
+        },
+        {
+          q: 'What sizes and materials do you work with?',
+          a: 'Any size you need. Flags are digitally printed on polyester fabric, while banners are made of velvet.',
+        },
+        {
+          q: 'What file do you need for a logo flag?',
+          a: 'Ideally a vector file (EPS, PDF, SVG) or a high-resolution image (PNG). If all you have is a simple photo of the design, call us and we will advise you.',
+        },
+        {
+          q: 'Where do you deliver?',
+          a: 'We deliver orders anywhere in Cyprus.',
+        },
+        {
+          q: 'Do you make church and parade banners?',
+          a: 'Yes, they are one of our specialties. Handmade velvet banners with embroidery, finished with a pole, cross or sphere finial.',
+        },
+        {
+          q: 'How do I get a quote?',
+          a: "With one phone call to +357 22 764662 (shop) or +357 22 432481 (factory). Tell us what you need and we'll give you a price and delivery time.",
+        },
+      ],
     },
     locations: {
       title: 'Visit us in Nicosia',
