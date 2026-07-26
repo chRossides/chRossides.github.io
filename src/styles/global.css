@@ -1,0 +1,92 @@
+:root {
+  --navy: #15265e;
+  --navy-dark: #0f1c44;
+  --orange: #d2762b;
+  --orange-dark: #b9641f;
+  --orange-light: #f3b681;
+  --ink: #1c2433;
+  --ink-soft: #4a5466;
+  --ink-muted: #6b7384;
+  --bg-soft: #f6f8fb;
+  --bg-pill: #eef1f8;
+  --border: #eceff3;
+  --border-soft: #e7ebf1;
+  --border-input: #d9dfe8;
+  --font-display: 'Archivo', sans-serif;
+  --font-body: 'Libre Franklin', sans-serif;
+  --pad-x: clamp(24px, 6vw, 110px);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  font-family: var(--font-body);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--navy);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--orange);
+}
+
+img {
+  max-width: 100%;
+}
+
+.kicker {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  color: var(--orange);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.btn {
+  display: inline-block;
+  border-radius: 6px;
+  font-weight: 700;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.btn-primary {
+  background: var(--orange);
+  color: #fff;
+  padding: 15px 28px;
+}
+
+.btn-primary:hover {
+  background: var(--orange-dark);
+  color: #fff;
+}
+
+.btn-outline {
+  border: 1.5px solid #d4d9e1;
+  padding: 14px 24px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.btn-outline:hover {
+  border-color: var(--navy);
+  color: var(--navy);
+}

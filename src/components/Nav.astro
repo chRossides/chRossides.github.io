@@ -1,0 +1,105 @@
+---
+import { ui, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang].nav;
+const switchHref = lang === 'el' ? '/en/' : '/';
+const switchLabel = lang === 'el' ? 'EN' : 'ΕΛ';
+---
+
+<header class="nav">
+  <a class="brand" href={lang === 'el' ? '/' : '/en/'}>
+    <img src="/android-chrome-192x192.png" alt="Χαρ. Ρωσσίδης ΛΤΔ" width="42" height="42" />
+    <span class="wordmark">ROSSIDES<span class="dot">.</span></span>
+  </a>
+  <nav class="links" aria-label="Main">
+    <a href="#products">{t.products}</a>
+    <a href="#process">{t.process}</a>
+    <a href="#about">{t.about}</a>
+    <a href="#contact">{t.contact}</a>
+    <a class="cta" href="#quote">{t.cta}</a>
+    <a class="lang" href={switchHref} aria-label={lang === 'el' ? 'English version' : 'Ελληνική έκδοση'}>{switchLabel}</a>
+  </nav>
+</header>
+
+<style>
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(20px, 4vw, 60px);
+    padding: 22px var(--pad-x);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(8px);
+    z-index: 20;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    flex: none;
+  }
+  .brand img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+  }
+  .wordmark {
+    font: 800 18px/1 var(--font-display);
+    letter-spacing: -0.01em;
+    color: var(--navy);
+  }
+  .dot {
+    color: var(--orange);
+  }
+  .links {
+    display: flex;
+    align-items: center;
+    gap: clamp(14px, 1.8vw, 30px);
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .cta {
+    background: var(--orange);
+    color: #fff;
+    padding: 12px 22px;
+    border-radius: 6px;
+    font-weight: 700;
+  }
+  .cta:hover {
+    background: var(--orange-dark);
+    color: #fff;
+  }
+  .lang {
+    border: 1.5px solid var(--border-input);
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-weight: 700;
+    font-size: 13px;
+  }
+  .lang:hover {
+    border-color: var(--navy);
+  }
+  @media (max-width: 720px) {
+    .nav {
+      flex-wrap: wrap;
+      padding-top: 14px;
+      padding-bottom: 14px;
+    }
+    .links {
+      flex-wrap: wrap;
+      row-gap: 8px;
+    }
+    .links a:not(.cta):not(.lang) {
+      display: none;
+    }
+  }
+</style>

@@ -1,0 +1,32 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Base lang="el">
+  <Nav lang="el" />
+  <main class="nf">
+    <h1>404</h1>
+    <p>Η σελίδα δεν βρέθηκε. / Page not found.</p>
+    <a class="btn btn-primary" href="/">Αρχική σελίδα / Home</a>
+  </main>
+  <Footer lang="el" />
+</Base>
+
+<style>
+  .nf {
+    text-align: center;
+    padding: 100px var(--pad-x) 120px;
+  }
+  h1 {
+    font: 900 80px/1 var(--font-display);
+    color: var(--navy);
+    margin-bottom: 16px;
+  }
+  p {
+    color: var(--ink-soft);
+    margin-bottom: 30px;
+    font-size: 17px;
+  }
+</style>

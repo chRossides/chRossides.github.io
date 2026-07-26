@@ -1,0 +1,83 @@
+---
+import '@fontsource/libre-franklin/400.css';
+import '@fontsource/libre-franklin/500.css';
+import '@fontsource/libre-franklin/600.css';
+import '@fontsource/libre-franklin/700.css';
+import '@fontsource/archivo/700.css';
+import '@fontsource/archivo/800.css';
+import '@fontsource/archivo/900.css';
+import '../styles/global.css';
+import { site, ui, type Lang } from '../i18n/ui';
+import ogImage from '../assets/hero-flag.jpg';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang];
+const canonical = new URL(lang === 'el' ? '/' : '/en/', site.domain).href;
+const alternate = new URL(lang === 'el' ? '/en/' : '/', site.domain).href;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': `${site.domain}/#business`,
+  name: lang === 'el' ? 'Χαρ. Ρωσσίδης ΛΤΔ' : 'Charalambos Rossides LTD',
+  alternateName: lang === 'el' ? 'Charalambos Rossides LTD' : 'Χαρ. Ρωσσίδης ΛΤΔ',
+  description: t.meta.description,
+  url: site.domain,
+  telephone: site.phoneShop,
+  foundingDate: '1938',
+  image: new URL(ogImage.src, site.domain).href,
+  address: [
+    {
+      '@type': 'PostalAddress',
+      streetAddress: lang === 'el' ? site.addressShop.street : site.addressShop.streetEn,
+      postalCode: site.addressShop.postal,
+      addressLocality: site.addressShop.city[lang],
+      addressCountry: 'CY',
+    },
+    {
+      '@type': 'PostalAddress',
+      streetAddress: lang === 'el' ? site.addressFactory.street : site.addressFactory.streetEn,
+      postalCode: site.addressFactory.postal,
+      addressLocality: site.addressFactory.city[lang],
+      addressCountry: 'CY',
+    },
+  ],
+  areaServed: { '@type': 'Country', name: 'Cyprus' },
+};
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{t.meta.title}</title>
+    <meta name="description" content={t.meta.description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang={lang === 'el' ? 'en' : 'el'} href={alternate} />
+    <link rel="alternate" hreflang={lang} href={canonical} />
+    <link rel="alternate" hreflang="x-default" href={new URL('/', site.domain).href} />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="theme-color" content="#15265E" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={t.meta.title} />
+    <meta property="og:description" content={t.meta.description} />
+    <meta property="og:image" content={new URL(ogImage.src, site.domain).href} />
+    <meta property="og:locale" content={lang === 'el' ? 'el_GR' : 'en_GB'} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

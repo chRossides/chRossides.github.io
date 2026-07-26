@@ -1,0 +1,39 @@
+---
+import { ui, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang].trust;
+---
+
+<div class="strip">
+  <span class="label">{t.label}</span>
+  {t.items.map((item, i) => (
+    <>
+      <span>{item}</span>
+      {i < t.items.length - 1 && <span class="sep">·</span>}
+    </>
+  ))}
+</div>
+
+<style>
+  .strip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px clamp(14px, 2.2vw, 40px);
+    padding: 24px var(--pad-x);
+    background: var(--bg-soft);
+    font-size: 13.5px;
+    color: var(--ink-muted);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .label {
+    color: var(--navy);
+  }
+</style>

@@ -1,0 +1,194 @@
+---
+import { Image } from 'astro:assets';
+import { ui, type Lang } from '../i18n/ui';
+import nationalImg from '../assets/national-flags.jpg';
+import logoImg from '../assets/logo-print.jpg';
+import paradeImg from '../assets/parade-banners.jpg';
+import embroideryImg from '../assets/embroidery.jpg';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang].products;
+const images = [nationalImg, logoImg, paradeImg, embroideryImg];
+---
+
+<section id="products" class="products">
+  <div class="head">
+    <div>
+      <p class="kicker">{t.kicker}</p>
+      <h2>{t.title}</h2>
+    </div>
+    <a class="all" href="#quote">{t.all}</a>
+  </div>
+
+  <div class="grid">
+    {t.categories.map((c, i) => (
+      <div class="tile">
+        <Image src={images[i]!} alt={c.title} widths={[480, 760]} sizes="(max-width: 700px) 100vw, 25vw" />
+        <div class="shade"></div>
+        <div class="text">
+          <div class="tag">{c.sub}</div>
+          <div class="name">{c.title}</div>
+          <div class="desc">{c.desc}</div>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <div class="more">
+    <div class="more-head">
+      <h3>{t.moreTitle}</h3>
+      <div class="more-sub">{t.moreSub}</div>
+    </div>
+    <div class="more-grid">
+      {t.more.map((m) => (
+        <div class="item">
+          <div class="bullet"></div>
+          <div>
+            <div class="item-t">{m.t}</div>
+            <div class="item-d">{m.d}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .products {
+    padding: 80px var(--pad-x);
+    scroll-margin-top: 90px;
+  }
+  .head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 38px;
+    gap: 20px;
+  }
+  h2 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(30px, 3.2vw, 40px);
+    letter-spacing: -0.01em;
+    color: var(--navy);
+  }
+  .all {
+    font-size: 14px;
+    color: var(--navy);
+    font-weight: 600;
+    border-bottom: 1.5px solid var(--navy);
+    padding-bottom: 3px;
+    white-space: nowrap;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+    gap: 18px;
+  }
+  .tile {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    height: 250px;
+    background: var(--navy);
+  }
+  .tile img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .shade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(15, 28, 68, 0.08) 28%, rgba(15, 28, 68, 0.84));
+    pointer-events: none;
+  }
+  .text {
+    position: absolute;
+    left: 22px;
+    right: 22px;
+    bottom: 20px;
+    color: #fff;
+    pointer-events: none;
+  }
+  .tag {
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--orange-light);
+    font-weight: 700;
+    margin-bottom: 7px;
+  }
+  .name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 1.14;
+    margin-bottom: 5px;
+  }
+  .desc {
+    font-size: 12.5px;
+    color: #cfd6e6;
+    line-height: 1.45;
+  }
+  .more {
+    margin-top: 44px;
+    padding-top: 36px;
+    border-top: 1px solid var(--border-soft);
+  }
+  .more-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 26px;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 22px;
+    color: var(--navy);
+  }
+  .more-sub {
+    font-size: 14px;
+    color: var(--ink-muted);
+  }
+  .more-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(max(250px, 30%), 1fr));
+    gap: 14px 40px;
+  }
+  .item {
+    display: flex;
+    gap: 12px;
+    align-items: baseline;
+    padding: 12px 0;
+    border-top: 1px solid #f0f3f7;
+  }
+  .bullet {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--orange);
+    flex: none;
+    transform: translateY(-3px);
+  }
+  .item-t {
+    font-size: 15.5px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 3px;
+  }
+  .item-d {
+    font-size: 13.5px;
+    color: var(--ink-muted);
+    line-height: 1.5;
+  }
+</style>

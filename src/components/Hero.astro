@@ -1,0 +1,139 @@
+---
+import { Image } from 'astro:assets';
+import { ui, type Lang } from '../i18n/ui';
+import heroImg from '../assets/hero-flag.jpg';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang].hero;
+---
+
+<section class="hero">
+  <div>
+    <p class="badge">{t.badge}</p>
+    <h1>{t.title}</h1>
+    <p class="sub">{t.sub}</p>
+    <div class="pills">
+      {t.pills.map((p) => <a href="#products">{p}</a>)}
+    </div>
+    <div class="ctas">
+      <a class="btn btn-primary" href="#quote">{t.ctaQuote}</a>
+      <a class="btn btn-outline" href="#products">{t.ctaProducts}</a>
+    </div>
+  </div>
+  <div class="media">
+    <Image src={heroImg} alt={t.imgAlt} widths={[640, 960, 1400]} sizes="(max-width: 900px) 100vw, 46vw" loading="eager" fetchpriority="high" />
+    <div class="card">
+      <div class="card-title">{t.cardTitle}</div>
+      <div class="card-sub">{t.cardSub}</div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    display: grid;
+    grid-template-columns: 1.08fr 0.92fr;
+    align-items: center;
+    padding: 74px var(--pad-x) 60px;
+    gap: 56px;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--bg-pill);
+    color: var(--navy);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 7px 14px;
+    border-radius: 40px;
+    margin-bottom: 26px;
+  }
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(38px, 4.5vw, 58px);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    color: var(--navy);
+    margin-bottom: 22px;
+    text-wrap: pretty;
+  }
+  .sub {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 440px;
+    margin-bottom: 26px;
+    text-wrap: pretty;
+  }
+  .pills {
+    display: flex;
+    gap: 9px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+  }
+  .pills a {
+    background: var(--bg-pill);
+    color: var(--navy);
+    padding: 9px 17px;
+    border-radius: 40px;
+    font-size: 13.5px;
+    font-weight: 600;
+  }
+  .pills a:hover {
+    background: #dde4f2;
+  }
+  .ctas {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .media {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    min-height: 440px;
+    box-shadow: 0 24px 60px rgba(21, 38, 94, 0.2);
+  }
+  .media img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .card {
+    position: absolute;
+    left: 22px;
+    bottom: 22px;
+    background: rgba(255, 255, 255, 0.94);
+    border-radius: 8px;
+    padding: 14px 18px;
+  }
+  .card-title {
+    font: 800 13px/1 var(--font-display);
+    color: var(--navy);
+  }
+  .card-sub {
+    font-size: 12px;
+    color: var(--ink-muted);
+    margin-top: 4px;
+  }
+  @media (max-width: 900px) {
+    .hero {
+      grid-template-columns: 1fr;
+      padding-top: 48px;
+      gap: 36px;
+    }
+    .media {
+      min-height: 320px;
+    }
+  }
+</style>
