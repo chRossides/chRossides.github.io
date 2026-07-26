@@ -62,6 +62,8 @@ Ask satisfied customers to leave a Google review right after delivery — a scho
 - **Bing Webmaster Tools** — imported from Search Console, sitemap submitted, URLs submitted. The homepage already reports **"Indexed successfully"**, with JSON-LD and OpenGraph markup detected. This is the registration that matters for AI assistants: ChatGPT and Copilot draw on Bing's web index.
 - **Bing Places** — *deliberately skipped.* It is the local-listing product (Bing's answer to a Google Business Profile), not a website-indexing tool, and it does not affect whether the site is indexed or whether AI assistants can find it. Bing's share of search in Cyprus is very small, and Cyprus support could not even be confirmed. Revisit only if there is spare time.
 
+- **IndexNow** — ✅ automated. Every push to `main` now notifies Bing and other IndexNow participants of the published URLs (verified: HTTP 202 accepted). No manual URL submission is needed again, ever. The key lives at `public/30e6698977e07ef5d30fcb3505b15aa4.txt`; **do not delete or rename that file** or submissions will start failing.
+
 **Check back in 1–2 weeks:** Search Console → Performance (which queries you appear for) and Pages (what got indexed). Reports are empty for the first few days — that is normal, and resubmitting the sitemap does nothing.
 
 ## 4. Fix the directory listings
@@ -82,7 +84,7 @@ Not one of the eight directory listings found links to the website, and most fil
 
 - **Facebook: there are two pages.** The one in use is `facebook.com/profile.php?id=100052710947198`; a duplicate exists at `.../Charalambos-Rossides-Ltd-112433953742975`. Ask Facebook to merge them (Settings → merge duplicate pages) so likes and history consolidate.
 - Add the website link, address, phone and opening hours to the surviving page.
-- **Instagram**: `instagram.com/chrossides_ltd` exists — confirm it is yours. If so, tell me and I will add it to the site's structured data alongside Facebook.
+- **Instagram**: `instagram.com/chrossides_ltd` — ✅ confirmed as yours and now linked from the site's structured data alongside Facebook, so search engines connect the two to one business.
 - One active channel posting finished work (banners, embroidery, flags going out the door) is worth more than three dormant ones. Parade season is the natural content.
 
 ## 6. Tell the story — the biggest opportunity
