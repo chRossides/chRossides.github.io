@@ -20,7 +20,7 @@ export function telHref(phone: string): string {
 export const ui = {
   el: {
     meta: {
-      title: 'Χαρ. Ρωσσίδης ΛΤΔ — Σημαίες, Λάβαρα & Κεντήματα στην Κύπρο από το 1938',
+      title: 'Χαρ. Ρωσσίδης ΛΤΔ - Σημαίες, Λάβαρα & Κεντήματα στην Κύπρο από το 1938',
       description:
         'Χειροποίητες εθνικές και προσωποποιημένες σημαίες, λάβαρα παρελάσεων και κεντήματα στη Λευκωσία. Κάθε διάσταση, χωρίς ελάχιστη ποσότητα. Ζητήστε δωρεάν προσφορά.',
     },
@@ -33,7 +33,7 @@ export const ui = {
     },
     hero: {
       badge: '★ Χειροποίητα στην Κύπρο από το 1938',
-      title: 'Βρείτε τη σημαία σας — ή φτιάξτε τη δική σας.',
+      title: 'Βρείτε τη σημαία σας - ή φτιάξτε τη δική σας.',
       sub: 'Εθνικές και προσωποποιημένες σημαίες, λάβαρα και κεντήματα. Κάθε διάσταση, χωρίς ελάχιστη ποσότητα.',
       pills: ['Εθνικές σημαίες', 'Σημαίες με λογότυπο', 'Λάβαρα παρελάσεων', 'Κεντήματα', 'Αθλητικές'],
       ctaCall: '☎ Καλέστε μας: 22 764662',
@@ -79,7 +79,7 @@ export const ui = {
     about: {
       kicker: 'Η ΕΤΑΙΡΕΙΑ',
       title: 'Οικογενειακή βιοτεχνία στη Λευκωσία από το 1938',
-      p1: 'Η βιοτεχνία μας ιδρύθηκε το 1938 από τον Χαραλάμπο Ρωσσίδη και συνεχίζεται σήμερα από τον Νίκο και τον Μιχάλη Ρωσσίδη — με την ίδια προσήλωση στη χειροποίητη ποιότητα.',
+      p1: 'Η βιοτεχνία μας ιδρύθηκε το 1938 από τον Χαραλάμπο Ρωσσίδη και συνεχίζεται σήμερα από τον Νίκο και τον Μιχάλη Ρωσσίδη - με την ίδια προσήλωση στη χειροποίητη ποιότητα.',
       p2: 'Παράγουμε τοπικά και αναλαμβάνουμε παραγγελίες κάθε ποσότητας, για συλλόγους, σχολεία, εκκλησίες, δήμους και επιχειρήσεις σε όλη την Κύπρο.',
       imgAlt: 'Το εργαστήριο στη Λευκωσία',
       stats: [
@@ -91,11 +91,11 @@ export const ui = {
     quote: {
       kicker: 'ΖΗΤΗΣΤΕ ΠΡΟΣΦΟΡΑ',
       title: 'Μία κλήση αρκεί για δωρεάν προσφορά',
-      sub: 'Πείτε μας τι χρειάζεστε — σχέδιο, διαστάσεις, ποσότητα — και θα σας δώσουμε τιμή και χρόνο παράδοσης στο τηλέφωνο, χωρίς ελάχιστη ποσότητα.',
+      sub: 'Πείτε μας τι χρειάζεστε - σχέδιο, διαστάσεις, ποσότητα - και θα σας δώσουμε τιμή και χρόνο παράδοσης στο τηλέφωνο, χωρίς ελάχιστη ποσότητα.',
       shopLabel: 'ΚΑΤΑΣΤΗΜΑ',
       factoryLabel: 'ΕΡΓΟΣΤΑΣΙΟ',
       callAction: 'Καλέστε τώρα',
-      hint: 'Έχετε πρόχειρα: διαστάσεις, ποσότητα και — αν υπάρχει — το λογότυπό σας.',
+      hint: 'Έχετε πρόχειρα: διαστάσεις, ποσότητα και - αν υπάρχει - το λογότυπό σας.',
     },
     locations: {
       title: 'Επισκεφθείτε μας στη Λευκωσία',
@@ -111,7 +111,7 @@ export const ui = {
   },
   en: {
     meta: {
-      title: 'Char. Rossides LTD — Flags, Banners & Embroidery in Cyprus since 1938',
+      title: 'Char. Rossides LTD - Flags, Banners & Embroidery in Cyprus since 1938',
       description:
         'Handmade national and custom flags, parade banners and embroidery in Nicosia, Cyprus. Any size, no minimum order. Request a free quote.',
     },
@@ -124,7 +124,7 @@ export const ui = {
     },
     hero: {
       badge: '★ Handmade in Cyprus since 1938',
-      title: 'Find your flag — or create your own.',
+      title: 'Find your flag - or create your own.',
       sub: 'National and custom flags, banners and embroidery. Any size, no minimum order.',
       pills: ['National flags', 'Logo flags', 'Parade banners', 'Embroidery', 'Sports'],
       ctaCall: '☎ Call us: 22 764662',
@@ -170,7 +170,7 @@ export const ui = {
     about: {
       kicker: 'THE COMPANY',
       title: 'A family workshop in Nicosia since 1938',
-      p1: 'Our workshop was founded in 1938 by Charalambos Rossides and continues today under Nicos and Michalis Rossides — with the same devotion to handmade quality.',
+      p1: 'Our workshop was founded in 1938 by Charalambos Rossides and continues today under Nicos and Michalis Rossides - with the same devotion to handmade quality.',
       p2: 'We produce locally and take orders of any quantity, for clubs, schools, churches, municipalities and businesses across Cyprus.',
       imgAlt: 'The workshop in Nicosia',
       stats: [
@@ -182,11 +182,11 @@ export const ui = {
     quote: {
       kicker: 'REQUEST A QUOTE',
       title: 'One call is all it takes for a free quote',
-      sub: "Tell us what you need — design, dimensions, quantity — and we'll give you a price and delivery time over the phone, no minimum order.",
+      sub: "Tell us what you need - design, dimensions, quantity - and we'll give you a price and delivery time over the phone, no minimum order.",
       shopLabel: 'SHOP',
       factoryLabel: 'FACTORY',
       callAction: 'Call now',
-      hint: 'Have ready: dimensions, quantity and — if you have one — your logo.',
+      hint: 'Have ready: dimensions, quantity and - if you have one - your logo.',
     },
     locations: {
       title: 'Visit us in Nicosia',
