@@ -6,6 +6,8 @@ Built with [Astro](https://astro.build), served on GitHub Pages at https://www.c
 
 ## Development
 
+Requires Node.js ≥ 22.12 (see `.nvmrc`).
+
 ```sh
 npm install
 npm run dev      # local dev server

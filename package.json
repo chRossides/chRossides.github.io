@@ -3,18 +3,18 @@
   "type": "module",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.4.1",
+    "@astrojs/sitemap": "^3.7.3",
     "@fontsource/archivo": "^5.2.5",
     "@fontsource/libre-franklin": "^5.2.5",
-    "astro": "^5.12.0"
-  },
-  "devDependencies": {
-    "playwright-core": "^1.62.0"
+    "astro": "^7.1.3"
   }
 }
