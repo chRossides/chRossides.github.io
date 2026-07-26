@@ -83,12 +83,15 @@ The registry's rendering of the factory street is **Νικ. Θ. Ιωάννου**
 | Channel | State |
 |---|---|
 | Website | `www.chrossides.com` — rebuilt July 2026, good technical SEO **[confirmed]** |
-| **Google Business Profile** | Both store and factory profiles exist, **but their websites point to dead `.business.site` pages returning HTTP 404** **[confirmed]** — anyone clicking through from Google Maps hits nothing |
+| **Google Business Profile — store** | Healthy. Website correctly set to chrossides.com, rated **4.6**, address and phone correct. Gaps: **no opening hours**, generic category "Store", only one photo **[confirmed, browser-verified 26 Jul 2026]** |
+| **Google Business Profile — factory** | Healthy. Website chrossides.com, rated **5.0**, category "Manufacturer", **opening hours set** (opens 07:00 Mon). Gap: only one photo **[confirmed, browser-verified 26 Jul 2026]** |
 | Facebook | **Two pages exist.** Official: `facebook.com/profile.php?id=100052710947198` (~554 likes **[reported]**). Duplicate: `facebook.com/Charalambos-Rossides-Ltd-112433953742975` **[confirmed]** |
 | Instagram | `instagram.com/chrossides_ltd` exists **[confirmed]**; ownership **[unverified]** — confirm before we link it |
 | LinkedIn | No company page. (`linkedin.com/in/chrossides/` is an unrelated person.) **[confirmed]** |
-| Reviews | **Effectively zero across every platform checked.** One unattributed snippet — "Excellent service flawless work very reasonable charges" — apparently from Google Maps, **[unverified]** |
-| Opening hours | **Published nowhere** — not on the site, not on any directory **[confirmed]** |
+| Reviews | **Google: 4.6 (store), 5.0 (factory)** **[confirmed]**. Exact counts are not visible when signed out — check the GBP dashboard. No reviews on any other platform **[confirmed]** |
+| Opening hours | Factory published on Google; **store has none anywhere**, and neither is on the website **[confirmed]** |
+
+> **Correction, 26 July 2026.** An earlier draft of this dossier claimed both Google profiles pointed at dead `charalambos-rossides-ltd-*.business.site` URLs, and that the business had no reviews at all. **Both claims were wrong** and have been removed. The `.business.site` URLs do return 404 (Google retired that product), but they are merely stale entries still sitting in the search index — the profiles themselves were already updated to chrossides.com. The "no reviews" claim came from being unable to load Google Maps during research and wrongly reading that as an absence. Lesson recorded: absence of evidence in a blocked source is not evidence of absence.
 
 **Directory listings found (8), and what is wrong with them:**
 
@@ -121,7 +124,7 @@ Equally, **no named customer is publicly verifiable.** The site's "trusted by sc
 ## 6. Open questions for the family
 
 1. Can the **1938** founding date be evidenced (document, photo, press cutting)? Was there a predecessor partnership before the 1983 incorporation?
-2. What are the **opening hours** of the shop and the factory?
+2. What are the **opening hours**? The factory's are on Google (opens 07:00 Mon) but the full week is needed; the shop has none published anywhere.
 3. Are the mobile **99 199063**, the line **22 765176**, the fax **22 438042** and **chrossides@gmail.com** current, and should they be public?
 4. Is `instagram.com/chrossides_ltd` ours?
 5. Should the shop's **army/hunting retail** line be represented on the website?

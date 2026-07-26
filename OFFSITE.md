@@ -27,20 +27,33 @@ Never use the spelling **"Char. Rossidis Ltd"** — it is in circulation on one 
 
 ---
 
-## 1. Fix the broken Google listings — do this first
+## 1. Google Business Profiles — in decent shape, three gaps to close
 
-Both Google Business Profiles (store and factory) currently link to `charalambos-rossides-ltd-store.business.site` and `...-factory.business.site`. **Both return a 404 error page.** Google retired these auto-generated sites, so every customer who finds you on Google Maps and taps "Website" hits a dead end. Other directories have copied the dead link too.
+**Verified live on 26 July 2026** (both listings loaded in a browser):
 
-1. Claim/verify both locations at https://business.google.com (they already exist — you are claiming, not creating).
-2. Set the website field on both to **https://www.chrossides.com**.
-3. Set the primary category to **Flag manufacturer** on both; add secondary categories for embroidery and, for the shop, army surplus/hunting if that retail line matters.
-4. Add **opening hours** — these are published nowhere at all right now, which suppresses you in "open now" searches.
-5. Upload photos: the printing machine, the velvet banners, the embroidered badges, the workshop. Google weights profiles with real photos heavily.
-6. Add the products list and a short description mentioning 1938, handmade, no minimum order.
+| | Store | Factory |
+|---|---|---|
+| Website | ✅ chrossides.com | ✅ chrossides.com |
+| Rating | ✅ 4.6 | ✅ 5.0 |
+| Address | ✅ Pindarou 5B, Nicosia, Lefkosia 1060 | ✅ Nikolaou Ioannou 3, Kaimakli |
+| Phone | ✅ +357 22 764662 | ✅ +357 22 432481 |
+| Opening hours | ❌ **missing** ("Add hours" prompt) | ✅ set (opens 07:00 Mon) |
+| Category | ⚠️ "Store" — generic | ✅ "Manufacturer" |
+| Photos | ⚠️ one storefront photo | ⚠️ one machine photo |
 
-## 2. Ask for reviews
+So the fundamentals are right. Three things to fix:
 
-You have **effectively zero reviews anywhere**. For local search this is the single biggest ranking factor you can still move, and for a business with a 1938 heritage it is also the easiest — ask satisfied customers (a school, a church committee, a club secretary) to leave a Google review right after delivery. Ten genuine reviews would put you ahead of most competitors listed in profile.md, several of whom have none either.
+1. **Add opening hours to the store profile.** The factory has them; the store does not, and without them the shop is suppressed in "open now" searches — which is exactly when someone needs a flag today.
+2. **Make the store's category specific.** "Store" tells Google nothing. Change the primary category to **Flag store** or **Flag manufacturer**, and add secondaries for embroidery and — if it is a real revenue line — army surplus/hunting.
+3. **Add more photos to both.** One photo each is thin, and photos are one of the strongest engagement signals Google measures. The velvet banners, embroidered badges, the flags coming off the printer, the workshop itself. The same images already used on the website work fine.
+
+Also worth adding on both: a short business description mentioning 1938, handmade in Cyprus, and no minimum order.
+
+## 2. Build on the reviews you already have
+
+You are rated **4.6 (store)** and **5.0 (factory)** — better than most competitors in profile.md, several of whom have none. The ratings are strong; the volume is not, and volume is what moves local rankings.
+
+Ask satisfied customers to leave a Google review right after delivery — a school secretary, a church committee, a club official. A dozen genuine reviews at that rating would make you very hard to displace in Nicosia. Reviews mentioning specific products ("church banner", "school flag") also help you surface for those searches.
 
 ## 3. Register with the search engines
 
@@ -89,7 +102,7 @@ The site says "trusted by sports clubs, schools, churches, municipalities" but c
 
 Tell me any of these and I will implement them:
 
-- **Opening hours** → added to the site and to its structured data, so Google can show "open now".
+- **Opening hours for both locations** (full week) → added to the site and its structured data. The factory's are already on Google; the shop's exist nowhere.
 - **Instagram confirmed** → added to the structured data alongside Facebook.
 - **Named customers / testimonials** → a credibility section on the landing page.
 - **Photos of finished work**, especially banners for named organisations → the category pages have room for more.
