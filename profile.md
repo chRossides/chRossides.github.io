@@ -125,11 +125,11 @@ Researched 26 July 2026; **the family confirms this is a single flag of ours, do
 
 **Specification** (from the 2014 coverage) — **1,650 m², 280 kg**, cost around **€4,000**. For scale, that is larger than every other Greek flag found in this research, including the Guinness-registered one.
 
-**Appearance 1 — Nicosia, June 2014.** Hung over a building in central Nicosia for Greece vs Costa Rica in the World Cup last 16. It took a **12-person crew about six hours** in a heatwave. Organised by **Χριστόφορος Τορναρίτης**. Greek media described it as *"τη μεγαλύτερη ελληνική σημαία που κατασκευάστηκε ποτέ"* — the largest Greek flag ever constructed.
+**Appearance 1 — Nicosia, Saturday 28 June 2014.** Raised over a building in the heart of Nicosia on the Saturday afternoon before Greece played Costa Rica in the World Cup last 16. A **12-person crew took about six hours** in extreme heat. Organised by **Χριστόφορος Τορναρίτης**, a former football administrator/agent, who is quoted giving the specification directly: *"τὸ ἐμβαδόν τῆς σημαίας εἶναι 1.650 τετραγωνικὰ μέτρα καὶ τὸ βάρος της 280 κιλά"*. Greek media described it as *"τη μεγαλύτερη ελληνική σημαία που κατασκευάστηκε ποτέ"* — the largest Greek flag ever constructed. **Neither article names the manufacturer.**
 - https://www.iefimerida.gr/news/161199/η-μεγαλύτερη-ελληνική-σημαία-για-χάρη-της-εθνικής-ομάδας-γαλανόλευκη-1650-τετραγωνικών-β
 - https://oladeka.com/2014/06/blog-post_29-14/
 
-**Appearance 2 — GSP Stadium, 28 October 2024.** APOEL's organised supporters unfurled it across the entire south stand (πέταλο) for the 28 October national holiday, at APOEL–Anorthosis (APOEL won 2-0). Widely covered on video. No dimensions were republished, which is why the two events read as unrelated in the press.
+**Appearance 2 — GSP Stadium, Nicosia.** APOEL's organised supporters have unfurled the flag across the entire south stand (πέταλο). The best-documented such occasion in the press is **28 October 2024**, during APOEL–Anorthosis (matchday 8, APOEL won 2-0) for the 28 October national holiday — but ⚠️ **the family has not confirmed that specific date**, and the flag may have been displayed there more than once, so do not pin the GSP appearance to a single fixture in public copy. None of the 2024 coverage republished the dimensions, which is why the two events read as unrelated in the press.
 - https://www.24sports.com.cy/gr/sports/podosfairo/kypros/a-katigoria/apoel/apoel-terastia-elliniki-simaia-sto-petalo-vid
 - https://www.iefimerida.gr/spor/kypros-opadoi-apoel-sikosan-elliniki-simaia
 - https://www.aek365.org/a-1018283/mia-gigantia-ellhnikh-shmaia-upswsan-oi-filoi-tou-apoel-video.htm
