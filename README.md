@@ -17,7 +17,7 @@ npm run preview  # serve dist/ locally
 
 ## Deployment
 
-Pushes to `master` trigger `.github/workflows/deploy.yml`, which builds the site and deploys it to GitHub Pages.
+Pushes to `main` trigger `.github/workflows/deploy.yml`, which builds the site and deploys it to GitHub Pages.
 
 One-time repo setting: **Settings → Pages → Source** must be set to **GitHub Actions** (not "Deploy from a branch").
 
