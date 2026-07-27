@@ -49,11 +49,13 @@ So the fundamentals are right. Three things to fix:
 
 4. **Add a business description to each profile** — ready to copy-paste in [the appendix below](#appendix--google-business-profile-descriptions).
 
-## 2. Build on the reviews you already have
+## 2. Build on the reviews you already have — full plan in [REVIEWS.md](REVIEWS.md)
 
 You are rated **4.6 (store)** and **5.0 (factory)** — better than most competitors in profile.md, several of whom have none. The ratings are strong; the volume is not, and volume is what moves local rankings.
 
 Ask satisfied customers to leave a Google review right after delivery — a school secretary, a church committee, a club official. A dozen genuine reviews at that rating would make you very hard to displace in Nicosia. Reviews mentioning specific products ("church banner", "school flag") also help you surface for those searches.
+
+[REVIEWS.md](REVIEWS.md) has the mechanics: the two short review links to generate, where to put the QR code so the ask costs nothing, ready-to-send Greek scripts, the post-parade batch that is currently going unused, and the Google policies that get reviews wiped.
 
 ## 3. Register with the search engines — ✅ DONE (26 July 2026)
 

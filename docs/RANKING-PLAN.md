@@ -45,7 +45,7 @@ Each targets a query where the search results are currently visibly broken. Gree
 The site is now the fastest and best-structured in the market, but **nothing feeds it**.
 
 1. **Reviews: 14 → 50+.** Hercules has 192, Laser Signs 60. This is the single biggest ranking factor still available. Ask every satisfied customer. Reviews naming products ("school banner", "church λάβαρο") also help those pages rank. Steer them to the **store** profile — the factory profile has one review.
-2. **Restart social.** Facebook has been silent since **March 2023**; Instagram has **76 followers** against Laser Signs' 3,690. A flag workshop generates exactly the finished-work photography that performs on those channels.
+2. **Restart social — see [SOCIAL.md](SOCIAL.md).** Facebook has been silent since **March 2023**; Instagram has **76 followers** against Laser Signs' 3,690. A flag workshop generates exactly the finished-work photography that performs on those channels. The restart sequence and the capture-to-publish pipeline that stops it dying again are set out in full in SOCIAL.md.
 3. **Google Business Profiles** — add the store's opening hours, change its category from the generic "Store", and add photos to both. *(Both profiles already point correctly at chrossides.com and are rated 4.6 and 5.0 — verified.)*
 4. **Directory listings** — see [OFFSITE.md](OFFSITE.md). Note that **Sapo and Pafitis are both listed under Flags & Banners but sell no flags**; their directory traffic is takeable.
 

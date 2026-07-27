@@ -28,3 +28,7 @@ The site is phone-first: all quote CTAs are click-to-call `tel:` links to the sh
 ## Content
 
 All copy for both languages lives in `src/i18n/ui.ts`. Images live in `src/assets/` and are optimized at build time; favicons and other static files are in `public/`.
+
+## Research and plans
+
+Internal working documents — company research, the competitor teardown, and the ranking, off-site, reviews and social plans — live in [`docs/`](docs/README.md). They are not published by the site build.
