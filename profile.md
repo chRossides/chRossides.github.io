@@ -60,21 +60,62 @@ The registry's rendering of the factory street is **Νικ. Θ. Ιωάννου**
 
 **Product range** (from our own site and directory categories): national flags of any country and size, digitally printed logo flags on polyester, handmade velvet parade and church banners with pole/cross/sphere finials, embroidered badges, emblems and insignia, πηλήκια (kepis) and military accessories, table flags, bunting, sports flags, poles and fittings. Directory listings also file them under hunting and army goods, suggesting a retail side to the Pindarou shop that the website does not currently mention. **Worth asking whether the shop's army/hunting retail line should appear on the site at all** — it may be a meaningful revenue stream that is currently invisible online.
 
-**Competitive landscape** — the Cypriot field is fragmented and weakly digitised. Most rivals are sign/print shops or promotional-gift houses that treat flags as a side line. Named competitors **[confirmed]**:
+**Competitive landscape** — full teardown of 14 rivals' websites, 26–27 July 2026. Every finding below was verified by fetching the live pages. **[confirmed]**
 
-- **Ricami Studio Designs & Embroideries** (Kaimakli, `ricamistudio.com`, est. 1998) — the strongest digital competitor, with its own branded site and e-shop.
-- **Classmates** (`classmates.com.cy`) — full e-commerce for army insignia, velcro badges, National Guard kit. Directly overlaps the embroidery/military line.
-- **Sapo Giveaways Public Ltd** (est. 1988, three showrooms), **Hercules Group** (Limassol, e-shop), **Pantone Signs**, **Φώτης Παφίτης & Υιός**, **Αναστασίου Awards Center**, and a Facebook-only trader "Σημαίες Παραγγελίες Πωλήσεις".
+**Only one Cypriot competitor is genuinely strong.**
 
-**The bigger threat is Greek importers**, which dominate every Greek-language search: Kokkonis (127 years old), flags.gr, ekivotos.com, psomiadisflags.gr, hatzakis1938.gr. Several explicitly sell Cyprus flags and Cypriot team flags, and Skroutz/Jumbo carry Cyprus-flag SKUs. **[confirmed]**
+| # | Company | Site | Flags? | Prices | Languages | Google reviews |
+|---|---|---|---|---|---|---|
+| **1** | **Hercules Group** (Limassol) + NextDay — *the same company*, H. Hercules Sports Ltd HE36663 | ✅ | **Core, ~298 SKUs** | ✅ published | **EN only** | 4.6 / **192** |
+| **2** | **S&H Laser Signs** (Kaimakli) | ✅ | ⚠️ 67-word stub | ❌ | EL + EN | 5.0 / **60** |
+| 3 | Sapo Giveaways | ✅ | ❌ **none at all** | ✅ | EN only | 4.9 / 20 |
+| 4 | Classmates | ✅ | ❌ none | ✅ | EL + EN | **3.5** / 17 |
+| 5 | Photis Pafitis & Son | ✅ | ❌ abandoned flags | ❌ | EL-led | 5.0 / 21 |
+| 6 | Alexio Promotions | ✅ | ⚠️ 2 of 124 SKUs | ✅ €40 | EN only | — |
+| 7 | Cyprus Printing Center | ✅ | ⚠️ 6 feather SKUs | ✅ | EN only | — |
+| 8–11 | L&A Nicolaou · Evangelou Signs · MCM Digital · Landas Colour | ✅ | ⚠️ one bullet each | ❌ | EL + EN | ≤5 |
+| — | **Ricami Studio** | ❌ **404, domain dead** | — | — | — | 4.8 / 12 |
+| — | **Pantone Signs** | ❌ **maintenance mode ~7 years** | — | — | — | 4.8 / 5 |
+| — | FlagsCyp (Facebook only) | ❌ | nominal | ❌ | EL | none |
+| — | C. Kilaniotis · Potamitis Kokos | ❌ **no website exists** | listed | — | — | — |
 
-**Our defensible wedge:** Rossides is the only Cyprus player found positioned on *heritage + genuinely handmade + church/parade banners + military insignia*, made locally with no minimum order. Nobody else combines those.
+**Correction to earlier research:** Ricami Studio was previously described here as the strongest digital competitor. **Its domain now returns HTTP 404** ("This domain isn't connected to a site"), dead since roughly May 2026, and its social had been dormant since April 2023. It is a three-year decline, not an outage. **Pantone Signs has shown a WordPress maintenance page since 2019.** Both are Kaimakli-area names whose brand traffic is currently unclaimed.
+
+**Hercules is the only real threat, and its weakness is precise.** It has ~298 flag SKUs across six subcategories, full e-commerce, published prices including VAT, `Product` schema, an active blog, a 3,034-URL sitemap, and the best single product page in the market — it states the fabric (**140 gsm polyester**) and a **21-day production time**. But it publishes **zero Greek URLs**, has **no H1 on any category page**, and hides every bespoke item behind "Price on Request".
+
+**S&H Laser Signs is the biggest mismatch in the market** — and a Kaimakli neighbour. It has 60 five-star reviews, **3,690 Instagram followers** and an active TikTok, all pointing at a flags page of **67 words** with no H1, no schema, no prices and a site-wide boilerplate meta description. They have the audience and nothing to land it on.
+
+**Two directory listings are misleading.** Sapo appears under "Flags & Banners" but **sells no flags at all** — searches for both `flag` and `σημαία` return nothing across ~2,600 products. Pafitis is likewise listed but has pivoted entirely to safety workwear. Their directory traffic is available.
+
+**A shared-agency weakness:** OnCyprus/NetShop built and hosts Laser Signs, Evangelou, MCM, Nicolaou *and* KD Photiou. All five share the same template defects — no JSON-LD, no H1, and identical keyword-stuffed site-wide meta descriptions. One agency's weaknesses are five competitors' weaknesses.
+
+**The bigger threat remains Greek importers**, which dominate every Greek-language search: ekivotos.com appeared in 9 of 12 Greek queries tested, niceflags.com in 8, plus kokkonis-flags.gr, coconis.gr and flags.gr — the last of which has built a **dedicated "Σημαίες ομάδων Κύπρου" category** to farm Cypriot demand from Greece. Skroutz operates a **`.cy` domain** and ranked #2 for "σημαίες Κύπρος". **[confirmed]**
+
+**Our defensible wedge:** Rossides is the only Cyprus player combining *heritage + genuinely handmade + church/parade banners + military insignia*, made locally with **no minimum order** — against Sapo's 300-piece minimum and Hercules' catalogue model. The site is also already **three times faster than any competitor** (0.16 s TTFB) and the only one in the market with hreflang plus `Organization`, `FAQPage` and `BreadcrumbList` schema.
+
+**Where we are behind:** 10 URLs against Hercules' 3,034; ~190-word product pages against Hercules' 638; no published prices; no lead times; 14 Google reviews against 192; Facebook dormant since March 2023; Instagram at 76 followers.
 
 **Demand pattern** — sharply seasonal, around fixed national dates: **25 March** (Greek Independence, student parades), **1 April** (EOKA), **1 October** (Cyprus Independence), **28 October** (Ohi Day). Municipal σημαιοστολισμός is formally mandated on national days, and the Ministry of Education publishes parade arrangements for schools. **[confirmed]** Content and outreach should lead these dates by 4–6 weeks.
 
 **Search vocabulary Cypriots actually use:** σημαίες, λάβαρα, κεντητά σήματα, χρυσοκέντητα λάβαρα, εξαπτέρυγα, διαφημιστικές σημαίες / beach flags, σημαίες ομάδων, πηλήκια, διακριτικά Εθνικής Φρουράς.
 
-**Visible SEO whitespace:** for *church λάβαρα*, *χρυσοκέντητα λάβαρα*, *κεντητά σήματα* and *beach flags / διαφημιστικές σημαίες*, only Greek suppliers rank — no Cyprus company competes. **[confirmed]**
+**Visible SEO whitespace** — 18 queries tested in Greek and English, 27 July 2026. ⚠️ *Caveat: the search tool used is US-based, so it cannot see the Cyprus local pack and over-weights US sellers on English queries. Treat as directional; confirm with Search Console once impressions accumulate.*
+
+**Queries where nobody relevant ranks at all — build these first:**
+
+| Query | What actually ranks |
+|---|---|
+| **λάβαρα σχολείων** | The top nine results are **school directories and government lists** — Google has no product page to serve. The single biggest gap found. |
+| **σημαιοστολισμός Κύπρος** | Not one commercial result. A service query with municipal, school, church and hotel buyers behind it. |
+| **επιτραπέζιες σημαίες Κύπρος** | Zero table-flag product pages. Google surfaced a **Blue Flag beach-awards news story** out of desperation. |
+| **flag manufacturer Cyprus** / **custom flags Cyprus** | 100% US/UK resellers of the national flag. No Cypriot business ranks — despite us being a literal manufacturer since 1938. |
+| **κατασκευή σημαιών Κύπρος** | Hijacked by history articles about who designed the 1960 Cyprus flag. No Cypriot manufacturer ranks. |
+
+**Already ranking:** chrossides.com sits at roughly **#8 for "printed flags Nicosia"** — positions 1–5 are eBay/Amazon/Etsy selling souvenir city flags, so this is realistically winnable.
+
+**Hard, low priority:** *διαφημιστικές σημαίες Κύπρος* (7 of 7 top slots are mature Greek e-commerce with priced landing pages, Skroutz at #1); *σημαίες Κύπρος* and *εθνικές σημαίες Κύπρος* (mostly informational — people looking up what the flag looks like); *flags Cyprus* (pure informational, do not chase).
+
+**The structural insight:** across nearly every Greek query, Google reads **"Κύπρος" as a product attribute** ("the Cyprus flag") rather than **a location** ("a supplier in Cyprus"). Bare `[product] + Κύπρος` keywords are therefore semantically contaminated and dominated by Greek e-shops selling a €9 flag. **City- and service-level modifiers — Λευκωσία, κατά παραγγελία, βιοτεχνία, κοντά μου — are far cleaner intent signals and much easier to own.**
 
 ---
 
@@ -85,8 +126,8 @@ The registry's rendering of the factory street is **Νικ. Θ. Ιωάννου**
 | Website | `www.chrossides.com` — rebuilt July 2026, good technical SEO **[confirmed]** |
 | **Google Business Profile — store** | Healthy. Website correctly set to chrossides.com, rated **4.6**, address and phone correct. Gaps: **no opening hours**, generic category "Store", only one photo **[confirmed, browser-verified 26 Jul 2026]** |
 | **Google Business Profile — factory** | Healthy. Website chrossides.com, rated **5.0**, category "Manufacturer", **opening hours set** (opens 07:00 Mon). Gap: only one photo **[confirmed, browser-verified 26 Jul 2026]** |
-| Facebook | **Two pages exist.** Official: `facebook.com/profile.php?id=100052710947198` (~554 likes **[reported]**). Duplicate: `facebook.com/Charalambos-Rossides-Ltd-112433953742975` **[confirmed]** |
-| Instagram | `instagram.com/chrossides_ltd` exists **[confirmed]**; ownership **[unverified]** — confirm before we link it |
+| Facebook | **One page**, at `facebook.com/profile.php?id=100052710947198` — around 580 followers, **last post March 2023**. *(Earlier research reported a second, duplicate page; the family confirms these were two URL forms of the same page, not two pages. No merge needed.)* **[confirmed]** |
+| Instagram | `instagram.com/chrossides_ltd` — **confirmed ours** and linked from the site's structured data. 76 followers. **[confirmed]** |
 | LinkedIn | No company page. (`linkedin.com/in/chrossides/` is an unrelated person.) **[confirmed]** |
 | Reviews | **Google: 4.6 (store), 5.0 (factory)** **[confirmed]**. Exact counts are not visible when signed out — check the GBP dashboard. No reviews on any other platform **[confirmed]** |
 | Opening hours | Factory published on Google; **store has none anywhere**, and neither is on the website **[confirmed]** |
@@ -165,6 +206,26 @@ This is the single strongest marketing asset the business has. It is concrete, n
 
 ---
 
+### The RIK documentary — searched 26–27 July 2026, not found online
+
+The family recalls an old RIK (ΡΙΚ / CyBC) documentary featuring the founder and the early workshop. **It is not in RIK's public digital archive.** This is a thorough negative, not a cursory one — but it is *not* evidence the programme doesn't exist.
+
+**What was searched.** RIK's public archive is **«Ψηφιακός Ηρόδοτος» / Digital Herodotus** (https://www.digital-herodotus.eu), linked from rik.cy. Every one of its **9,320 catalogued video items and 1,018 audio items** was crawled and the titles and synopses grepped offline, plus its own search for `Ρωσσίδης`, `σημαιοποιός`, `σημαιοποιείο`, `σημαίες`, `λάβαρα`, `κεντήματα`, `βιοτεχνία`, `Πινδάρου`, `Καϊμακλί`. Nothing. Also checked and negative: RIK's YouTube channel, riknews.com.cy, tv.rik.cy, Europeana (including the PIO collection), and the CUT Digital Heritage Lab (apsida.cut.ac.cy). *Note: the `Χαράλαμπος Γ. Ρωσσίδης (1929-2018)` item on apsida is a different person — an EOKA fighter from Κυπερούντα.*
+
+**Why the negative is not conclusive.** RIK's television archive holds **over 40,000 hours from 1955**, but Digital Herodotus publishes **only the digitised subset — 1950–1974 and 1978–1990**. Anything from 1975–1977 or after 1990 that was never digitised is invisible online. Programme synopses are also short and routinely omit individual subjects, so a workshop segment inside a magazine programme would not surface.
+
+**The strongest leads to give RIK's archivists:**
+- **«ΤΕΧΝΙΤΕΣ ΤΗΣ ΠΑΡΑΔΟΣΗΣ» (1994–1996)** — RIK's series on traditional trades. 18 episodes are digitised (cooper, quilt-maker, weaver, saddler, basket-maker and so on) and **none covers flag-making — but the full broadcast run may be longer than the digitised subset.** Ask for the complete episode list.
+- **«ΕΠΑΓΓΕΛΜΑΤΑ - ΠΑΛΙΑ» (1981)** — an earlier strand on old trades, same request.
+- A 1977 RIK film on silk-weaving was shot **in a Kaimakli workshop**, showing the neighbourhood was on their radar in that period.
+
+**How to make the request (this is the actionable outcome):**
+- **RIK Archive department direct line: 22 862 316.** Switchboard +357 22 862 000. Email info@cybc.com.cy and info@digital-herodotus.eu. Archive building visits by arrangement: 22 862 336.
+- Application forms are at https://www.digital-herodotus.eu/acquisition-archive-material-el/ — one for **research access** («Αίτηση για έρευνα στο Αρχείο ΡΙΚ»), one for **obtaining a copy**.
+- **Viewing and research at the archive is free.** Copies cost €30 per file for personal use, €60 for non-commercial screening; commercial licensing is per minute by era (1958–1980 is €50/min).
+- Give them concrete handles: the founder's name, the workshop, Πινδάρου, Καϊμακλί, and an approximate decade if the family can narrow it.
+- **Second route:** RIK deposited a copy of the Ψηφιακός Ηρόδοτος ΙΙ archives with the **Cyprus State Archives** in 2022. And the **PIO (ΓΤΠ)** runs free research centres holding every Cypriot newspaper from 1878 — a press mention would help date the broadcast and make RIK's search far easier.
+
 ## 6. Open questions for the family
 
 1. Can the **1938** founding date be evidenced (document, photo, press cutting)? Was there a predecessor partnership before the 1983 incorporation?
@@ -174,6 +235,7 @@ This is the single strongest marketing asset the business has. It is concrete, n
 5. Should the shop's **army/hunting retail** line be represented on the website?
 6. Which **customers** may we name, and are there photos of banners made for them?
 7. Is the factory street legally **Νικολάου Ιωάννου** or **Νικολάου Θωμά Ιωάννου**?
+8. **Roughly when did the RIK documentary air, and was it a standalone or part of a series?** Even a decade narrows RIK's archive search enormously. Does the family hold a recording (VHS/DVD) or a press cutting about it?
 
 ---
 

@@ -82,8 +82,8 @@ Not one of the eight directory listings found links to the website, and most fil
 
 ## 5. Tidy up social media
 
-- **Facebook: there are two pages.** The one in use is `facebook.com/profile.php?id=100052710947198`; a duplicate exists at `.../Charalambos-Rossides-Ltd-112433953742975`. Ask Facebook to merge them (Settings → merge duplicate pages) so likes and history consolidate.
-- Add the website link, address, phone and opening hours to the surviving page.
+- **Facebook** — one page, `facebook.com/profile.php?id=100052710947198`, ~580 followers. *(An earlier note here claimed a duplicate page needed merging — that was wrong; it was the same page under two URL forms. Nothing to merge.)* Add the website link, address, phone and opening hours to it.
+- **The real Facebook problem is dormancy: the last post was March 2023.** A competitor two streets away in Kaimakli posts weekly and has 3,690 Instagram followers.
 - **Instagram**: `instagram.com/chrossides_ltd` — ✅ confirmed as yours and now linked from the site's structured data alongside Facebook, so search engines connect the two to one business.
 - One active channel posting finished work (banners, embroidery, flags going out the door) is worth more than three dormant ones. Parade season is the natural content.
 
