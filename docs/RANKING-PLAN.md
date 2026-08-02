@@ -41,22 +41,23 @@ Still outstanding for these pages: **photographs**. Every page reuses the same t
 
 ## Phase 2 — The pages nobody has ✅ done, 2 August 2026
 
-Eight new pages, Greek and English, all under `/proionta/` and `/en/products/`. The first two were surfaced by the specification answers and were not in the original plan; both are stronger than anything that was.
+Seven new pages, Greek and English, all under `/proionta/` and `/en/products/`. The first two were surfaced by the specification answers and were not in the original plan; both are stronger than anything that was.
 
 | New page | URL | Target query | Why it wins |
 |---|---|---|---|
 | **Επισκευή λαβάρων** | `/proionta/episkevi-lavaron/` | `επισκευή λαβάρων` | **Zero competition anywhere.** Parishes and schools hold banners decades old. High intent, and it feeds new orders |
 | **Παραγγελίες για παρελάσεις** | `/proionta/paraggelies-parelaseon/` | `λάβαρα 28ης Οκτωβρίου`, `παρέλαση 25ης Μαρτίου` | The three-week rule, built round the parade calendar with a "call us by" date for each of the four anniversaries |
-| **Λάβαρα σχολείων** | `/proionta/lavara-scholeion/` | `λάβαρα σχολείων` | Top nine results are school *directories*. No product page existed anywhere |
-| **Εκκλησιαστικά λάβαρα** | `/proionta/ekklisiastika-lavara/` | `εκκλησιαστικά λάβαρα Κύπρος` | Nine Greek specialists rank, **zero Cypriot**. Parishes want a supplier they can visit |
+| **Λάβαρα σχολείων και εκκλησιών** | `/proionta/lavara-scholeion-ekklision/` | `λάβαρα σχολείων`, `εκκλησιαστικά λάβαρα Κύπρος` | Two gaps on one page. For schools, the top nine results are *directories* with no product page anywhere; for parishes, nine Greek specialists rank and **zero Cypriot**. Originally built as two pages and merged on the owner's instruction — see the note below |
 | **Επιτραπέζιες σημαίες** | `/proionta/epitrapezies-simaies/` | `επιτραπέζιες σημαίες Κύπρος` | Zero table-flag pages. B2B demand from ministries, embassies, conference rooms |
 | **Ιστοί & κοντάρια** | `/proionta/istoi-kontaria/` | `κοντάρια σημαιών Κύπρος` | Poles are expensive to ship from Greece. Only 2 of 7 current results were on-topic |
 | **Σημαιοστολισμός** | `/proionta/simaiostolismos/` | `σημαιοστολισμός Κύπρος` | Zero commercial results. Municipal flag decoration is mandated on national days |
 | **Οδηγός διαστάσεων** | `/proionta/odigos-diastaseon/` | long-tail | **No competitor has a size guide.** Consolidates every dimension we make, and settles the width × height ambiguity |
 
-**Internal linking was rebuilt at the same time**, because eight orphan pages would have been worthless. Every one of the twelve product pages is now linked from **both homepages** — the four tiles plus a linked "also made to order" grid — and from a **site-wide footer list on all 27 pages**. Each page also carries four editorially chosen cross-links. Verified: no broken internal links, no broken hreflang pairs.
+**Internal linking was rebuilt at the same time**, because orphan pages would have been worthless. Every one of the eleven product pages is now linked from **both homepages** — the four tiles plus a linked "also made to order" grid — and from a **site-wide footer list on all 25 pages**. Each page also carries editorially chosen cross-links. Verified: no broken internal links, no broken hreflang pairs.
 
-The site went from 11 pages to 27. Every new page carries `BreadcrumbList` + `FAQPage` schema and a correct hreflang pair.
+⚠️ **Watch the church query.** `εκκλησιαστικά λάβαρα Κύπρος` had zero Cypriot competitors and a dedicated page targeting it exactly would have been the stronger play. The merged page compensates with a dedicated section, its own FAQ entry and the term in the Greek `<title>` — but if it fails to rank within a few months, splitting it back out is the first thing to try.
+
+The site went from 11 pages to 25. Every new page carries `BreadcrumbList` + `FAQPage` schema and a correct hreflang pair.
 
 ## Phase 3 — Authority content
 
@@ -77,7 +78,7 @@ The site is the fastest and best-structured in the market, but **nothing feeds i
 
 ## Sequencing
 
-**Done:** Phases 1 and 2 — twelve product pages, Greek and English, fully cross-linked.
+**Done:** Phases 1 and 2 — eleven product pages, Greek and English, fully cross-linked.
 **Next:** Phase 3 story content, and **photographs**, which now block more than anything else. Twenty-four product pages currently share the same two stock workshop images.
 **Alongside, not after:** the reviews push in Phase 4. It is independent of everything else and outranks most of Phase 3 in value.
 **Deadline to watch:** the parade page must be live and indexed before **early September** to be useful for the 1 and 28 October parades. It is written; it needs merging and crawling.

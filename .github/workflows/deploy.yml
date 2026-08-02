@@ -3,6 +3,11 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  # The "N years of experience" stat and the footer copyright year are computed at
+  # build time, so the site must rebuild at least once a year even if nothing is
+  # pushed. Runs just after midnight UTC on 1 January.
+  schedule:
+    - cron: '20 0 1 1 *'
   workflow_dispatch:
 
 permissions:
