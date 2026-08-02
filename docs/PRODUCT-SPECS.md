@@ -17,12 +17,14 @@ Answers are recorded as given, with obvious transliterations normalised (`fridgi
 | **Fabric grades** | One grade only — no separate indoor/outdoor weights |
 | **Sewn flags** | "No" ⚠️ *contradicted by B1 below* |
 | **Banner fabric** | Velvet, in **navy blue, black or Bordeaux** |
-| **Lettering** | **Appliqué embroidery** |
-| **Central emblem (μακέτα)** | Customer's choice — **printed or embroidered** |
-| **Metallic thread** | Yes — metallic and gold |
-| **Badge fixing** | Sewn on. The reverse face of the banner is velvet, so **the stitching is not visible from the back** |
+| **Lettering** *(banners)* | **Appliqué embroidery** |
+| **Central emblem / μακέτα** *(banners)* | Customer's choice — **printed or embroidered**, sewn onto the velvet |
+| **Metallic thread** *(banners)* | Yes — metallic and gold |
+| **Emblem fixing** *(banners)* | Sewn on. The reverse face of the banner is velvet, so **the stitching is not visible from the back** |
 | **Fringing** | Gold |
 | **Tassels and cord** | Colour of choice — gold, silver, blue and others |
+
+⚠️ **Scope correction, 2 August 2026.** Answers A6 and A7 describe the **μακέτα on a λάβαρο**, not the badge product. The printed-or-embroidered choice, the appliqué lettering and the metallic thread are all **banner** attributes and belong on the banner pages only. The embroidery category is a separate product line — see below.
 
 Hercules publishes 140 gsm. At 120 gsm ours is lighter, so **weight is not a claim to lead with** — but stating it is still better than their competitors' silence, and lighter fabric flies better in light wind, which is a legitimate framing.
 
@@ -53,7 +55,25 @@ Custom sizes on request. The Greek flag is **also available sewn** in every stan
 
 **School parade λάβαρο** — 90 × 120 cm, or custom.
 
-**Embroidered badge** — 50 mm diameter typical.
+**Embroidery & badges — the separate product line.** Corrected 2 August 2026. This category covers:
+
+- **Embroidered rank insignia** for uniforms (military rank credentials)
+- **Unit and corps emblems**
+- **Badges** for sports clubs, associations and scout groups
+- **Name tags**
+- **Kepis and military accessories**
+
+Everything in this category is **embroidered** — club badges included. There is no printed option here; the printed-or-embroidered choice belongs to the banner μακέτα.
+
+**Fixing** — two forms, customer's choice, stated when ordering:
+- **Plain**, to be sewn onto the uniform
+- **With velcro**, so insignia can be swapped on the same garment
+
+⚠️ **The 50 mm badge diameter given in answer B5 is wrong.** Removed from every page and from the size guide. **Do not publish badge dimensions** — instruction from the owner, 2 August 2026.
+
+Greek terminology: name tags are **«πινακίδες ονομάτων»**, not «ονομαστικές πινακίδες» (owner's correction).
+
+Still open, non-blocking: **thread and materials** for badges specifically, as distinct from banner embroidery.
 
 ### The largest flag ever made
 
@@ -72,15 +92,27 @@ Custom sizes on request. The Greek flag is **also available sewn** in every stan
 **Λάβαρα poles**
 - Aluminium, **39 mm diameter, 3 m long, 2–2.5 kg**.
 - Optional **splitting mechanism** — the pole comes apart into two halves for transport and storage.
-- Greek: blue ribbon and a **PVC cross**.
-- Cypriot: white, with a **plastic or bronze sphere** — not truly spherical, a πόμωλο (knob).
 
-**Carrying harness (τελαμώνες)**
+*Pole finish* — three choices (confirmed 2 August 2026):
+
+| Finish | Description |
+|---|---|
+| **Greek** | Ribboned in **blue and white**, wound along the length |
+| **Cypriot** | **Plain white** throughout |
+| **Velvet** | Pole **covered in velvet**, with a **yellow rope wound around it**. Same three velvet colours as the banners — navy blue, black, Bordeaux — so pole and banner match |
+
+*Finial* — fitted at the top, separately from the finish:
+- **PVC cross** — the usual choice for the Greek flag.
+- **Sphere** — the usual choice for the Cypriot. Plastic, or bronze; not truly spherical, a πόμωλο (knob).
+
+**Carrying harness (η τελαμώνα)**
 - Cow leather.
 - Two straps, **100 cm and 60 cm**, **4 cm** wide.
 - Adjustable, with a non-corrosive buckle.
+- ⚠️ **NOT included with a banner.** Corrected 2 August 2026 — it must be **ordered separately**, and is also **sold on its own**. Earlier copy claimed banners "arrive complete" with a harness; that was wrong and has been fixed across all pages.
+- Greek: the noun is **feminine** — *η τελαμώνα, της τελαμώνας, την τελαμώνα*. Never *ο τελαμώνας*.
 
-Poles and fittings are **sold separately**, on their own.
+Poles and fittings are **sold separately**, on their own. The pole itself *is* supplied with a banner.
 
 ## D. Lead times
 
@@ -152,10 +184,11 @@ Worth picking up on the next call, but Phase 1 can be written without them.
 1. **120 gsm** — the owner's own question mark. Since it is *below* Hercules' published 140, we are not leading with it anyway; the site currently describes the fabric without a number.
 2. **Flag fixing** — with no eyelets, what attaches the flag to the pole? Sleeve, ties, rope and toggle?
 3. **Giant flag** — 58 × 27 m is 1,566 m² against the press's 1,650 m², and the cost was given in a pre-2008 currency. Use the family's dimensions as primary and attribute the press figure separately; no price is published either way.
-4. **Pole ribbon** — confirm "blue ribbon" / "white" means a spiral wrap along the pole rather than a hanging ribbon.
-5. **Velvet weight** — asked, not answered.
+4. **Velvet weight** — asked, not answered.
 
-*Resolved 2 August 2026: the "5000 × 3000" standard size is **5 m × 3 m**, i.e. 500 × 300 cm, as published.*
+*Resolved 2 August 2026:*
+- *The "5000 × 3000" standard size is **5 m × 3 m**, i.e. 500 × 300 cm, as published.*
+- *The pole "ribbon" is a **finish along the whole pole**, not a hanging ribbon, and there are **three** options — Greek blue/white, Cypriot plain white, and velvet-covered with a yellow rope. Finish and finial are separate choices.*
 
 ## What this unlocks
 
@@ -164,6 +197,6 @@ Enough to write Phase 1 in full. Per page:
 - **National flags** — the standard size table, stock availability and same-day collection, fabric and print, hem and header construction, no minimum order.
 - **Custom logo flags** — the 10-day turnaround, artwork formats, the graphic-design option, samples to view, print method.
 - **Parade banners** — velvet and its three colours, lettering and emblem, fringing and tassels, the full pole specification, the leather harness, 15-day lead time, the three-week parade rule, **and the repair service**.
-- **Embroidery & badges** — 50 mm typical, printed or embroidered, stock versus custom designs, the 7- versus 15-day split, name tags.
+- **Embroidery & badges** — rank insignia and unit emblems, club badges, name tags, kepis; stock versus custom designs and the 7- versus 15-day split. No sizes published, and nothing about banners.
 
 The **three-week parade rule** and the **repair service** are both strong enough to carry pages of their own, and neither was on the Phase 2 list. Worth adding.

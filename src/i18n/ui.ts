@@ -3,11 +3,27 @@ export type Lang = 'el' | 'en';
 /** Dialling prefix. Used for tel: links and structured data only, never displayed. */
 const COUNTRY_CODE = '+357';
 
+/** The year the workshop was founded. Cited across the site and in structured data. */
+export const FOUNDED_YEAR = 1938;
+
+/**
+ * Years in business, computed at build time so the "N years of experience" stat
+ * does not go stale. It refreshes on every deploy; see the annual rebuild in
+ * .github/workflows/deploy.yml for the case where nothing is pushed for a year.
+ */
+export const yearsTrading = new Date().getFullYear() - FOUNDED_YEAR;
+
 export const site = {
   domain: 'https://www.chrossides.com',
+  // Landlines are the canonical NAP numbers - they match the Google Business
+  // Profiles and the directory listings, so they stay in the address blocks and
+  // in structured data. Mobiles are shown alongside them on the call buttons,
+  // where reaching a person quickly matters more than NAP consistency.
   phoneShop: '22 764662',
+  mobileShop: '99 199063',
   phoneFactory: '22 432481',
   phoneFactory2: '22 347982',
+  mobileFactory: '99 411986',
   contactPerson: { el: 'Ελένη Ρωσσίδου', en: 'Eleni Rossidou' },
   factoryPersons: { el: 'Μιχάλης & Νίκος Ρωσσίδης', en: 'Michalis & Nicos Rossides' },
   mapShop: 'https://maps.app.goo.gl/9boKTNLgHSPWGbFd7',
@@ -58,15 +74,15 @@ export const ui = {
     },
     nav: {
       products: 'Προϊόντα',
-      process: 'Πώς δουλεύουμε',
+      process: 'Πως δουλεύουμε',
       about: 'Η εταιρεία',
       contact: 'Επικοινωνία',
       cta: 'Ζητήστε προσφορά',
     },
     hero: {
       badge: '★ Χειροποίητα στην Κύπρο από το 1938',
-      title: 'Βρείτε τη σημαία σας - ή φτιάξτε τη δική σας.',
-      sub: 'Εθνικές και προσωποποιημένες σημαίες, λάβαρα και κεντήματα. Κάθε διάσταση, χωρίς ελάχιστη ποσότητα.',
+      title: 'Βρείτε τη σημαία σας ή φτιάξτε τη δική σας',
+      sub: 'Εθνικές και κατά παραγγελία σημαίες, λάβαρα και κεντήματα. Κάθε διάσταση, χωρίς ελάχιστη ποσότητα.',
       pills: ['Εθνικές σημαίες', 'Σημαίες με λογότυπο', 'Λάβαρα παρελάσεων', 'Κεντήματα', 'Αθλητικές'],
       ctaCall: '☎ Καλέστε μας: 22 764662',
       ctaProducts: 'Δείτε τα προϊόντα',
@@ -91,19 +107,18 @@ export const ui = {
       moreTitle: 'Και κατά παραγγελία',
       moreSub: 'Ό,τι δεν βλέπετε, το κατασκευάζουμε από την αρχή.',
       more: [
-        { t: 'Λάβαρα σχολείων', d: 'Με το έμβλημα και το όνομα του σχολείου.', key: 'school' },
-        { t: 'Επισκευή λαβάρων', d: 'Κρόσσια, φούντες, κεντήματα, ιστός.', key: 'repairs' },
+        { t: 'Λάβαρα σχολείων και εκκλησιών', d: 'Με το έμβλημα και το όνομα που θέλετε.', key: 'school' },
+        { t: 'Επισκευή λαβάρων', d: 'Κρόσσια, φούντες, ιστός, τελαμώνα.', key: 'repairs' },
         { t: 'Επιτραπέζιες σημαίες', d: 'Με βάση και ιστό, για γραφεία και συνέδρια.', key: 'table' },
         { t: 'Σημαιοστολισμός', d: 'Σειρές σημαιάκια για γιορτές και πανηγύρια.', key: 'bunting' },
         { t: 'Αθλητικές σημαίες', d: 'Χρώματα και έμβλημα του συλλόγου σας.', key: 'logo' },
-        { t: 'Εκκλησιαστικά λάβαρα', d: 'Χειροποίητα, με κέντημα σε χρυσή κλωστή.', key: 'church' },
         { t: 'Ιστοί & εξαρτήματα', d: 'Κοντάρια, σφαίρες, σταυροί και τελαμώνες.', key: 'poles' },
         { t: 'Οδηγός διαστάσεων', d: 'Όλες οι διαστάσεις σε έναν πίνακα.', key: 'sizes' },
       ],
     },
     process: {
       kicker: 'ΠΩΣ ΔΟΥΛΕΥΟΥΜΕ',
-      title: 'Από την ιδέα στη σημαία σε 3 βήματα',
+      title: 'Με 3 απλά βήματα',
       steps: [
         { n: '01', t: 'Στείλτε το σχέδιο', d: 'Λογότυπο, χρώματα και διαστάσεις. Σας συμβουλεύουμε δωρεάν.' },
         { n: '02', t: 'Λάβετε δωρεάν προσφορά', d: 'Με τιμή και χρόνο παράδοσης, πριν δεσμευτείτε.' },
@@ -113,11 +128,11 @@ export const ui = {
     about: {
       kicker: 'Η ΕΤΑΙΡΕΙΑ',
       title: 'Οικογενειακή βιοτεχνία στη Λευκωσία από το 1938',
-      p1: 'Η βιοτεχνία μας ιδρύθηκε το 1938 από τον Χαραλάμπο Ρωσσίδη και συνεχίζεται σήμερα από τον Νίκο και τον Μιχάλη Ρωσσίδη - με την ίδια προσήλωση στη χειροποίητη ποιότητα.',
+      p1: 'Η βιοτεχνία μας ιδρύθηκε το 1938 από το Χαραλάμπο Ρωσσίδη και συνεχίζεται σήμερα από το Νίκο και το Μιχάλη Ρωσσίδη - με την ίδια προσήλωση στη χειροποίητη ποιότητα.',
       p2: 'Παράγουμε τοπικά και αναλαμβάνουμε παραγγελίες κάθε ποσότητας, για συλλόγους, σχολεία, εκκλησίες, δήμους και επιχειρήσεις σε όλη την Κύπρο.',
       imgAlt: 'Το εργαστήριο στη Λευκωσία',
       stats: [
-        { v: '87', l: 'χρόνια εμπειρίας' },
+        { v: String(yearsTrading), l: 'χρόνια εμπειρίας' },
         { v: '100%', l: 'χειροποίητα στην Κύπρο' },
         { flag: true, l: 'αποστολή παγκύπρια' },
       ],
@@ -145,7 +160,8 @@ export const ui = {
         },
         {
           q: 'Έχετε σημαίες έτοιμες για άμεση παραλαβή;',
-          a: 'Ναι. Κρατάμε σε απόθεμα τις σταθερές διαστάσεις, από 60 × 40 έως 500 × 300 εκατοστά. Αν κάτι έχει εξαντληθεί προσωρινά, το ετοιμάζουμε σε ένα με πέντε εργάσιμες ημέρες.',
+          a: 'Ναι. Κρατάμε σε απόθεμα τις σταθερές διαστάσεις, από 60 × 40 έως 500 × 300 εκατοστά. Αν κάτι έχει εξαντληθεί προσωρινά, το ετοιμάζουμε σε μία με πέντε εργάσιμες ημέρες.',
+          link: { key: 'sizes', label: 'Δείτε όλες τις σταθερές διαστάσεις' },
         },
         {
           q: 'Σε ποιες διαστάσεις και υλικά φτιάχνετε σημαίες;',
@@ -161,7 +177,7 @@ export const ui = {
         },
         {
           q: 'Φτιάχνετε εκκλησιαστικά λάβαρα και λάβαρα παρελάσεων;',
-          a: 'Ναι, είναι από τις ειδικότητές μας. Χειροποίητα βελούδινα λάβαρα, ολοκληρωμένα με ιστό αλουμινίου, σταυρό ή σφαίρα και δερμάτινο τελαμώνα. Επισκευάζουμε επίσης παλιά λάβαρα.',
+          a: 'Ναι, είναι μία από τις ειδικότητές μας. Χειροποίητα βελούδινα λάβαρα, με ιστό αλουμινίου, σταυρό ή σφαίρα και δερμάτινη τελαμώνα - διαλέγετε τι χρειάζεστε. Επισκευάζουμε επίσης παλιά λάβαρα.',
         },
         {
           q: 'Πόσο νωρίς πρέπει να παραγγείλουμε για παρέλαση;',
@@ -227,12 +243,11 @@ export const ui = {
       moreTitle: 'Also made to order',
       moreSub: "Don't see what you need? We make it from scratch.",
       more: [
-        { t: 'School banners', d: 'With your school emblem and name.', key: 'school' },
-        { t: 'Banner repairs', d: 'Fringing, tassels, embroidery, poles.', key: 'repairs' },
+        { t: 'Church and school banners', d: 'With the emblem and name you want.', key: 'school' },
+        { t: 'Banner repairs', d: 'Fringing, tassels, poles, harnesses.', key: 'repairs' },
         { t: 'Table flags', d: 'With base and pole, for offices and conferences.', key: 'table' },
         { t: 'Bunting & string flags', d: 'Flag garlands for festivals and celebrations.', key: 'bunting' },
         { t: 'Sports flags', d: "Your club's colours and emblem.", key: 'logo' },
-        { t: 'Church banners', d: 'Handmade, embroidered in gold thread.', key: 'church' },
         { t: 'Poles & fittings', d: 'Poles, spheres, crosses and harnesses.', key: 'poles' },
         { t: 'Size guide', d: 'Every size we make, in one table.', key: 'sizes' },
       ],
@@ -253,7 +268,7 @@ export const ui = {
       p2: 'We produce locally and take orders of any quantity, for clubs, schools, churches, municipalities and businesses across Cyprus.',
       imgAlt: 'The workshop in Nicosia',
       stats: [
-        { v: '87', l: 'years of experience' },
+        { v: String(yearsTrading), l: 'years of experience' },
         { v: '100%', l: 'handmade in Cyprus' },
         { flag: true, l: 'island-wide delivery' },
       ],
@@ -282,6 +297,7 @@ export const ui = {
         {
           q: 'Do you have flags ready for immediate collection?',
           a: 'Yes. We keep our standard sizes in stock, from 60 × 40 up to 500 × 300 centimetres. If something is temporarily out, we make it in one to five working days.',
+          link: { key: 'sizes', label: 'See every standard size' },
         },
         {
           q: 'What sizes and materials do you work with?',
@@ -297,7 +313,7 @@ export const ui = {
         },
         {
           q: 'Do you make church and parade banners?',
-          a: 'Yes, they are one of our specialties. Handmade velvet banners, finished with an aluminium pole, cross or sphere finial and a leather carrying harness. We also repair old banners.',
+          a: 'Yes, they are one of our specialties. Handmade velvet banners, with an aluminium pole, a cross or sphere finial and a leather carrying harness - you choose what you need. We also repair old banners.',
         },
         {
           q: 'How early should we order for a parade?',
