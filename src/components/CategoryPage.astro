@@ -34,6 +34,7 @@ const images = imagesByKey[category.key];
 
 const path = categoryPath(category, lang);
 const altPath = categoryPath(category, lang === 'el' ? 'en' : 'el');
+const related = categories.filter((c) => c.key !== category.key);
 const homeLabel = lang === 'el' ? 'Αρχική' : 'Home';
 const productsLabel = nav.nav.products;
 const home = lang === 'el' ? '/' : '/en/';
@@ -46,6 +47,18 @@ const breadcrumbLd = {
     { '@type': 'ListItem', position: 2, name: productsLabel, item: new URL(`${home}#products`, site.domain).href },
     { '@type': 'ListItem', position: 3, name: t.title, item: new URL(path, site.domain).href },
   ],
+};
+
+// Per-category FAQ. The homepage carries its own FAQPage for the general questions;
+// these are product-specific and target the long-tail queries for this category.
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: t.faq.map((i) => ({
+    '@type': 'Question',
+    name: i.q,
+    acceptedAnswer: { '@type': 'Answer', text: i.a },
+  })),
 };
 ---
 
@@ -84,12 +97,68 @@ const breadcrumbLd = {
           ))}
         </div>
       </div>
+
+      <div class="detail">
+        {t.sections.map((s) => (
+          <section class="block">
+            <h2>{s.heading}</h2>
+            {s.body?.map((p) => <p class="body">{p}</p>)}
+            {s.table && (
+              <div class="tablewrap">
+                <table>
+                  <thead>
+                    <tr>{s.table.columns.map((c) => <th scope="col">{c}</th>)}</tr>
+                  </thead>
+                  <tbody>
+                    {s.table.rows.map((row) => (
+                      <tr>{row.map((cell, i) => (i === 0 ? <th scope="row">{cell}</th> : <td>{cell}</td>))}</tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+            {s.bullets && (
+              <ul class="points">
+                {s.bullets.map((b) => <li>{b}</li>)}
+              </ul>
+            )}
+            {s.footnote && <p class="footnote">{s.footnote}</p>}
+          </section>
+        ))}
+
+        <section class="block">
+          <h2>{t.faqTitle}</h2>
+          <div class="faq">
+            {t.faq.map((i) => (
+              <details>
+                <summary>
+                  {i.q}
+                  <span class="mark" aria-hidden="true"></span>
+                </summary>
+                <p>{i.a}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+
+        <section class="block">
+          <h2>{t.relatedTitle}</h2>
+          <ul class="related">
+            {related.map((c) => (
+              <li>
+                <a href={categoryPath(c, lang)}>{c.content[lang].title}</a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      </div>
     </article>
     <CallQuote lang={lang} />
   </main>
   <Footer lang={lang} />
 </Base>
 <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
+<script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
 
 <style>
   .category {
@@ -164,6 +233,164 @@ const breadcrumbLd = {
     height: 6px;
     border-radius: 50%;
     background: var(--orange);
+  }
+  .detail {
+    max-width: 720px;
+    margin-top: 64px;
+  }
+  .block + .block {
+    margin-top: 44px;
+  }
+  .block h2 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(21px, 2.2vw, 26px);
+    letter-spacing: -0.01em;
+    color: var(--navy);
+    margin-bottom: 14px;
+    text-wrap: balance;
+  }
+  .tablewrap {
+    overflow-x: auto;
+    margin: 20px 0;
+    border: 1px solid var(--border-soft);
+    border-radius: 12px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+  }
+  thead th {
+    background: var(--bg-soft);
+    text-align: left;
+    font-weight: 700;
+    font-size: 13.5px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--navy);
+    padding: 12px 16px;
+    white-space: nowrap;
+  }
+  tbody th {
+    text-align: left;
+    font-weight: 700;
+    color: var(--navy);
+    white-space: nowrap;
+  }
+  tbody th,
+  tbody td {
+    padding: 12px 16px;
+    vertical-align: top;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    border-top: 1px solid var(--border-soft);
+  }
+  .points {
+    margin: 18px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .points li {
+    position: relative;
+    padding: 6px 0 6px 22px;
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+  .points li::before {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: 13px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--orange);
+  }
+  .footnote {
+    margin-top: 14px;
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--ink-muted);
+  }
+  .faq details {
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .faq details:first-child {
+    border-top: 1px solid var(--border-soft);
+  }
+  .faq summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    cursor: pointer;
+    list-style: none;
+    padding: 16px 2px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--navy);
+  }
+  .faq summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq summary:hover {
+    color: var(--orange);
+  }
+  .mark {
+    position: relative;
+    width: 14px;
+    height: 14px;
+    flex: none;
+  }
+  .mark::before,
+  .mark::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    background: var(--orange);
+  }
+  .mark::before {
+    width: 14px;
+    height: 2px;
+  }
+  .mark::after {
+    width: 2px;
+    height: 14px;
+    transition: transform 0.15s;
+  }
+  .faq details[open] .mark::after {
+    transform: scaleY(0);
+  }
+  .faq details p {
+    padding: 0 2px 18px;
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+  }
+  .related {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .related a {
+    display: inline-block;
+    padding: 10px 18px;
+    border: 1px solid var(--border-soft);
+    border-radius: 999px;
+    background: var(--bg-soft);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--navy);
+  }
+  .related a:hover {
+    border-color: var(--orange);
+    color: var(--orange);
   }
   .media {
     display: grid;

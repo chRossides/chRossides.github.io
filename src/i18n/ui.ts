@@ -139,11 +139,15 @@ export const ui = {
         },
         {
           q: 'Πόσος χρόνος χρειάζεται για μια παραγγελία;',
-          a: 'Εξαρτάται από το προϊόν και την ποσότητα. Με την προσφορά θα σας δώσουμε συγκεκριμένο χρόνο παράδοσης, πριν δεσμευτείτε.',
+          a: 'Τις εθνικές σημαίες στις σταθερές διαστάσεις τις κρατάμε σε απόθεμα, οπότε συνήθως παραλαμβάνετε αυθημερόν. Οι σημαίες με λογότυπο θέλουν έως 10 ημέρες σε μικρές ποσότητες, ενώ τα κεντητά λάβαρα και τα διακριτικά με δικό σας σχέδιο 15 ημέρες.',
+        },
+        {
+          q: 'Έχετε σημαίες έτοιμες για άμεση παραλαβή;',
+          a: 'Ναι. Κρατάμε σε απόθεμα τις σταθερές διαστάσεις, από 60 × 40 έως 500 × 300 εκατοστά. Αν κάτι έχει εξαντληθεί προσωρινά, το ετοιμάζουμε σε ένα με πέντε εργάσιμες ημέρες.',
         },
         {
           q: 'Σε ποιες διαστάσεις και υλικά φτιάχνετε σημαίες;',
-          a: 'Σε οποιαδήποτε διάσταση χρειάζεστε. Οι σημαίες τυπώνονται ψηφιακά σε ύφασμα πολυεστέρα, ενώ τα λάβαρα κατασκευάζονται από βελούδο.',
+          a: 'Σε οποιαδήποτε διάσταση χρειάζεστε. Οι σημαίες τυπώνονται ψηφιακά σε ύφασμα 100% πολυεστέρα, με ενισχυμένο στρίφωμα και διπλή ραφή. Τα λάβαρα κατασκευάζονται από βελούδο, με κεντητά γράμματα και ιστό αλουμινίου.',
         },
         {
           q: 'Τι αρχείο χρειάζεστε για σημαία με λογότυπο;',
@@ -151,11 +155,15 @@ export const ui = {
         },
         {
           q: 'Πού παραδίδετε;',
-          a: 'Παραδίδουμε παραγγελίες σε όλη την Κύπρο.',
+          a: 'Σε όλη την Κύπρο, με κούριερ. Για παραγγελίες άνω των €150 δεν υπάρχει χρέωση αποστολής. Μπορείτε επίσης να παραλάβετε από το κατάστημα στην Πινδάρου ή από το εργοστάσιο στο Καϊμακλί.',
         },
         {
           q: 'Φτιάχνετε εκκλησιαστικά λάβαρα και λάβαρα παρελάσεων;',
-          a: 'Ναι, είναι από τις ειδικότητές μας. Χειροποίητα βελούδινα λάβαρα, ολοκληρωμένα με ιστό, σταυρό ή σφαίρα.',
+          a: 'Ναι, είναι από τις ειδικότητές μας. Χειροποίητα βελούδινα λάβαρα, ολοκληρωμένα με ιστό αλουμινίου, σταυρό ή σφαίρα και δερμάτινο τελαμώνα. Επισκευάζουμε επίσης παλιά λάβαρα.',
+        },
+        {
+          q: 'Πόσο νωρίς πρέπει να παραγγείλουμε για παρέλαση;',
+          a: 'Δώστε μας τρεις εβδομάδες περιθώριο πριν από την 25η Μαρτίου ή την 28η Οκτωβρίου. Εκείνες τις περιόδους η ζήτηση είναι μεγάλη και θέλουμε να προλάβουμε άνετα.',
         },
         {
           q: 'Πώς θα πάρω προσφορά;',
@@ -264,11 +272,15 @@ export const ui = {
         },
         {
           q: 'How long does an order take?',
-          a: "It depends on the product and quantity. Your quote includes a specific delivery time, before you commit.",
+          a: 'National flags in our standard sizes are held in stock, so you can usually collect the same day. Logo flags take up to 10 days in small quantities, while embroidered banners and badges to your own design take 15 days.',
+        },
+        {
+          q: 'Do you have flags ready for immediate collection?',
+          a: 'Yes. We keep our standard sizes in stock, from 60 × 40 up to 500 × 300 centimetres. If something is temporarily out, we make it in one to five working days.',
         },
         {
           q: 'What sizes and materials do you work with?',
-          a: 'Any size you need. Flags are digitally printed on polyester fabric, while banners are made of velvet.',
+          a: 'Any size you need. Flags are digitally printed on 100% polyester with a reinforced, double-stitched hem. Banners are made of velvet, with embroidered lettering and an aluminium pole.',
         },
         {
           q: 'What file do you need for a logo flag?',
@@ -276,11 +288,15 @@ export const ui = {
         },
         {
           q: 'Where do you deliver?',
-          a: 'We deliver orders anywhere in Cyprus.',
+          a: 'Anywhere in Cyprus, by courier. There is no delivery charge on orders over €150. You can also collect from the shop on Pindarou or the factory in Kaimakli.',
         },
         {
           q: 'Do you make church and parade banners?',
-          a: 'Yes, they are one of our specialties. Handmade velvet banners, finished with a pole, cross or sphere finial.',
+          a: 'Yes, they are one of our specialties. Handmade velvet banners, finished with an aluminium pole, cross or sphere finial and a leather carrying harness. We also repair old banners.',
+        },
+        {
+          q: 'How early should we order for a parade?',
+          a: 'Allow us three weeks before 25 March or 28 October. Demand in those periods is heavy and we want comfortable margin.',
         },
         {
           q: 'How do I get a quote?',
