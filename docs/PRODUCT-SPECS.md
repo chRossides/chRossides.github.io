@@ -79,7 +79,7 @@ Still open, non-blocking: **thread and materials** for badges specifically, as d
 
 **58 m × 27 m**, commissioned by an APOEL supporter. A special job: **15 rolls of fabric, three full days of work**. It was too large to unroll inside the factory — the first time it was ever opened out was on a football pitch, to confirm it had been assembled correctly.
 
-⚠️ **This does not cleanly match the giant-flag research in [profile.md](profile.md).** 58 × 27 m is **1,566 m²**, against the **1,650 m²** the 2014 press reported. The cost given here — **around £3,000 Cyprus pounds** — is in a currency withdrawn in January 2008, while the press reported roughly **€4,000** for a 2014 event. Either the owner is recalling approximate figures in old money out of habit, or **this is a different and earlier flag than the one in the 2014 coverage**. Worth one clarifying question, because "the workshop that made the 1,650 m² flag" is the strongest single asset in the dossier and it should rest on figures that agree. Note also that the press figures came from the organiser, Τορναρίτης, not from the workshop — so the family's numbers may well be the more accurate ones.
+**These figures are the ones the site publishes.** They differ from the 2014 press coverage recorded in [profile.md](profile.md), which reported 1,650 m² and 280 kg — but those figures came from the event's organiser rather than from the workshop, so the family's own numbers are the better source. **The discrepancy was closed by the owner on 2 August 2026 and is not to be pursued.** No cost is published, here or anywhere on the site.
 
 ## C. Finishing and fittings
 
@@ -159,9 +159,9 @@ The repair service is worth a section of its own. Parishes and schools hold bann
 
 ## G. Still outstanding
 
-- **G1. Photographs** — no answer. Still the largest single gap, for the site and for social alike. Priority: the giant flag, λάβαρα, badges, the workshop.
-- **G2. Evidence for 1938** — no answer. The date appears across the entire site and rests on family testimony alone.
-- **G3. Nameable customers** — no answer.
+- **G1. Photographs** — no answer. The only outstanding ask, and the largest single gap for the site and for social alike. Priority: the giant flag, λάβαρα, badges, the workshop.
+
+*G2 (documentary evidence for 1938) and G3 (nameable customers) were closed by the owner on 2 August 2026. Do not raise them again. The 1938 date stands on the family's account, and no customers are to be named.*
 
 ---
 

@@ -61,8 +61,8 @@ The site went from 11 pages to 25. Every new page carries `BreadcrumbList` + `FA
 
 ## Phase 3 — Authority content
 
-1. **The giant flag page.** Concrete, numerical, unrepeatable. Lead with the family's own account — 58 × 27 m, fifteen rolls, three days, first unrolled on a football pitch — and treat the 2014 press coverage as separate corroboration, since the figures do not precisely agree (see PRODUCT-SPECS.md). Needs a photograph.
-2. **"Our story" / 1938.** The site's biggest content gap, and the press hook. Rests on family testimony alone; no documentary evidence has been found.
+1. **The giant flag page.** Concrete, numerical, unrepeatable. Use the family's own account — 58 × 27 m, fifteen rolls, three days, first unrolled on a football pitch — which is what the product pages already say. Needs a photograph.
+2. **"Our story" / 1938.** The site's biggest remaining content gap, and the press hook. Written from the family's own account; the founding date is settled and needs no further sourcing.
 3. **Seasonal articles**, 4–6 weeks before each parade season. Hercules has an active blog; we have none.
 
 ## Phase 4 — Fix the signals feeding all of it
@@ -85,10 +85,10 @@ The site is the fastest and best-structured in the market, but **nothing feeds i
 
 ## Still needed from the family
 
-1. **Photographs** — finished work, the giant flag, λάβαρα, badges, the workshop. Blocks Phase 1 quality and all of Phase 3.
-2. **Evidence for 1938** — a registration document, an old photograph, a press cutting.
-3. **Nameable customers** — schools, parishes, clubs, ministries we may cite.
-4. The six minor specification gaps listed at the end of [PRODUCT-SPECS.md](PRODUCT-SPECS.md), none of them blocking.
+1. **Photographs** — finished work, the giant flag, λάβαρα, badges, the workshop. Blocks Phase 1 quality and all of Phase 3. **This is the only outstanding ask.**
+2. The minor specification gaps listed at the end of [PRODUCT-SPECS.md](PRODUCT-SPECS.md), none of them blocking.
+
+*Closed by the owner, 2 August 2026, and not to be raised again: documentary evidence for the 1938 founding date, naming customers publicly, and pursuing the giant-flag attribution through the 2014 press or its organiser. The site publishes the family's own account and that is sufficient.*
 
 ## How we will know it is working
 
