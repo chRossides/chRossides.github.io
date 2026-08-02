@@ -7,9 +7,20 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = ui[lang].quote;
+// Landline first, then the mobile for the person who answers it. The second
+// factory landline is deliberately not here - see Locations.astro, which keeps
+// the full set of landlines with the addresses.
 const cards = [
-  { label: t.shopLabel, phones: [site.phoneShop], persons: site.contactPerson[lang] },
-  { label: t.factoryLabel, phones: [site.phoneFactory, site.phoneFactory2], persons: site.factoryPersons[lang] },
+  {
+    label: t.shopLabel,
+    phones: [site.phoneShop, site.mobileShop],
+    persons: site.contactPerson[lang],
+  },
+  {
+    label: t.factoryLabel,
+    phones: [site.phoneFactory, site.mobileFactory],
+    persons: site.factoryPersons[lang],
+  },
 ];
 ---
 

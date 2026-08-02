@@ -6,9 +6,8 @@ import Nav from './Nav.astro';
 import CallQuote from './CallQuote.astro';
 import Footer from './Footer.astro';
 import { site, ui, type Lang } from '../i18n/ui';
-import { byKey, categoryPath, type Category } from '../i18n/categories';
+import { byKey, categoryPath, type Category, type CategoryKey } from '../i18n/categories';
 import nationalImg from '../assets/national-flags.jpg';
-import heroFlagImg from '../assets/hero-flag.jpg';
 import logoImg from '../assets/logo-print.jpg';
 import paradeBlueImg from '../assets/parade-banner-blue.jpg';
 import paradeBlackImg from '../assets/parade-banner-black.jpg';
@@ -27,20 +26,66 @@ const nav = ui[lang];
 // Every page currently reuses the same small stock of workshop photographs.
 // Replace these once the family supplies real photography of finished work.
 const imagesByKey: Record<Category['key'], ImageMetadata[]> = {
-  national: [nationalImg, heroFlagImg],
-  logo: [logoImg, heroFlagImg],
+  national: [nationalImg],
+  logo: [logoImg],
   parade: [paradeBlueImg, paradeBlackImg],
   embroidery: [embroideryImg, machinesImg],
-  repairs: [paradeBlackImg, embroideryImg],
+  repairs: [],
   parades: [paradeBlueImg, nationalImg],
   school: [paradeBlueImg, paradeBlackImg],
-  church: [paradeBlackImg, embroideryImg],
-  table: [nationalImg, heroFlagImg],
-  poles: [paradeBlueImg, paradeBlackImg],
-  bunting: [nationalImg, heroFlagImg],
-  sizes: [nationalImg, logoImg],
+  table: [],
+  poles: [],
+  bunting: [],
+  sizes: [],
 };
 const images = imagesByKey[category.key];
+
+/*
+ * Frame proportions follow the photographs rather than the other way round.
+ * A single image gets its own ratio, so nothing is cropped or letterboxed.
+ * A pair shares the group average, so the two sit at a matching height, and
+ * the small residual is filled by the blurred backdrop.
+ */
+const frameRatio =
+  images.length === 0 ? 1 : images.reduce((sum, i) => sum + i.width / i.height, 0) / images.length;
+
+/**
+ * Body copy supports three inline markers:
+ *   [[key|anchor text]]   a link to another product page, resolved per language
+ *                         so cross-references survive a slug change
+ *   [[https://…|text]]    an external link, opened in a new tab
+ *   **bold**              emphasis, for the numbers worth stopping on
+ * All render as nodes, never as raw HTML, so copy cannot inject markup.
+ */
+const INLINE_MARKUP = /\[\[([^|\]]+)\|([^\]]+)\]\]|\*\*([^*]+)\*\*/g;
+
+type Part =
+  | { text: string }
+  | { href: string; label: string; external: boolean }
+  | { bold: string };
+
+function inlineParts(text: string): Part[] {
+  const parts: Part[] = [];
+  let cursor = 0;
+  for (const match of text.matchAll(INLINE_MARKUP)) {
+    const at = match.index ?? 0;
+    if (at > cursor) parts.push({ text: text.slice(cursor, at) });
+    if (match[3] !== undefined) {
+      parts.push({ bold: match[3] });
+    } else {
+      const target = match[1]!;
+      const external = target.startsWith('http');
+      parts.push({
+        href: external ? target : categoryPath(byKey(target as CategoryKey), lang),
+        label: match[2]!,
+        external,
+      });
+    }
+    cursor = at + match[0].length;
+  }
+  if (cursor < text.length) parts.push({ text: text.slice(cursor) });
+  return parts;
+}
 
 const path = categoryPath(category, lang);
 const altPath = categoryPath(category, lang === 'el' ? 'en' : 'el');
@@ -73,7 +118,7 @@ const faqLd = {
 ---
 
 <Base lang={lang} title={t.metaTitle} description={t.metaDescription} path={path} altPath={altPath}>
-  <Nav lang={lang} />
+  <Nav lang={lang} altPath={altPath} />
   <main>
     <article class="category">
       <nav class="crumbs" aria-label="Breadcrumb">
@@ -84,35 +129,57 @@ const faqLd = {
         <span aria-current="page">{t.title}</span>
       </nav>
 
-      <div class="grid">
-        <div class="text">
-          <h1>{t.title}</h1>
-          {t.intro.map((p) => <p class="body">{p}</p>)}
-          <div class="specs">
-            <h2>{t.specsTitle}</h2>
-            <ul>
-              {t.specs.map((s) => <li>{s}</li>)}
-            </ul>
-          </div>
+      <header class="lead">
+        <h1>{t.title}</h1>
+        {t.intro.map((p) => <p class="body">{p}</p>)}
+        <div class="specs">
+          <h2>{t.specsTitle}</h2>
+          <ul>
+            {t.specs.map((s) => <li>{s}</li>)}
+          </ul>
         </div>
-        <div class="media">
+      </header>
+
+      {images.length > 0 && (
+        <div class:list={['media', { pair: images.length > 1 }]}>
           {images.map((img, i) => (
-            <Image
-              src={img}
-              alt={`${t.title} ${i + 1}`}
-              widths={[480, 760, 1100]}
-              sizes="(max-width: 900px) 100vw, 38vw"
-              loading={i === 0 ? 'eager' : 'lazy'}
-            />
+            <figure class="frame" style={`--r:${images.length > 1 ? frameRatio : img.width / img.height}`}>
+              <div class="backdrop" style={`background-image:url(${img.src})`}></div>
+              <Image
+                src={img}
+                alt={`${t.title} ${i + 1}`}
+                widths={[480, 760, 1100]}
+                sizes={images.length > 1 ? '(max-width: 820px) 100vw, 370px' : '(max-width: 820px) 100vw, 760px'}
+                loading={i === 0 ? 'eager' : 'lazy'}
+              />
+            </figure>
           ))}
         </div>
-      </div>
+      )}
 
       <div class="detail">
         {t.sections.map((s) => (
           <section class="block">
             <h2>{s.heading}</h2>
-            {s.body?.map((p) => <p class="body">{p}</p>)}
+            {s.body?.map((p) => (
+              <p class="body">
+                {inlineParts(p).map((part) =>
+                  'href' in part ? (
+                    <a
+                      href={part.href}
+                      target={part.external ? '_blank' : undefined}
+                      rel={part.external ? 'noopener' : undefined}
+                    >
+                      {part.label}
+                    </a>
+                  ) : 'bold' in part ? (
+                    <strong>{part.bold}</strong>
+                  ) : (
+                    part.text
+                  )
+                )}
+              </p>
+            ))}
             {s.table && (
               <div class="tablewrap">
                 <table>
@@ -129,10 +196,46 @@ const faqLd = {
             )}
             {s.bullets && (
               <ul class="points">
-                {s.bullets.map((b) => <li>{b}</li>)}
+                {s.bullets.map((b) => (
+                  <li>
+                    {inlineParts(b).map((part) =>
+                      'href' in part ? (
+                        <a
+                          href={part.href}
+                          target={part.external ? '_blank' : undefined}
+                          rel={part.external ? 'noopener' : undefined}
+                        >
+                          {part.label}
+                        </a>
+                      ) : 'bold' in part ? (
+                        <strong>{part.bold}</strong>
+                      ) : (
+                        part.text
+                      )
+                    )}
+                  </li>
+                ))}
               </ul>
             )}
-            {s.footnote && <p class="footnote">{s.footnote}</p>}
+            {s.footnote && (
+              <p class="footnote">
+                {inlineParts(s.footnote).map((part) =>
+                  'href' in part ? (
+                    <a
+                      href={part.href}
+                      target={part.external ? '_blank' : undefined}
+                      rel={part.external ? 'noopener' : undefined}
+                    >
+                      {part.label}
+                    </a>
+                  ) : 'bold' in part ? (
+                    <strong>{part.bold}</strong>
+                  ) : (
+                    part.text
+                  )
+                )}
+              </p>
+            )}
           </section>
         ))}
 
@@ -171,8 +274,14 @@ const faqLd = {
 <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
 
 <style>
+  /*
+   * One measure the whole way down. The page is spec-heavy and several pages
+   * carry no photography at all, so nothing here depends on an image being
+   * present - the band below simply does not render when there is none.
+   */
   .category {
     padding: 40px var(--pad-x) 80px;
+    --measure: 760px;
   }
   .crumbs {
     font-size: 13.5px;
@@ -184,11 +293,12 @@ const faqLd = {
   .crumbs a {
     font-weight: 600;
   }
-  .grid {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 56px;
-    align-items: start;
+  .crumbs,
+  .lead,
+  .detail,
+  .media {
+    max-width: var(--measure);
+    margin-inline: auto;
   }
   h1 {
     font-family: var(--font-display);
@@ -205,7 +315,6 @@ const faqLd = {
     line-height: 1.7;
     color: var(--ink-soft);
     margin-bottom: 16px;
-    max-width: 560px;
     text-wrap: pretty;
   }
   .specs {
@@ -214,7 +323,6 @@ const faqLd = {
     border: 1px solid var(--border-soft);
     border-radius: 12px;
     padding: 24px 28px;
-    max-width: 560px;
   }
   .specs h2 {
     font-family: var(--font-display);
@@ -245,8 +353,7 @@ const faqLd = {
     background: var(--orange);
   }
   .detail {
-    max-width: 720px;
-    margin-top: 64px;
+    margin-top: 56px;
   }
   .block + .block {
     margin-top: 44px;
@@ -317,6 +424,12 @@ const faqLd = {
     height: 6px;
     border-radius: 50%;
     background: var(--orange);
+  }
+  .body strong,
+  .points strong,
+  .footnote strong {
+    font-weight: 700;
+    color: var(--navy);
   }
   .footnote {
     margin-top: 14px;
@@ -402,20 +515,54 @@ const faqLd = {
     border-color: var(--orange);
     color: var(--orange);
   }
+  /*
+   * Fixed-ratio frames keep every page the same height, but the photograph is
+   * contained rather than cropped - source images run from 0.75 to 1.78 and
+   * cropping was cutting the banners in half. The residual space is filled by a
+   * blurred, enlarged copy of the same photograph, which reads as intentional
+   * and hides the soft edges of the weaker source images.
+   */
   .media {
     display: grid;
     gap: 18px;
+    margin-top: 40px;
   }
-  .media img {
-    width: 100%;
-    height: auto;
+  .media.pair {
+    grid-template-columns: 1fr 1fr;
+  }
+  .frame {
+    position: relative;
+    margin: 0 auto;
+    aspect-ratio: var(--r);
+    /* Bound the height so a portrait source cannot run a thousand pixels tall. */
+    width: min(100%, calc(560px * var(--r)));
     border-radius: 14px;
+    overflow: hidden;
+    background: var(--bg-soft);
     box-shadow: 0 18px 44px rgba(21, 38, 94, 0.16);
   }
-  @media (max-width: 900px) {
-    .grid {
-      grid-template-columns: 1fr;
-      gap: 36px;
-    }
+  .media.pair .frame {
+    width: 100%;
+  }
+  /*
+   * Each frame holds two copies of the image: a blurred, enlarged one filling
+   * the frame, and the real one contained on top. Nothing is ever cropped, and
+   * sources whose proportions do not match the frame sit on a soft field of
+   * their own colours rather than on empty grey.
+   */
+  .backdrop {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: blur(18px) saturate(1.1) brightness(0.94);
+    transform: scale(1.15);
+  }
+  .frame img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 </style>

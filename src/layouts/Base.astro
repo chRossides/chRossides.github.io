@@ -61,14 +61,14 @@ const jsonLd = {
       contactPoint: [
         {
           '@type': 'ContactPoint',
-          telephone: telIntl(site.phoneShop),
+          telephone: [telIntl(site.phoneShop), telIntl(site.mobileShop)],
           contactType: 'sales',
           name: site.contactPerson[lang],
           availableLanguage: ['el', 'en'],
         },
         {
           '@type': 'ContactPoint',
-          telephone: telIntl(site.phoneFactory),
+          telephone: [telIntl(site.phoneFactory), telIntl(site.mobileFactory)],
           contactType: 'sales',
           name: site.factoryPersons[lang],
           availableLanguage: ['el', 'en'],

@@ -1,5 +1,6 @@
 ---
-import { ui, type Lang } from '../i18n/ui';
+import { site, ui, type Lang } from '../i18n/ui';
+import { byKey, categoryPath, type CategoryKey } from '../i18n/categories';
 
 interface Props {
   lang: Lang;
@@ -8,14 +9,28 @@ interface Props {
 const { lang } = Astro.props;
 const t = ui[lang].faq;
 
+/** Absolute URL for an answer that points at a product page, or null. */
+function answerLink(item: (typeof t.items)[number]): { href: string; label: string } | null {
+  if (!('link' in item)) return null;
+  return {
+    href: categoryPath(byKey(item.link.key as CategoryKey), lang),
+    label: item.link.label,
+  };
+}
+
+// Google allows a small set of HTML tags inside acceptedAnswer.text, including <a>.
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: t.items.map((i) => ({
-    '@type': 'Question',
-    name: i.q,
-    acceptedAnswer: { '@type': 'Answer', text: i.a },
-  })),
+  mainEntity: t.items.map((i) => {
+    const link = answerLink(i);
+    const text = link ? `${i.a} <a href="${new URL(link.href, site.domain).href}">${link.label}</a>` : i.a;
+    return {
+      '@type': 'Question',
+      name: i.q,
+      acceptedAnswer: { '@type': 'Answer', text },
+    };
+  }),
 };
 ---
 
@@ -31,7 +46,10 @@ const jsonLd = {
           {i.q}
           <span class="mark" aria-hidden="true"></span>
         </summary>
-        <p>{i.a}</p>
+        <p>
+          {i.a}
+          {answerLink(i) && <a class="more" href={answerLink(i)!.href}>{answerLink(i)!.label} →</a>}
+        </p>
       </details>
     ))}
   </div>
@@ -113,5 +131,15 @@ const jsonLd = {
     line-height: 1.65;
     color: var(--ink-soft);
     max-width: 640px;
+  }
+  .more {
+    display: inline-block;
+    margin-top: 6px;
+    font-weight: 600;
+    color: var(--orange);
+    white-space: nowrap;
+  }
+  .more:hover {
+    text-decoration: underline;
   }
 </style>

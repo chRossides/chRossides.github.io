@@ -3,12 +3,18 @@ import { ui, type Lang } from '../i18n/ui';
 
 interface Props {
   lang: Lang;
+  /**
+   * Path of this page's other-language twin, so the toggle keeps the reader on
+   * the page they are reading. Same value the layout uses for hreflang. Falls
+   * back to the other landing page for pages with no twin, such as 404.
+   */
+  altPath?: string;
 }
 
 const { lang } = Astro.props;
 const t = ui[lang].nav;
 const home = lang === 'el' ? '/' : '/en/';
-const switchHref = lang === 'el' ? '/en/' : '/';
+const switchHref = Astro.props.altPath ?? (lang === 'el' ? '/en/' : '/');
 const switchLabel = lang === 'el' ? 'EN' : 'ΕΛ';
 ---
 
