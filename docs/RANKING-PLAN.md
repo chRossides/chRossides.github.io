@@ -39,20 +39,24 @@ The homepage FAQ was updated to match: the old "delivery time depends, we'll tel
 
 Still outstanding for these pages: **photographs**. Every page reuses the same two stock workshop images. This is the largest remaining quality gap and it is blocked on the family.
 
-## Phase 2 — The pages nobody has
+## Phase 2 — The pages nobody has ✅ done, 2 August 2026
 
-Greek first, English mirror. The first two were surfaced by the specification answers and were not in the original plan; both are stronger than anything that was.
+Eight new pages, Greek and English, all under `/proionta/` and `/en/products/`. The first two were surfaced by the specification answers and were not in the original plan; both are stronger than anything that was.
 
-| New page | Target query | Why it wins |
-|---|---|---|
-| **Επισκευή λαβάρων** | `επισκευή λαβάρων` | **Zero competition anywhere.** Parishes and schools hold banners decades old. High intent, low effort, and it feeds new orders |
-| **Παραγγελίες για παρελάσεις** | `λάβαρα 28ης Οκτωβρίου`, `παρέλαση 25ης Μαρτίου` | The three-week rule, built round the parade calendar. **Date-sensitive — wants to be live by early September** to catch the 1 and 28 October parades |
-| **Λάβαρα σχολείων** | `λάβαρα σχολείων` | Top nine results are school *directories*. No product page exists anywhere. We now have the 90 × 120 standard and the full pole and harness spec |
-| **Επιτραπέζιες σημαίες** | `επιτραπέζιες σημαίες Κύπρος` | Zero table-flag pages. We have the spec: 24 × 16 cm, 33 cm tall, silver base 6 cm across. B2B demand from ministries, embassies, conference rooms |
-| **Ιστοί & κοντάρια** | `κοντάρια σημαιών Κύπρος` | Poles are expensive to ship from Greece. Only 2 of 7 current results are on-topic, and we sell poles separately |
-| **Σημαιοστολισμός** | `σημαιοστολισμός Κύπρος` | Zero commercial results. Municipal flag decoration is legally mandated on national days. We supply the materials — 30 × 20 cm bunting, three per metre — but not installation |
-| **Εκκλησιαστικά λάβαρα** *(expand existing)* | `εκκλησιαστικά λάβαρα Κύπρος` | Nine Greek specialists rank, **zero Cypriot**. Parishes want a supplier they can visit |
-| **Οδηγός διαστάσεων** | long-tail | **No competitor has a size guide or fabric guide.** We now have the full eight-size table with uses. Wins long-tail and earns links |
+| New page | URL | Target query | Why it wins |
+|---|---|---|---|
+| **Επισκευή λαβάρων** | `/proionta/episkevi-lavaron/` | `επισκευή λαβάρων` | **Zero competition anywhere.** Parishes and schools hold banners decades old. High intent, and it feeds new orders |
+| **Παραγγελίες για παρελάσεις** | `/proionta/paraggelies-parelaseon/` | `λάβαρα 28ης Οκτωβρίου`, `παρέλαση 25ης Μαρτίου` | The three-week rule, built round the parade calendar with a "call us by" date for each of the four anniversaries |
+| **Λάβαρα σχολείων** | `/proionta/lavara-scholeion/` | `λάβαρα σχολείων` | Top nine results are school *directories*. No product page existed anywhere |
+| **Εκκλησιαστικά λάβαρα** | `/proionta/ekklisiastika-lavara/` | `εκκλησιαστικά λάβαρα Κύπρος` | Nine Greek specialists rank, **zero Cypriot**. Parishes want a supplier they can visit |
+| **Επιτραπέζιες σημαίες** | `/proionta/epitrapezies-simaies/` | `επιτραπέζιες σημαίες Κύπρος` | Zero table-flag pages. B2B demand from ministries, embassies, conference rooms |
+| **Ιστοί & κοντάρια** | `/proionta/istoi-kontaria/` | `κοντάρια σημαιών Κύπρος` | Poles are expensive to ship from Greece. Only 2 of 7 current results were on-topic |
+| **Σημαιοστολισμός** | `/proionta/simaiostolismos/` | `σημαιοστολισμός Κύπρος` | Zero commercial results. Municipal flag decoration is mandated on national days |
+| **Οδηγός διαστάσεων** | `/proionta/odigos-diastaseon/` | long-tail | **No competitor has a size guide.** Consolidates every dimension we make, and settles the width × height ambiguity |
+
+**Internal linking was rebuilt at the same time**, because eight orphan pages would have been worthless. Every one of the twelve product pages is now linked from **both homepages** — the four tiles plus a linked "also made to order" grid — and from a **site-wide footer list on all 27 pages**. Each page also carries four editorially chosen cross-links. Verified: no broken internal links, no broken hreflang pairs.
+
+The site went from 11 pages to 27. Every new page carries `BreadcrumbList` + `FAQPage` schema and a correct hreflang pair.
 
 ## Phase 3 — Authority content
 
@@ -73,10 +77,10 @@ The site is the fastest and best-structured in the market, but **nothing feeds i
 
 ## Sequencing
 
-**Done:** Phase 1.
-**Now:** Phase 2, starting with **επισκευή λαβάρων** and **παραγγελίες για παρελάσεις**. The parade page is the only genuinely date-sensitive item in the plan — working back from the 1 October parades and a three-week ordering window, it should be live by **early September**.
-**Alongside, not after:** the reviews push in Phase 4. It is independent of everything else and outranks most of Phase 2 in value.
-**Ongoing:** Phase 3 story content and the social restart.
+**Done:** Phases 1 and 2 — twelve product pages, Greek and English, fully cross-linked.
+**Next:** Phase 3 story content, and **photographs**, which now block more than anything else. Twenty-four product pages currently share the same two stock workshop images.
+**Alongside, not after:** the reviews push in Phase 4. It is independent of everything else and outranks most of Phase 3 in value.
+**Deadline to watch:** the parade page must be live and indexed before **early September** to be useful for the 1 and 28 October parades. It is written; it needs merging and crawling.
 
 ## Still needed from the family
 

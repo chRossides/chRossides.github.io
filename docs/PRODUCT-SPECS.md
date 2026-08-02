@@ -39,7 +39,7 @@ Hercules publishes 140 gsm. At 120 gsm ours is lighter, so **weight is not a cla
 | 180 × 110 |
 | 240 × 150 |
 | 300 × 180 |
-| 5000 × 3000 ⚠️ *almost certainly 500 × 300 cm — confirm* |
+| 500 × 300 — given as "5000 × 3000"; **confirmed as 5 m × 3 m** |
 
 Custom sizes on request. The Greek flag is **also available sewn** in every standard size, in polyester — which contradicts A4.
 
@@ -149,12 +149,13 @@ Also settled: **delivery over €150 carries no charge** and may be stated. Pref
 
 Worth picking up on the next call, but Phase 1 can be written without them.
 
-1. **120 gsm** — the owner's own question mark. Since it is *below* Hercules' published 140, we are not leading with it anyway; simplest is to describe the fabric without a number until confirmed.
-2. **5000 × 3000** — read as 500 × 300 cm pending confirmation.
-3. **Flag fixing** — with no eyelets, what attaches the flag to the pole? Sleeve, ties, rope and toggle?
-4. **Giant flag** — 58 × 27 m is 1,566 m² against the press's 1,650 m², and the cost was given in a pre-2008 currency. Use the family's dimensions as primary and attribute the press figure separately; no price is published either way.
-5. **Pole ribbon** — confirm "blue ribbon" / "white" means a spiral wrap along the pole rather than a hanging ribbon.
-6. **Velvet weight** — asked, not answered.
+1. **120 gsm** — the owner's own question mark. Since it is *below* Hercules' published 140, we are not leading with it anyway; the site currently describes the fabric without a number.
+2. **Flag fixing** — with no eyelets, what attaches the flag to the pole? Sleeve, ties, rope and toggle?
+3. **Giant flag** — 58 × 27 m is 1,566 m² against the press's 1,650 m², and the cost was given in a pre-2008 currency. Use the family's dimensions as primary and attribute the press figure separately; no price is published either way.
+4. **Pole ribbon** — confirm "blue ribbon" / "white" means a spiral wrap along the pole rather than a hanging ribbon.
+5. **Velvet weight** — asked, not answered.
+
+*Resolved 2 August 2026: the "5000 × 3000" standard size is **5 m × 3 m**, i.e. 500 × 300 cm, as published.*
 
 ## What this unlocks
 

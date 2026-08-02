@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import { ui, type Lang } from '../i18n/ui';
-import { categories, categoryPath } from '../i18n/categories';
+import { byKey, categoryPath, featuredCategories, type CategoryKey } from '../i18n/categories';
 import nationalImg from '../assets/national-flags.jpg';
 import logoImg from '../assets/logo-print.jpg';
 import paradeImg from '../assets/parade-banners.jpg';
@@ -14,6 +14,7 @@ interface Props {
 const { lang } = Astro.props;
 const t = ui[lang].products;
 const images = [nationalImg, logoImg, paradeImg, embroideryImg];
+const featured = featuredCategories();
 ---
 
 <section id="products" class="products">
@@ -27,7 +28,7 @@ const images = [nationalImg, logoImg, paradeImg, embroideryImg];
 
   <div class="grid">
     {t.categories.map((c, i) => (
-      <a class="tile" href={categoryPath(categories[i]!, lang)}>
+      <a class="tile" href={categoryPath(featured[i]!, lang)}>
         <Image src={images[i]!} alt={c.title} widths={[480, 760]} sizes="(max-width: 700px) 100vw, 25vw" />
         <div class="shade"></div>
         <div class="text">
@@ -46,13 +47,13 @@ const images = [nationalImg, logoImg, paradeImg, embroideryImg];
     </div>
     <div class="more-grid">
       {t.more.map((m) => (
-        <div class="item">
+        <a class="item" href={categoryPath(byKey(m.key as CategoryKey), lang)}>
           <div class="bullet"></div>
           <div>
             <div class="item-t">{m.t}</div>
             <div class="item-d">{m.d}</div>
           </div>
-        </div>
+        </a>
       ))}
     </div>
   </div>
@@ -176,6 +177,10 @@ const images = [nationalImg, logoImg, paradeImg, embroideryImg];
     align-items: baseline;
     padding: 12px 0;
     border-top: 1px solid #f0f3f7;
+    color: inherit;
+  }
+  .item:hover .item-t {
+    color: var(--orange);
   }
   .bullet {
     width: 6px;

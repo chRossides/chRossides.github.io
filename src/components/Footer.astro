@@ -1,5 +1,6 @@
 ---
 import { ui, type Lang } from '../i18n/ui';
+import { categories, categoryPath } from '../i18n/categories';
 
 interface Props {
   lang: Lang;
@@ -16,6 +17,14 @@ const year = new Date().getFullYear();
       ROSSIDES<span class="dot">.</span>
       <span class="company">{t.company}</span>
     </div>
+    <nav class="links" aria-label={t.productsLabel}>
+      <h2>{t.productsLabel}</h2>
+      <ul>
+        {categories.map((c) => (
+          <li><a href={categoryPath(c, lang)}>{c.content[lang].title}</a></li>
+        ))}
+      </ul>
+    </nav>
   </div>
   <div class="legal">© {year} Charalambos Rossides LTD - {t.tagline}</div>
 </footer>
@@ -29,6 +38,31 @@ const year = new Date().getFullYear();
   .top {
     padding-bottom: 24px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  .links {
+    margin-top: 26px;
+  }
+  .links h2 {
+    font: 700 12px/1 var(--font-body);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #8a93a3;
+    margin-bottom: 14px;
+  }
+  .links ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .links a {
+    font-size: 14px;
+    color: #c3cbe4;
+  }
+  .links a:hover {
+    color: #fff;
   }
   .brand {
     font: 800 20px/1 var(--font-display);

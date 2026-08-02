@@ -38,9 +38,27 @@ export interface CategoryContent {
   relatedTitle: string;
 }
 
+export type CategoryKey =
+  | 'national'
+  | 'logo'
+  | 'parade'
+  | 'embroidery'
+  | 'repairs'
+  | 'parades'
+  | 'school'
+  | 'church'
+  | 'table'
+  | 'poles'
+  | 'bunting'
+  | 'sizes';
+
 export interface Category {
-  key: 'national' | 'logo' | 'parade' | 'embroidery';
+  key: CategoryKey;
   slug: { el: string; en: string };
+  /** The four tiles on the homepage grid. Order here must match ui.products.categories. */
+  featured?: boolean;
+  /** Explicit cross-links, chosen editorially rather than linking to everything. */
+  related: CategoryKey[];
   content: { el: CategoryContent; en: CategoryContent };
 }
 
@@ -48,10 +66,23 @@ export function categoryPath(c: Category, lang: Lang): string {
   return lang === 'el' ? `/proionta/${c.slug.el}/` : `/en/products/${c.slug.en}/`;
 }
 
+export function byKey(key: CategoryKey): Category {
+  const found = categories.find((c) => c.key === key);
+  if (!found) throw new Error(`Unknown category key: ${key}`);
+  return found;
+}
+
+/** The four homepage tiles, in the order the homepage copy expects. */
+export function featuredCategories(): Category[] {
+  return categories.filter((c) => c.featured);
+}
+
 export const categories: Category[] = [
   {
     key: 'national',
     slug: { el: 'ethnikes-simaies', en: 'national-flags' },
+    featured: true,
+    related: ['logo', 'table', 'bunting', 'sizes'],
     content: {
       el: {
         title: 'Εθνικές σημαίες',
@@ -312,6 +343,8 @@ export const categories: Category[] = [
   {
     key: 'logo',
     slug: { el: 'simaies-me-logotypo', en: 'custom-logo-flags' },
+    featured: true,
+    related: ['national', 'embroidery', 'table', 'sizes'],
     content: {
       el: {
         title: 'Σημαίες με λογότυπο',
@@ -542,6 +575,8 @@ export const categories: Category[] = [
   {
     key: 'parade',
     slug: { el: 'lavara-parelaseon', en: 'parade-banners' },
+    featured: true,
+    related: ['school', 'church', 'repairs', 'poles'],
     content: {
       el: {
         title: 'Λάβαρα παρελάσεων',
@@ -792,6 +827,8 @@ export const categories: Category[] = [
   {
     key: 'embroidery',
     slug: { el: 'kentimata-diakritika', en: 'embroidery-badges' },
+    featured: true,
+    related: ['parade', 'logo', 'school'],
     content: {
       el: {
         title: 'Κεντήματα & διακριτικά',
@@ -1011,6 +1048,1390 @@ export const categories: Category[] = [
           {
             q: 'Is there a minimum quantity?',
             a: 'No. We take on small and large quantities to the same standard.',
+          },
+        ],
+        relatedTitle: 'See also',
+      },
+    },
+  },
+  {
+    key: 'repairs',
+    slug: { el: 'episkevi-lavaron', en: 'banner-repairs' },
+    related: ['parade', 'school', 'church', 'poles'],
+    content: {
+      el: {
+        title: 'Επισκευή λαβάρων',
+        metaTitle: 'Επισκευή & ανακαίνιση λαβάρων - Χαρ. Ρωσσίδης ΛΤΔ',
+        metaDescription:
+          'Επισκευάζουμε και ανακαινίζουμε παλιά λάβαρα σχολείων, συλλόγων και εκκλησιών: κρόσσια, φούντες, κεντήματα, ιστός και τελαμώνας. Φέρτε μας το λάβαρο να το δούμε.',
+        intro: [
+          'Ένα λάβαρο δεν χρειάζεται πάντα αντικατάσταση. Τα περισσότερα παλιά λάβαρα που φτάνουν στο εργαστήριό μας θέλουν φροντίδα, όχι καινούργιο ύφασμα.',
+          'Επισκευάζουμε και ανακαινίζουμε λάβαρα σχολείων, συλλόγων, σωματείων και εκκλησιών - ακόμη κι αν δεν τα κατασκευάσαμε εμείς.',
+          'Φέρτε μας το λάβαρο στο κατάστημα ή στο εργοστάσιο, να το δούμε από κοντά και να σας πούμε τι χρειάζεται.',
+        ],
+        specsTitle: 'Με μια ματιά',
+        specs: [
+          'Αλλαγή κροσσιών και φούντας',
+          'Επιδιόρθωση κεντήματος',
+          'Αντικατάσταση ιστού ή τελαμώνα',
+          'Για λάβαρα κάθε ηλικίας και προέλευσης',
+        ],
+        sections: [
+          {
+            heading: 'Τι αναλαμβάνουμε',
+            bullets: [
+              'Αλλαγή χρυσών κροσσιών που έχουν φθαρεί ή ξεφτίσει',
+              'Νέες φούντες, στο χρώμα που ταιριάζει με το λάβαρο',
+              'Επιδιόρθωση κεντήματος και γραμμάτων',
+              'Επανατοποθέτηση ή αντικατάσταση του εμβλήματος',
+              'Καινούργιος ιστός αλουμινίου, σφαίρα ή σταυρός',
+              'Νέος δερμάτινος τελαμώνας',
+              'Γενική ανακαίνιση και στερέωση του υφάσματος',
+            ],
+          },
+          {
+            heading: 'Γιατί αξίζει η επισκευή',
+            body: [
+              'Πολλά σχολεία και ενορίες κρατούν λάβαρα δεκαετιών. Το έμβλημα μπορεί να έχει σχεδιαστεί πριν από πολλά χρόνια και να μην υπάρχει πουθενά αλλού, και το ίδιο το λάβαρο να έχει περάσει από γενιές μαθητών ή πιστών.',
+              'Σε τέτοιες περιπτώσεις η επισκευή διατηρεί κάτι που δεν αντικαθίσταται. Ένα λάβαρο με φθαρμένα κρόσσια και ξηλωμένο κέντημα μπορεί συχνά να ξαναγίνει αξιοπρεπές για την παρέλαση.',
+            ],
+          },
+          {
+            heading: 'Πώς ξεκινά',
+            body: [
+              'Δεν μπορούμε να πούμε τι χρειάζεται ένα λάβαρο χωρίς να το δούμε. Φέρτε το στο κατάστημα στην Πινδάρου ή στο εργοστάσιο στο Καϊμακλί και θα το εξετάσουμε μαζί σας.',
+              'Θα σας πούμε τι μπορεί να επισκευαστεί, τι θα αλλάξει και πόσο χρόνο θα χρειαστεί, πριν αφήσετε οτιδήποτε.',
+            ],
+          },
+          {
+            heading: 'Ελέγξτε το λάβαρο πριν από την παρέλαση',
+            body: [
+              'Η καλύτερη στιγμή για να δείτε το λάβαρο του σχολείου δεν είναι η εβδομάδα της παρέλασης. Βγάλτε το από τη θήκη του στις αρχές Σεπτεμβρίου για τις παρελάσεις του Οκτωβρίου, και στις αρχές Μαρτίου για την 25η Μαρτίου.',
+              'Κοιτάξτε τα κρόσσια, τις φούντες, τις ραφές γύρω από το έμβλημα και τον ιστό. Αν κάτι δεν είναι εντάξει, υπάρχει ακόμη χρόνος να το φέρετε.',
+              'Πριν από την 25η Μαρτίου και την 28η Οκτωβρίου η ζήτηση ανεβαίνει απότομα, οπότε δώστε μας τρεις εβδομάδες περιθώριο.',
+            ],
+          },
+          {
+            heading: 'Αν τελικά χρειάζεται καινούργιο',
+            body: [
+              'Μερικές φορές το ύφασμα έχει φτάσει στο τέλος του και η επισκευή δεν συμφέρει. Θα σας το πούμε ειλικρινά.',
+              'Σε αυτή την περίπτωση κατασκευάζουμε καινούργιο λάβαρο κατά παραγγελία, με το ίδιο έμβλημα και τα ίδια χρώματα, σε δεκαπέντε ημέρες.',
+            ],
+          },
+        ],
+        faqTitle: 'Συχνές ερωτήσεις',
+        faq: [
+          {
+            q: 'Επισκευάζετε λάβαρα που δεν φτιάξατε εσείς;',
+            a: 'Ναι. Αναλαμβάνουμε λάβαρα κάθε προέλευσης και ηλικίας.',
+          },
+          {
+            q: 'Τι μπορεί να επισκευαστεί;',
+            a: 'Κρόσσια και φούντες, κεντήματα και γράμματα, το έμβλημα, ο ιστός, η σφαίρα ή ο σταυρός και ο τελαμώνας. Πολύ συχνά ένα λάβαρο που μοιάζει τελειωμένο χρειάζεται μόνο καινούργια κρόσσια και μια στερέωση στις ραφές.',
+          },
+          {
+            q: 'Πόσο κοστίζει η επισκευή;',
+            a: 'Εξαρτάται εντελώς από το τι χρειάζεται. Φέρτε μας το λάβαρο να το δούμε από κοντά και θα σας ενημερώσουμε πριν προχωρήσουμε σε οτιδήποτε.',
+          },
+          {
+            q: 'Πόσο χρόνο θέλει;',
+            a: 'Εξαρτάται από την έκταση της επισκευής. Πριν από τις παρελάσεις της 25ης Μαρτίου και της 28ης Οκτωβρίου προτείνουμε να μας το φέρετε τρεις εβδομάδες νωρίτερα.',
+          },
+          {
+            q: 'Πού το φέρνω;',
+            a: 'Στο κατάστημα στην Πινδάρου 5Β στη Λευκωσία ή στο εργοστάσιο στην οδό Νικολάου Ιωάννου 3 στο Καϊμακλί.',
+          },
+        ],
+        relatedTitle: 'Δείτε επίσης',
+      },
+      en: {
+        title: 'Banner repairs',
+        metaTitle: 'Banner repair & restoration - Char. Rossides LTD, Nicosia',
+        metaDescription:
+          'We repair and restore old school, club and church banners: fringing, tassels, embroidery, poles and harnesses. Bring the banner in and we will look at it.',
+        intro: [
+          'A banner does not always need replacing. Most of the old banners that reach our workshop need care rather than new fabric.',
+          'We repair and restore banners for schools, clubs, associations and churches - even ones we did not make.',
+          'Bring the banner to the shop or the factory so we can look at it properly and tell you what it needs.',
+        ],
+        specsTitle: 'At a glance',
+        specs: [
+          'New fringing and tassels',
+          'Embroidery repair',
+          'New pole or carrying harness',
+          'Banners of any age or origin',
+        ],
+        sections: [
+          {
+            heading: 'What we take on',
+            bullets: [
+              'Replacing gold fringing that has worn or frayed',
+              'New tassels, in a colour that matches the banner',
+              'Repairing embroidery and lettering',
+              'Refitting or replacing the emblem',
+              'A new aluminium pole, sphere or cross',
+              'A new leather carrying harness',
+              'General restoration and reinforcement of the fabric',
+            ],
+          },
+          {
+            heading: 'Why repair is worth it',
+            body: [
+              'Many schools and parishes hold banners decades old. The emblem may have been drawn many years ago and exist nowhere else, and the banner itself may have passed through generations of pupils or parishioners.',
+              'In those cases a repair preserves something that cannot be replaced. A banner with worn fringing and unravelling embroidery can often be made fit for the parade again.',
+            ],
+          },
+          {
+            heading: 'How it starts',
+            body: [
+              'We cannot tell what a banner needs without seeing it. Bring it to the shop on Pindarou or the factory in Kaimakli and we will examine it with you.',
+              'We will tell you what can be repaired, what will be replaced and how long it will take, before you leave anything with us.',
+            ],
+          },
+          {
+            heading: 'Check the banner before the parade',
+            body: [
+              'The best moment to look at a school banner is not the week of the parade. Take it out of its cover in early September for the October parades, and in early March for 25 March.',
+              'Look at the fringing, the tassels, the stitching around the emblem and the pole. If something is wrong, there is still time to bring it in.',
+              'Demand rises sharply before 25 March and 28 October, so allow us three weeks.',
+            ],
+          },
+          {
+            heading: 'If it does need replacing',
+            body: [
+              'Sometimes the fabric has reached the end of its life and a repair is not worth it. We will tell you honestly.',
+              'In that case we make a new banner to order, with the same emblem and the same colours, in fifteen days.',
+            ],
+          },
+        ],
+        faqTitle: 'Frequently asked questions',
+        faq: [
+          {
+            q: 'Do you repair banners you did not make?',
+            a: 'Yes. We take on banners of any origin and any age.',
+          },
+          {
+            q: 'What can be repaired?',
+            a: 'Fringing and tassels, embroidery and lettering, the emblem, the pole, the sphere or cross, and the harness. Very often a banner that looks finished needs only new fringing and its seams reinforced.',
+          },
+          {
+            q: 'What does a repair cost?',
+            a: 'It depends entirely on what is needed. Bring the banner in so we can see it properly, and we will let you know before going ahead with anything.',
+          },
+          {
+            q: 'How long does it take?',
+            a: 'It depends on the extent of the repair. Before the 25 March and 28 October parades we suggest bringing it in three weeks ahead.',
+          },
+          {
+            q: 'Where do I bring it?',
+            a: 'To the shop at Pindarou 5B in Nicosia, or the factory at Nikolaou Ioannou 3 in Kaimakli.',
+          },
+        ],
+        relatedTitle: 'See also',
+      },
+    },
+  },
+  {
+    key: 'parades',
+    slug: { el: 'paraggelies-parelaseon', en: 'parade-orders' },
+    related: ['school', 'parade', 'repairs', 'national'],
+    content: {
+      el: {
+        title: 'Παραγγελίες για παρελάσεις',
+        metaTitle: 'Λάβαρα & σημαίες για παρελάσεις - πότε να παραγγείλετε',
+        metaDescription:
+          'Τι χρειάζεται ένα σχολείο ή σύλλογος για την παρέλαση της 25ης Μαρτίου και της 28ης Οκτωβρίου, και πόσο νωρίς πρέπει να παραγγείλει. Δώστε τρεις εβδομάδες.',
+        intro: [
+          'Κάθε χρόνο, τις δύο εβδομάδες πριν από την παρέλαση, δεχόμαστε τηλεφωνήματα από σχολεία και συλλόγους που ανακάλυψαν την τελευταία στιγμή ότι το λάβαρο έχει φθαρεί ή ότι λείπουν σημαίες.',
+          'Αυτή η σελίδα υπάρχει για να μη σας συμβεί. Δείχνει τι χρειάζεται μια παρέλαση, πόσο χρόνο θέλει το καθένα και πότε πρέπει να μας τηλεφωνήσετε.',
+          'Ο απλός κανόνας: δώστε μας τρεις εβδομάδες περιθώριο πριν από την ημερομηνία της παρέλασης.',
+        ],
+        specsTitle: 'Με μια ματιά',
+        specs: [
+          'Τρεις εβδομάδες περιθώριο πριν από την παρέλαση',
+          'Κεντητό λάβαρο: 15 ημέρες',
+          'Σημαίες σε σταθερές διαστάσεις: από απόθεμα',
+          'Ελέγξτε το περσινό λάβαρο νωρίς',
+        ],
+        sections: [
+          {
+            heading: 'Πόσο χρόνο θέλει το καθένα',
+            table: {
+              columns: ['Τι χρειάζεστε', 'Χρόνος'],
+              rows: [
+                ['Εθνική σημαία σε σταθερή διάσταση', 'Από απόθεμα - 1 έως 5 ημέρες αν εξαντληθεί'],
+                ['Σημαίες χειρός και σημαιάκια', 'Από απόθεμα ή με δικό σας σχέδιο'],
+                ['Σημαία με λογότυπο ή έμβλημα', 'Έως 10 ημέρες'],
+                ['Κεντητό λάβαρο', '15 ημέρες'],
+                ['Κεντητά διακριτικά με δικό σας σχέδιο', '15 ημέρες'],
+                ['Επισκευή παλιού λαβάρου', 'Ανάλογα με το τι χρειάζεται - φέρτε το νωρίς'],
+              ],
+            },
+            footnote:
+              "Οι χρόνοι μετρούν από την έγκριση του σχεδίου. Πριν από την 25η Μαρτίου και την 28η Οκτωβρίου η ζήτηση ανεβαίνει απότομα, γι' αυτό ζητάμε τρεις εβδομάδες.",
+          },
+          {
+            heading: 'Το ημερολόγιο των παρελάσεων',
+            body: [
+              'Στην Κύπρο οι μεγάλες παρελάσεις είναι τέσσερις. Σημειώστε πότε πρέπει να μας τηλεφωνήσετε για την καθεμία.',
+            ],
+            table: {
+              columns: ['Επέτειος', 'Τηλεφωνήστε μας'],
+              rows: [
+                ['25 Μαρτίου', 'Αρχές Μαρτίου'],
+                ['1 Απριλίου', 'Μέσα Μαρτίου'],
+                ['1 Οκτωβρίου', 'Αρχές Σεπτεμβρίου'],
+                ['28 Οκτωβρίου', 'Αρχές Οκτωβρίου'],
+              ],
+            },
+          },
+          {
+            heading: 'Τι χρειάζεται ένα σχολείο',
+            bullets: [
+              'Το λάβαρο του σχολείου - συνήθως 90 × 120 εκ., βελούδινο, με το έμβλημα και το όνομα του σχολείου',
+              'Ιστό αλουμινίου 3 μέτρων, με σταυρό ή σφαίρα',
+              'Δερμάτινο τελαμώνα για τον μαθητή που κρατά το λάβαρο',
+              'Εθνικές σημαίες για τον ιστό της αυλής',
+              'Σημαίες χειρός 30 × 20 εκ. για τους μαθητές',
+              'Σημαιάκια για τον σημαιοστολισμό του χώρου',
+            ],
+          },
+          {
+            heading: 'Ελέγξτε το περσινό λάβαρο πρώτα',
+            body: [
+              'Πριν παραγγείλετε καινούργιο, βγάλτε το περσινό λάβαρο από τη θήκη του και δείτε το στο φως.',
+              'Τα κρόσσια ξεφτίζουν, οι φούντες φθείρονται και οι ραφές γύρω από το έμβλημα ξηλώνονται με τα χρόνια. Όλα αυτά επισκευάζονται και συχνά κοστίζουν πολύ λιγότερο από ένα καινούργιο λάβαρο.',
+            ],
+          },
+          {
+            heading: 'Πώς να μας τηλεφωνήσετε',
+            body: [
+              'Έχετε πρόχειρα το όνομα του σχολείου ή του συλλόγου, τις διαστάσεις που θέλετε και - αν υπάρχει - το έμβλημα σε αρχείο.',
+              'Αν δεν έχετε το έμβλημα σε καλή ποιότητα, μπορούμε να το δώσουμε σε γραφίστα να το ξανασχεδιάσει, με επιπλέον χρέωση που θα σας πούμε από πριν.',
+            ],
+          },
+        ],
+        faqTitle: 'Συχνές ερωτήσεις',
+        faq: [
+          {
+            q: 'Πόσο νωρίς πρέπει να παραγγείλουμε για την παρέλαση;',
+            a: 'Δώστε μας τρεις εβδομάδες περιθώριο πριν από την ημερομηνία της παρέλασης. Το κεντητό λάβαρο θέλει δεκαπέντε ημέρες κατασκευής, και εκείνες τις περιόδους η ζήτηση είναι μεγάλη.',
+          },
+          {
+            q: 'Άργησα. Προλαβαίνετε;',
+            a: 'Τηλεφωνήστε μας και ρωτήστε. Οι εθνικές σημαίες στις σταθερές διαστάσεις είναι σε απόθεμα και μπορείτε να τις παραλάβετε αμέσως. Για λάβαρο κατά παραγγελία, θα σας πούμε ειλικρινά αν προλαβαίνουμε.',
+          },
+          {
+            q: 'Τι διάσταση έχει το λάβαρο ενός σχολείου;',
+            a: 'Συνήθως 90 × 120 εκατοστά. Κατασκευάζουμε και άλλες διαστάσεις κατά παραγγελία.',
+          },
+          {
+            q: 'Μπορούμε να επισκευάσουμε το περσινό λάβαρο αντί να πάρουμε καινούργιο;',
+            a: 'Πολύ συχνά, ναι. Φέρτε το να το δούμε - κρόσσια, φούντες, κεντήματα, ιστός και τελαμώνας επισκευάζονται όλα.',
+          },
+          {
+            q: 'Προμηθεύετε και σημαίες χειρός για τους μαθητές;',
+            a: 'Ναι, σε διάσταση 30 × 20 εκατοστά, όπως και σημαιάκια για τον σημαιοστολισμό του σχολείου.',
+          },
+        ],
+        relatedTitle: 'Δείτε επίσης',
+      },
+      en: {
+        title: 'Ordering for parades',
+        metaTitle: 'Banners & flags for parades - when to order',
+        metaDescription:
+          'What a school or club needs for the 25 March and 28 October parades, and how early to order. Allow three weeks before the date of the parade.',
+        intro: [
+          'Every year, in the fortnight before a parade, we take calls from schools and clubs that have discovered at the last minute that the banner is worn or that flags are missing.',
+          'This page exists so that does not happen to you. It sets out what a parade needs, how long each item takes, and when to call us.',
+          'The simple rule: allow us three weeks before the date of the parade.',
+        ],
+        specsTitle: 'At a glance',
+        specs: [
+          'Allow three weeks before the parade',
+          'Embroidered banner: 15 days',
+          'Flags in standard sizes: from stock',
+          "Check last year's banner early",
+        ],
+        sections: [
+          {
+            heading: 'How long each item takes',
+            table: {
+              columns: ['What you need', 'Time'],
+              rows: [
+                ['National flag in a standard size', 'From stock - 1 to 5 days if out'],
+                ['Hand flags and bunting', 'From stock, or to your own design'],
+                ['Flag with a logo or emblem', 'Up to 10 days'],
+                ['Embroidered banner', '15 days'],
+                ['Embroidered badges to your own design', '15 days'],
+                ['Repair of an old banner', 'Depends what it needs - bring it in early'],
+              ],
+            },
+            footnote:
+              'Times run from approval of the design. Demand rises sharply before 25 March and 28 October, which is why we ask for three weeks.',
+          },
+          {
+            heading: 'The parade calendar',
+            body: [
+              'There are four major parades in Cyprus. Note when you should be calling us for each.',
+            ],
+            table: {
+              columns: ['Anniversary', 'Call us'],
+              rows: [
+                ['25 March', 'Early March'],
+                ['1 April', 'Mid March'],
+                ['1 October', 'Early September'],
+                ['28 October', 'Early October'],
+              ],
+            },
+          },
+          {
+            heading: 'What a school needs',
+            bullets: [
+              'The school banner - usually 90 × 120 cm, velvet, with the school emblem and name',
+              'A 3 metre aluminium pole, with a cross or sphere',
+              'A leather harness for the pupil carrying the banner',
+              'National flags for the pole in the yard',
+              'Hand flags at 30 × 20 cm for the pupils',
+              'Bunting to decorate the grounds',
+            ],
+          },
+          {
+            heading: "Check last year's banner first",
+            body: [
+              "Before ordering a new one, take last year's banner out of its cover and look at it in daylight.",
+              'Fringing frays, tassels wear and the stitching around the emblem works loose over the years. All of it can be repaired, and it often costs a great deal less than a new banner.',
+            ],
+          },
+          {
+            heading: 'How to call us',
+            body: [
+              'Have ready the name of the school or club, the dimensions you want and - if you have one - the emblem as a file.',
+              'If you do not have the emblem in good quality, we can pass it to a graphic designer to be redrawn, for an additional charge we will tell you about beforehand.',
+            ],
+          },
+        ],
+        faqTitle: 'Frequently asked questions',
+        faq: [
+          {
+            q: 'How early should we order for a parade?',
+            a: 'Allow us three weeks before the date of the parade. An embroidered banner takes fifteen days to make, and demand in those periods is heavy.',
+          },
+          {
+            q: 'We have left it late. Can you still do it?',
+            a: 'Call and ask. National flags in standard sizes are in stock and can be collected straight away. For a banner made to order, we will tell you honestly whether there is time.',
+          },
+          {
+            q: 'What size is a school banner?',
+            a: 'Usually 90 × 120 centimetres. We make other sizes to order.',
+          },
+          {
+            q: "Can we repair last year's banner instead of buying a new one?",
+            a: 'Very often, yes. Bring it in and we will look at it - fringing, tassels, embroidery, pole and harness can all be repaired.',
+          },
+          {
+            q: 'Do you supply hand flags for pupils?',
+            a: 'Yes, at 30 × 20 centimetres, along with bunting to decorate the school.',
+          },
+        ],
+        relatedTitle: 'See also',
+      },
+    },
+  },
+  {
+    key: 'school',
+    slug: { el: 'lavara-scholeion', en: 'school-banners' },
+    related: ['parades', 'parade', 'repairs', 'poles'],
+    content: {
+      el: {
+        title: 'Λάβαρα σχολείων',
+        metaTitle: 'Λάβαρα σχολείων - χειροποίητα, κατά παραγγελία',
+        metaDescription:
+          'Βελούδινα λάβαρα σχολείων 90 × 120 εκ. με κεντητό όνομα και έμβλημα, ιστό αλουμινίου και δερμάτινο τελαμώνα. Κατασκευή σε 15 ημέρες, στη Λευκωσία.',
+        intro: [
+          'Το λάβαρο είναι το πρώτο πράγμα που βλέπει κανείς όταν περνά το σχολείο στην παρέλαση, και μένει στο σχολείο για δεκαετίες.',
+          'Κατασκευάζουμε λάβαρα σχολείων ένα-ένα στο εργαστήριό μας στη Λευκωσία, με το όνομα και το έμβλημα του σχολείου, και τα παραδίδουμε ολοκληρωμένα: ύφασμα, ιστός, στέψη και τελαμώνας.',
+          'Η συνηθισμένη διάσταση είναι 90 × 120 εκατοστά και ο χρόνος κατασκευής δεκαπέντε ημέρες.',
+        ],
+        specsTitle: 'Με μια ματιά',
+        specs: [
+          'Βελούδο σε μπλε, μαύρο ή μπορντό',
+          'Συνήθης διάσταση 90 × 120 εκ.',
+          'Ιστός αλουμινίου 3 μ. και δερμάτινος τελαμώνας',
+          'Κατασκευή σε 15 ημέρες',
+        ],
+        sections: [
+          {
+            heading: 'Τι περιλαμβάνει',
+            bullets: [
+              'Βελούδινο λάβαρο 90 × 120 εκ., ή σε όποια διάσταση θέλετε',
+              'Το όνομα του σχολείου με κεντητή απλικέ εργασία',
+              'Το έμβλημα του σχολείου, κεντητό ή τυπωμένο, ραμμένο στο ύφασμα',
+              'Χρυσά κρόσσια και φούντες στο χρώμα που επιλέγετε',
+              'Ιστός αλουμινίου 3 μέτρων, διαμέτρου 39 χιλιοστών',
+              'Σταυρός ή σφαίρα στην κορυφή',
+              'Δερμάτινος τελαμώνας για τον σημαιοφόρο',
+            ],
+          },
+          {
+            heading: 'Χρώματα και έμβλημα',
+            body: [
+              'Το βελούδο διατίθεται σε μπλε σκούρο, μαύρο και μπορντό. Τα περισσότερα σχολεία επιλέγουν το χρώμα που ταιριάζει με τα χρώματα του σχολείου ή με το προηγούμενο λάβαρο.',
+              'Το έμβλημα στο κέντρο μπορεί να είναι κεντητό ή τυπωμένο. Επειδή η πίσω όψη του λαβάρου είναι κι αυτή βελούδινη, οι ραφές δεν φαίνονται από πίσω.',
+              'Στείλτε μας το έμβλημα σε EPS, PDF, SVG ή PNG υψηλής ανάλυσης. Αν το σχολείο έχει μόνο μια παλιά φωτοτυπία ή φωτογραφία, μπορούμε να το δώσουμε σε γραφίστα να το ξανασχεδιάσει, με επιπλέον χρέωση που θα σας πούμε από πριν.',
+            ],
+          },
+          {
+            heading: 'Ο ιστός και ο τελαμώνας',
+            body: [
+              'Ο ιστός είναι από αλουμίνιο, μήκους 3 μέτρων και διαμέτρου 39 χιλιοστών, και ζυγίζει δύο με δυόμισι κιλά - αρκετά ελαφρύς ώστε να τον κρατήσει μαθητής σε ολόκληρη τη διαδρομή.',
+              'Προαιρετικά τοποθετούμε μηχανισμό που χωρίζει τον ιστό στη μέση, ώστε το λάβαρο να μπαίνει σε αυτοκίνητο και να αποθηκεύεται πιο εύκολα.',
+              'Ο τελαμώνας είναι από δέρμα αγελάδας, με δύο ρυθμιζόμενους ιμάντες 100 και 60 εκατοστών, πλάτους 4 εκατοστών, και πόρπη που δεν σκουριάζει.',
+            ],
+          },
+          {
+            heading: 'Πότε να παραγγείλετε',
+            body: [
+              'Το λάβαρο θέλει δεκαπέντε ημέρες κατασκευής. Πριν από την 25η Μαρτίου και την 28η Οκτωβρίου η ζήτηση ανεβαίνει απότομα, οπότε δώστε μας τρεις εβδομάδες περιθώριο.',
+              'Πρακτικά: για τις παρελάσεις του Οκτωβρίου τηλεφωνήστε στις αρχές Σεπτεμβρίου, και για την 25η Μαρτίου στις αρχές Μαρτίου.',
+            ],
+          },
+          {
+            heading: 'Πριν παραγγείλετε καινούργιο',
+            body: [
+              'Αν το σχολείο έχει ήδη λάβαρο, δείτε το πρώτα. Πολλά παλιά λάβαρα θέλουν μόνο καινούργια κρόσσια, φούντες ή μια στερέωση στις ραφές γύρω από το έμβλημα.',
+              'Η επισκευή διατηρεί το έμβλημα και την ιστορία του σχολείου, και συχνά κοστίζει πολύ λιγότερο από ένα καινούργιο λάβαρο.',
+            ],
+          },
+        ],
+        faqTitle: 'Συχνές ερωτήσεις',
+        faq: [
+          {
+            q: 'Τι διάσταση έχει ένα λάβαρο σχολείου;',
+            a: 'Η συνηθισμένη διάσταση είναι 90 × 120 εκατοστά. Κατασκευάζουμε και άλλες διαστάσεις κατά παραγγελία.',
+          },
+          {
+            q: 'Πόσο χρόνο θέλει η κατασκευή;',
+            a: 'Δεκαπέντε ημέρες. Πριν από τις παρελάσεις της 25ης Μαρτίου και της 28ης Οκτωβρίου δώστε μας τρεις εβδομάδες περιθώριο.',
+          },
+          {
+            q: 'Περιλαμβάνεται ο ιστός και ο τελαμώνας;',
+            a: 'Ναι. Το λάβαρο παραδίδεται ολοκληρωμένο, με ιστό αλουμινίου 3 μέτρων, σταυρό ή σφαίρα και δερμάτινο τελαμώνα.',
+          },
+          {
+            q: 'Δεν έχουμε το έμβλημα σε αρχείο. Τι κάνουμε;',
+            a: 'Στείλτε μας ό,τι έχετε. Αν η ποιότητα δεν επαρκεί, μπορούμε να το δώσουμε σε γραφίστα να το ξανασχεδιάσει, με επιπλέον χρέωση που θα σας πούμε πριν προχωρήσουμε.',
+          },
+          {
+            q: 'Είναι βαρύ για μαθητή;',
+            a: 'Ο ιστός ζυγίζει δύο με δυόμισι κιλά και συνοδεύεται από δερμάτινο τελαμώνα που μεταφέρει το βάρος στον ώμο.',
+          },
+        ],
+        relatedTitle: 'Δείτε επίσης',
+      },
+      en: {
+        title: 'School banners',
+        metaTitle: 'School parade banners - handmade to order in Cyprus',
+        metaDescription:
+          'Velvet school banners at 90 × 120 cm with embroidered name and emblem, aluminium pole and leather harness. Made in Nicosia in 15 days.',
+        intro: [
+          'The banner is the first thing anyone sees as a school passes in the parade, and it stays with the school for decades.',
+          'We make school banners one by one at our workshop in Nicosia, carrying the name and emblem of the school, and deliver them complete: fabric, pole, finial and harness.',
+          'The usual size is 90 × 120 centimetres and it takes fifteen days to make.',
+        ],
+        specsTitle: 'At a glance',
+        specs: [
+          'Velvet in navy blue, black or Bordeaux',
+          'Usual size 90 × 120 cm',
+          '3 m aluminium pole and leather harness',
+          'Made in 15 days',
+        ],
+        sections: [
+          {
+            heading: 'What is included',
+            bullets: [
+              'Velvet banner at 90 × 120 cm, or any size you want',
+              'The school name in appliqué embroidery',
+              'The school emblem, embroidered or printed, sewn onto the fabric',
+              'Gold fringing and tassels in the colour you choose',
+              'A 3 metre aluminium pole, 39 mm in diameter',
+              'A cross or sphere at the top',
+              'A leather harness for the pupil carrying it',
+            ],
+          },
+          {
+            heading: 'Colours and emblem',
+            body: [
+              'The velvet comes in navy blue, black and Bordeaux. Most schools pick whichever matches the school colours or the previous banner.',
+              'The emblem at the centre can be embroidered or printed. Because the reverse face of the banner is velvet too, the stitching is not visible from behind.',
+              'Send us the emblem as EPS, PDF, SVG or a high-resolution PNG. If the school has only an old photocopy or photograph, we can pass it to a graphic designer to be redrawn, for an additional charge we will tell you about beforehand.',
+            ],
+          },
+          {
+            heading: 'The pole and harness',
+            body: [
+              'The pole is aluminium, 3 metres long and 39 mm in diameter, weighing two to two and a half kilos - light enough for a pupil to carry the whole route.',
+              'As an option we fit a mechanism that splits the pole in half, so the banner fits in a car and stores more easily.',
+              'The harness is cow leather, with two adjustable straps of 100 and 60 centimetres, 4 centimetres wide, and a buckle that does not corrode.',
+            ],
+          },
+          {
+            heading: 'When to order',
+            body: [
+              'A banner takes fifteen days to make. Demand rises sharply before 25 March and 28 October, so allow us three weeks.',
+              'In practice: call in early September for the October parades, and in early March for 25 March.',
+            ],
+          },
+          {
+            heading: 'Before ordering a new one',
+            body: [
+              'If the school already has a banner, look at it first. Many old banners need only new fringing, new tassels or the stitching around the emblem reinforced.',
+              'A repair keeps the emblem and the history of the school, and often costs a great deal less than a new banner.',
+            ],
+          },
+        ],
+        faqTitle: 'Frequently asked questions',
+        faq: [
+          {
+            q: 'What size is a school banner?',
+            a: 'The usual size is 90 × 120 centimetres. We make other sizes to order.',
+          },
+          {
+            q: 'How long does it take to make?',
+            a: 'Fifteen days. Before the 25 March and 28 October parades, allow us three weeks.',
+          },
+          {
+            q: 'Are the pole and harness included?',
+            a: 'Yes. The banner is delivered complete, with a 3 metre aluminium pole, a cross or sphere, and a leather carrying harness.',
+          },
+          {
+            q: 'We do not have the emblem as a file. What now?',
+            a: 'Send us whatever you have. If the quality is not good enough, we can pass it to a graphic designer to be redrawn, for an additional charge we will tell you about before going ahead.',
+          },
+          {
+            q: 'Is it heavy for a pupil?',
+            a: 'The pole weighs two to two and a half kilos and comes with a leather harness that carries the weight on the shoulder.',
+          },
+        ],
+        relatedTitle: 'See also',
+      },
+    },
+  },
+  {
+    key: 'church',
+    slug: { el: 'ekklisiastika-lavara', en: 'church-banners' },
+    related: ['parade', 'repairs', 'embroidery', 'poles'],
+    content: {
+      el: {
+        title: 'Εκκλησιαστικά λάβαρα',
+        metaTitle: 'Εκκλησιαστικά λάβαρα - χειροποίητα στην Κύπρο',
+        metaDescription:
+          'Χειροποίητα βελούδινα εκκλησιαστικά λάβαρα για ενορίες και μοναστήρια, με κέντημα σε χρυσή κλωστή, κρόσσια και ιστό. Επισκευή παλαιών λαβάρων.',
+        intro: [
+          'Κατασκευάζουμε εκκλησιαστικά λάβαρα για ενορίες, μοναστήρια και θρησκευτικά σωματεία, ένα-ένα στο εργαστήριό μας στη Λευκωσία.',
+          'Κάθε λάβαρο γίνεται κατά παραγγελία, σε βελούδο, με κέντημα σε χρυσή και μεταλλική κλωστή και χρυσά κρόσσια.',
+          'Αναλαμβάνουμε επίσης την επισκευή και ανακαίνιση παλαιών λαβάρων που έχουν φθαρεί με τα χρόνια.',
+        ],
+        specsTitle: 'Με μια ματιά',
+        specs: [
+          'Βελούδο σε μπλε, μαύρο ή μπορντό',
+          'Κέντημα με χρυσή και μεταλλική κλωστή',
+          'Χρυσά κρόσσια και φούντες',
+          'Κατασκευή σε 15 ημέρες',
+        ],
+        sections: [
+          {
+            heading: 'Υλικά και κατασκευή',
+            bullets: [
+              'Βελούδο σε μπλε σκούρο, μαύρο ή μπορντό',
+              'Κεντητά γράμματα με απλικέ εργασία',
+              'Κέντημα με χρυσή και μεταλλική κλωστή',
+              'Παράσταση ή έμβλημα, κεντητό ή τυπωμένο, ραμμένο στο ύφασμα',
+              'Χρυσά κρόσσια και φούντες σε χρώμα επιλογής',
+              'Η πίσω όψη είναι βελούδινη, οπότε οι ραφές δεν φαίνονται',
+            ],
+          },
+          {
+            heading: 'Ιστός και εξαρτήματα',
+            body: [
+              'Το λάβαρο παραδίδεται ολοκληρωμένο, με ιστό αλουμινίου 3 μέτρων και διαμέτρου 39 χιλιοστών, που ζυγίζει δύο με δυόμισι κιλά.',
+              'Στην κορυφή τοποθετείται σταυρός ή σφαίρα. Προαιρετικά υπάρχει μηχανισμός που χωρίζει τον ιστό στη μέση, για μεταφορά και αποθήκευση.',
+              'Συνοδεύεται από τελαμώνα από δέρμα αγελάδας, ώστε το βάρος να στηρίζεται στον ώμο κατά τη λιτανεία.',
+            ],
+          },
+          {
+            heading: 'Χρόνος κατασκευής',
+            body: [
+              'Ένα κεντητό λάβαρο θέλει δεκαπέντε ημέρες. Αν το χρειάζεστε για συγκεκριμένη γιορτή ή πανηγύρι, τηλεφωνήστε μας τουλάχιστον τρεις εβδομάδες νωρίτερα.',
+            ],
+          },
+          {
+            heading: 'Επισκευή παλαιών λαβάρων',
+            body: [
+              'Πολλές ενορίες κρατούν λάβαρα δεκαετιών, με κέντημα που δεν αντιγράφεται εύκολα σήμερα. Πριν παραγγείλετε καινούργιο, αξίζει να δούμε το παλιό.',
+              'Αλλάζουμε κρόσσια και φούντες, επιδιορθώνουμε κεντήματα, στερεώνουμε ραφές και αντικαθιστούμε ιστό ή τελαμώνα.',
+              'Φέρτε μας το λάβαρο στο κατάστημα ή στο εργοστάσιο να το δούμε από κοντά.',
+            ],
+          },
+        ],
+        faqTitle: 'Συχνές ερωτήσεις',
+        faq: [
+          {
+            q: 'Πόσο χρόνο θέλει ένα εκκλησιαστικό λάβαρο;',
+            a: 'Δεκαπέντε ημέρες. Για συγκεκριμένη γιορτή ή πανηγύρι, τηλεφωνήστε μας τρεις εβδομάδες νωρίτερα.',
+          },
+          {
+            q: 'Σε τι χρώματα γίνεται;',
+            a: 'Το βελούδο διατίθεται σε μπλε σκούρο, μαύρο και μπορντό.',
+          },
+          {
+            q: 'Επισκευάζετε παλαιά λάβαρα ενορίας;',
+            a: 'Ναι. Αλλάζουμε κρόσσια και φούντες, επιδιορθώνουμε κεντήματα και αντικαθιστούμε ιστό ή τελαμώνα, ακόμη κι αν το λάβαρο δεν το φτιάξαμε εμείς.',
+          },
+          {
+            q: 'Περιλαμβάνεται ο ιστός;',
+            a: 'Ναι, με σταυρό ή σφαίρα και δερμάτινο τελαμώνα.',
+          },
+        ],
+        relatedTitle: 'Δείτε επίσης',
+      },
+      en: {
+        title: 'Church banners',
+        metaTitle: 'Church banners - handmade in Cyprus since 1938',
+        metaDescription:
+          'Handmade velvet church banners for parishes and monasteries, embroidered in gold thread with fringing and pole. We also restore old banners.',
+        intro: [
+          'We make church banners for parishes, monasteries and religious associations, one by one at our workshop in Nicosia.',
+          'Every banner is made to order in velvet, embroidered in gold and metallic thread and finished with gold fringing.',
+          'We also repair and restore older banners worn by the years.',
+        ],
+        specsTitle: 'At a glance',
+        specs: [
+          'Velvet in navy blue, black or Bordeaux',
+          'Embroidered in gold and metallic thread',
+          'Gold fringing and tassels',
+          'Made in 15 days',
+        ],
+        sections: [
+          {
+            heading: 'Materials and construction',
+            bullets: [
+              'Velvet in navy blue, black or Bordeaux',
+              'Lettering in appliqué embroidery',
+              'Embroidery in gold and metallic thread',
+              'Image or emblem, embroidered or printed, sewn onto the fabric',
+              'Gold fringing and tassels in a colour of your choice',
+              'The reverse face is velvet, so the stitching is not visible',
+            ],
+          },
+          {
+            heading: 'Pole and fittings',
+            body: [
+              'The banner is delivered complete, with a 3 metre aluminium pole 39 mm in diameter, weighing two to two and a half kilos.',
+              'A cross or sphere is fitted at the top. As an option, a mechanism splits the pole in half for transport and storage.',
+              'It comes with a cow-leather harness so the weight rests on the shoulder during a procession.',
+            ],
+          },
+          {
+            heading: 'Lead time',
+            body: [
+              'An embroidered banner takes fifteen days. If you need it for a particular feast day, call us at least three weeks ahead.',
+            ],
+          },
+          {
+            heading: 'Restoring older banners',
+            body: [
+              'Many parishes hold banners decades old, with embroidery that is not easily reproduced today. Before ordering a new one, it is worth letting us look at the old one.',
+              'We replace fringing and tassels, repair embroidery, reinforce seams and fit a new pole or harness.',
+              'Bring the banner to the shop or the factory so we can see it properly.',
+            ],
+          },
+        ],
+        faqTitle: 'Frequently asked questions',
+        faq: [
+          {
+            q: 'How long does a church banner take?',
+            a: 'Fifteen days. For a particular feast day, call us three weeks ahead.',
+          },
+          {
+            q: 'What colours are available?',
+            a: 'The velvet comes in navy blue, black and Bordeaux.',
+          },
+          {
+            q: 'Do you restore old parish banners?',
+            a: 'Yes. We replace fringing and tassels, repair embroidery and fit a new pole or harness, even for banners we did not make.',
+          },
+          {
+            q: 'Is the pole included?',
+            a: 'Yes, with a cross or sphere and a leather carrying harness.',
+          },
+        ],
+        relatedTitle: 'See also',
+      },
+    },
+  },
+  {
+    key: 'table',
+    slug: { el: 'epitrapezies-simaies', en: 'table-flags' },
+    related: ['national', 'logo', 'bunting', 'sizes'],
+    content: {
+      el: {
+        title: 'Επιτραπέζιες σημαίες',
+        metaTitle: 'Επιτραπέζιες σημαίες με βάση - Χαρ. Ρωσσίδης ΛΤΔ',
+        metaDescription:
+          'Επιτραπέζιες σημαίες 24 × 16 εκ., συνολικό ύψος 33 εκ., σε μεταλλική ασημί βάση. Σημαίες χωρών ή με το λογότυπό σας. Κατασκευή στη Λευκωσία.',
+        intro: [
+          'Επιτραπέζιες σημαίες για γραφεία, αίθουσες συνεδριάσεων, υποδοχές και τελετές - σε σημαίες χωρών ή με το λογότυπο του οργανισμού σας.',
+          'Το σετ έχει συνολικό ύψος 33 εκατοστά και στηρίζεται σε μεταλλική ασημί βάση διαμέτρου 6 εκατοστών.',
+          'Χρησιμοποιούνται από υπουργεία και δημόσιες υπηρεσίες, πρεσβείες, δήμους σε τελετές αδελφοποίησης, ξενοδοχεία και επιχειρήσεις.',
+        ],
+        specsTitle: 'Με μια ματιά',
+        specs: [
+          'Σημαία 24 × 16 εκ.',
+          'Συνολικό ύψος 33 εκ.',
+          'Μεταλλική ασημί βάση, διαμέτρου 6 εκ.',
+          'Σημαίες χωρών ή με λογότυπο',
+        ],
+        sections: [
+          {
+            heading: 'Διαστάσεις',
+            table: {
+              columns: ['Στοιχείο', 'Διάσταση'],
+              rows: [
+                ['Σημαία', '24 × 16 εκ. (πλάτος × ύψος)'],
+                ['Συνολικό ύψος', '33 εκ.'],
+                ['Βάση', 'Μεταλλική, ασημί, διαμέτρου 6 εκ.'],
+              ],
+            },
+          },
+          {
+            heading: 'Σημαίες χωρών ή δικό σας λογότυπο',
+            body: [
+              'Κατασκευάζουμε επιτραπέζιες σημαίες όλων των χωρών, καθώς και σημαίες με το λογότυπο ή το έμβλημα του οργανισμού σας.',
+              'Για λογότυπο, στείλτε μας διανυσματικό αρχείο - EPS, PDF ή SVG - ή εικόνα υψηλής ανάλυσης σε PNG. Ο χρόνος για μικρές ποσότητες με δικό σας σχέδιο είναι έως δέκα ημέρες.',
+              'Δεν υπάρχει ελάχιστη ποσότητα: κατασκευάζουμε ακόμη και ένα τεμάχιο.',
+            ],
+          },
+          {
+            heading: 'Πού χρησιμοποιούνται',
+            bullets: [
+              'Γραφεία διευθυντών και αίθουσες συνεδριάσεων',
+              'Υπογραφές συμφωνιών και τελετές αδελφοποίησης',
+              'Πρεσβείες, προξενεία και δημόσιες υπηρεσίες',
+              'Συνέδρια και διεθνείς συναντήσεις',
+              'Υποδοχές ξενοδοχείων',
+            ],
+          },
+          {
+            heading: 'Παράδοση και παραλαβή',
+            bullets: [
+              'Αποστολή με κούριερ σε όλη την Κύπρο',
+              'Χωρίς χρέωση αποστολής για παραγγελίες άνω των €150',
+              'Παραλαβή από το κατάστημα ή το εργοστάσιο',
+              'Χωρίς προκαταβολή - μετρητά ή κάρτα στο κατάστημα',
+            ],
+          },
+        ],
+        faqTitle: 'Συχνές ερωτήσεις',
+        faq: [
+          {
+            q: 'Τι διαστάσεις έχει η επιτραπέζια σημαία;',
+            a: 'Η σημαία είναι 24 × 16 εκατοστά και το σετ έχει συνολικό ύψος 33 εκατοστά, σε μεταλλική βάση διαμέτρου 6 εκατοστών.',
+          },
+          {
+            q: 'Από τι είναι η βάση;',
+            a: 'Μεταλλική, σε ασημί χρώμα.',
+          },
+          {
+            q: 'Μπορείτε να βάλετε το λογότυπό μας;',
+            a: 'Ναι. Στείλτε μας το σχέδιο σε EPS, PDF, SVG ή PNG υψηλής ανάλυσης. Για μικρές ποσότητες ο χρόνος είναι έως δέκα ημέρες.',
+          },
+          {
+            q: 'Υπάρχει ελάχιστη ποσότητα;',
+            a: 'Όχι. Κατασκευάζουμε από ένα τεμάχιο.',
+          },
+        ],
+        relatedTitle: 'Δείτε επίσης',
+      },
+      en: {
+        title: 'Table flags',
+        metaTitle: 'Table flags with base - Char. Rossides LTD, Nicosia',
+        metaDescription:
+          'Table flags at 24 × 16 cm, 33 cm total height, on a silver metal base. National flags or your own logo. Made in Nicosia, Cyprus.',
+        intro: [
+          'Table flags for offices, meeting rooms, receptions and ceremonies - as national flags or carrying the logo of your organisation.',
+          'The set stands 33 centimetres tall on a silver metal base 6 centimetres across.',
+          'They are used by ministries and government departments, embassies, municipalities at twinning ceremonies, hotels and businesses.',
+        ],
+        specsTitle: 'At a glance',
+        specs: [
+          'Flag 24 × 16 cm',
+          '33 cm total height',
+          'Silver metal base, 6 cm across',
+          'National flags or your logo',
+        ],
+        sections: [
+          {
+            heading: 'Dimensions',
+            table: {
+              columns: ['Element', 'Dimension'],
+              rows: [
+                ['Flag', '24 × 16 cm (width × height)'],
+                ['Total height', '33 cm'],
+                ['Base', 'Metal, silver, 6 cm across'],
+              ],
+            },
+          },
+          {
+            heading: 'National flags or your own logo',
+            body: [
+              'We make table flags of every country, as well as flags carrying the logo or emblem of your organisation.',
+              'For a logo, send us a vector file - EPS, PDF or SVG - or a high-resolution PNG. Small quantities to your own design take up to ten days.',
+              'There is no minimum quantity: we will make a single piece.',
+            ],
+          },
+          {
+            heading: 'Where they are used',
+            bullets: [
+              'Directors offices and meeting rooms',
+              'Signing ceremonies and municipal twinnings',
+              'Embassies, consulates and government departments',
+              'Conferences and international meetings',
+              'Hotel receptions',
+            ],
+          },
+          {
+            heading: 'Delivery and collection',
+            bullets: [
+              'Courier delivery anywhere in Cyprus',
+              'No delivery charge on orders over €150',
+              'Collection from the shop or the factory',
+              'No deposit - cash or card at the shop',
+            ],
+          },
+        ],
+        faqTitle: 'Frequently asked questions',
+        faq: [
+          {
+            q: 'What size is a table flag?',
+            a: 'The flag is 24 × 16 centimetres and the set stands 33 centimetres tall, on a metal base 6 centimetres across.',
+          },
+          {
+            q: 'What is the base made of?',
+            a: 'Metal, in a silver finish.',
+          },
+          {
+            q: 'Can you put our logo on it?',
+            a: 'Yes. Send us the design as EPS, PDF, SVG or a high-resolution PNG. Small quantities take up to ten days.',
+          },
+          {
+            q: 'Is there a minimum quantity?',
+            a: 'No. We will make a single piece.',
+          },
+        ],
+        relatedTitle: 'See also',
+      },
+    },
+  },
+  {
+    key: 'poles',
+    slug: { el: 'istoi-kontaria', en: 'flag-poles' },
+    related: ['parade', 'school', 'church', 'repairs'],
+    content: {
+      el: {
+        title: 'Ιστοί & κοντάρια',
+        metaTitle: 'Ιστοί & κοντάρια σημαιών - αλουμινίου, 3 μέτρων',
+        metaDescription:
+          'Ιστοί αλουμινίου 3 μέτρων, διαμέτρου 39 χιλιοστών, με σταυρό ή σφαίρα και προαιρετικό μηχανισμό διαίρεσης. Πωλούνται και ξεχωριστά. Λευκωσία.',
+        intro: [
+          'Πουλάμε ιστούς, κοντάρια και εξαρτήματα και ξεχωριστά, όχι μόνο μαζί με λάβαρο.',
+          'Είναι χρήσιμο αν έχετε ήδη λάβαρο σε καλή κατάσταση αλλά ο ιστός έχει στραβώσει, αν χάθηκε η σφαίρα ή ο σταυρός, ή αν χρειάζεστε δεύτερο σετ.',
+          'Επειδή κατασκευάζονται και διατίθενται εδώ, δεν χρειάζεται να περιμένετε αποστολή από το εξωτερικό για ένα αντικείμενο τριών μέτρων.',
+        ],
+        specsTitle: 'Με μια ματιά',
+        specs: [
+          'Αλουμίνιο, μήκους 3 μέτρων',
+          'Διάμετρος 39 χιλιοστά, βάρος 2-2,5 κιλά',
+          'Σταυρός ή σφαίρα στην κορυφή',
+          'Προαιρετικός μηχανισμός διαίρεσης',
+        ],
+        sections: [
+          {
+            heading: 'Προδιαγραφές ιστού',
+            table: {
+              columns: ['Χαρακτηριστικό', 'Προδιαγραφή'],
+              rows: [
+                ['Υλικό', 'Αλουμίνιο'],
+                ['Μήκος', '3 μέτρα'],
+                ['Διάμετρος', '39 χιλιοστά'],
+                ['Βάρος', '2 έως 2,5 κιλά'],
+                ['Διαίρεση', 'Προαιρετικός μηχανισμός που χωρίζει τον ιστό στη μέση'],
+              ],
+            },
+          },
+          {
+            heading: 'Στέψη',
+            body: [
+              'Στην κορυφή του ιστού τοποθετείται σταυρός ή σφαίρα, ανάλογα με τη σημαία και τη χρήση.',
+            ],
+            bullets: [
+              'Για την ελληνική σημαία: μπλε ταινία και σταυρός από PVC',
+              'Για την κυπριακή σημαία: λευκή ταινία και σφαίρα',
+              'Η σφαίρα διατίθεται σε πλαστικό ή σε μπρούντζινο πόμωλο',
+            ],
+          },
+          {
+            heading: 'Ο μηχανισμός διαίρεσης',
+            body: [
+              'Ένας ιστός τριών μέτρων δεν χωράει σε αυτοκίνητο και δεν αποθηκεύεται εύκολα σε ντουλάπι σχολείου.',
+              'Ο προαιρετικός μηχανισμός χωρίζει τον ιστό σε δύο κομμάτια, ώστε να μεταφέρεται και να φυλάσσεται πιο εύκολα, και να συναρμολογείται ξανά πριν από την παρέλαση.',
+            ],
+          },
+          {
+            heading: 'Τελαμώνες',
+            body: [
+              'Διαθέτουμε επίσης τελαμώνες από δέρμα αγελάδας, με δύο ρυθμιζόμενους ιμάντες 100 και 60 εκατοστών, πλάτους 4 εκατοστών, και πόρπη που δεν σκουριάζει.',
+              'Αν ο παλιός τελαμώνας του σχολείου έχει σκληρύνει ή σκιστεί, αντικαθίσταται χωρίς να πειραχτεί το λάβαρο.',
+            ],
+          },
+        ],
+        faqTitle: 'Συχνές ερωτήσεις',
+        faq: [
+          {
+            q: 'Πουλάτε ιστούς χωρίς λάβαρο;',
+            a: 'Ναι. Ιστοί, σφαίρες, σταυροί, εξαρτήματα και τελαμώνες διατίθενται και ξεχωριστά.',
+          },
+          {
+            q: 'Τι μήκος και βάρος έχει ο ιστός;',
+            a: 'Τρία μέτρα, διαμέτρου 39 χιλιοστών, και ζυγίζει δύο με δυόμισι κιλά.',
+          },
+          {
+            q: 'Χωρίζει για να μεταφερθεί;',
+            a: 'Προαιρετικά, ναι. Υπάρχει μηχανισμός που τον χωρίζει στη μέση για μεταφορά και αποθήκευση.',
+          },
+          {
+            q: 'Τι μπαίνει στην κορυφή;',
+            a: 'Σταυρός από PVC με μπλε ταινία για την ελληνική σημαία, ή σφαίρα με λευκή ταινία για την κυπριακή. Η σφαίρα διατίθεται σε πλαστικό ή μπρούντζινο πόμωλο.',
+          },
+        ],
+        relatedTitle: 'Δείτε επίσης',
+      },
+      en: {
+        title: 'Flag poles & fittings',
+        metaTitle: 'Flag poles & fittings - 3 m aluminium, Nicosia',
+        metaDescription:
+          'Aluminium poles 3 metres long and 39 mm in diameter, with cross or sphere and an optional splitting mechanism. Sold separately. Made in Cyprus.',
+        intro: [
+          'We sell poles, staves and fittings separately, not only together with a banner.',
+          'That helps if you already have a banner in good condition but the pole has bent, if the sphere or cross has been lost, or if you need a second set.',
+          'Because they are supplied here, you are not waiting on a shipment from abroad for a three-metre object.',
+        ],
+        specsTitle: 'At a glance',
+        specs: [
+          'Aluminium, 3 metres long',
+          '39 mm diameter, 2-2.5 kg',
+          'Cross or sphere at the top',
+          'Optional splitting mechanism',
+        ],
+        sections: [
+          {
+            heading: 'Pole specification',
+            table: {
+              columns: ['Feature', 'Specification'],
+              rows: [
+                ['Material', 'Aluminium'],
+                ['Length', '3 metres'],
+                ['Diameter', '39 mm'],
+                ['Weight', '2 to 2.5 kg'],
+                ['Splitting', 'Optional mechanism that separates the pole in half'],
+              ],
+            },
+          },
+          {
+            heading: 'Finials',
+            body: [
+              'A cross or a sphere is fitted at the top of the pole, depending on the flag and the use.',
+            ],
+            bullets: [
+              'For the Greek flag: a blue ribbon and a PVC cross',
+              'For the Cypriot flag: a white ribbon and a sphere',
+              'The sphere is available in plastic, or as a bronze knob',
+            ],
+          },
+          {
+            heading: 'The splitting mechanism',
+            body: [
+              'A three-metre pole does not fit in a car and does not store easily in a school cupboard.',
+              'The optional mechanism separates the pole into two pieces, so it travels and stores more easily and goes back together before the parade.',
+            ],
+          },
+          {
+            heading: 'Carrying harnesses',
+            body: [
+              'We also supply cow-leather harnesses, with two adjustable straps of 100 and 60 centimetres, 4 centimetres wide, and a buckle that does not corrode.',
+              'If the old school harness has hardened or split, it can be replaced without touching the banner itself.',
+            ],
+          },
+        ],
+        faqTitle: 'Frequently asked questions',
+        faq: [
+          {
+            q: 'Do you sell poles without a banner?',
+            a: 'Yes. Poles, spheres, crosses, fittings and harnesses are all available separately.',
+          },
+          {
+            q: 'What length and weight is the pole?',
+            a: 'Three metres, 39 mm in diameter, weighing two to two and a half kilos.',
+          },
+          {
+            q: 'Does it come apart for transport?',
+            a: 'As an option, yes. A mechanism separates it in half for transport and storage.',
+          },
+          {
+            q: 'What goes on the top?',
+            a: 'A PVC cross with a blue ribbon for the Greek flag, or a sphere with a white ribbon for the Cypriot. The sphere comes in plastic or as a bronze knob.',
+          },
+        ],
+        relatedTitle: 'See also',
+      },
+    },
+  },
+  {
+    key: 'bunting',
+    slug: { el: 'simaiostolismos', en: 'bunting-street-decoration' },
+    related: ['national', 'logo', 'table', 'parades'],
+    content: {
+      el: {
+        title: 'Σημαιοστολισμός',
+        metaTitle: 'Σημαιοστολισμός & σημαιάκια - Χαρ. Ρωσσίδης ΛΤΔ',
+        metaDescription:
+          'Σημαιάκια 30 × 20 εκ., τρία ανά μέτρο, σε όποιον συνδυασμό χωρών θέλετε ή με δικό σας σχέδιο. Για δήμους, σχολεία, πανηγύρια και εκδηλώσεις.',
+        intro: [
+          'Κατασκευάζουμε σειρές από σημαιάκια για σημαιοστολισμό δρόμων, πλατειών, σχολικών αυλών, εκκλησιών και χώρων εκδηλώσεων.',
+          'Τα σημαιάκια είναι 30 × 20 εκατοστά και τοποθετούνται τρία ανά μέτρο. Ο συνδυασμός των σημαιών είναι δικός σας.',
+          'Προμηθεύουμε τα υλικά. Η τοποθέτηση γίνεται από εσάς ή από τον δικό σας συνεργείο.',
+        ],
+        specsTitle: 'Με μια ματιά',
+        specs: [
+          'Σημαιάκια 30 × 20 εκ.',
+          'Τρία σημαιάκια ανά μέτρο',
+          'Όποιος συνδυασμός χωρών, ή δικό σας σχέδιο',
+          'Προμήθεια υλικών - χωρίς τοποθέτηση',
+        ],
+        sections: [
+          {
+            heading: 'Προδιαγραφές',
+            table: {
+              columns: ['Στοιχείο', 'Προδιαγραφή'],
+              rows: [
+                ['Διάσταση σημαιακίου', '30 × 20 εκ. (πλάτος × ύψος)'],
+                ['Πυκνότητα', 'Τρία σημαιάκια ανά μέτρο'],
+                ['Ύφασμα', '100% πολυεστέρας, ψηφιακή εκτύπωση'],
+                ['Σχέδια', 'Σημαίες χωρών, συνδυασμοί, ή δικό σας σχέδιο'],
+              ],
+            },
+          },
+          {
+            heading: 'Πού χρησιμοποιείται',
+            bullets: [
+              'Δήμοι και κοινότητες στις εθνικές επετείους',
+              'Σχολικές αυλές πριν από τις παρελάσεις',
+              'Εκκλησίες και πανηγύρια',
+              'Εγκαίνια καταστημάτων και εμπορικές εκδηλώσεις',
+              'Αθλητικές διοργανώσεις και φεστιβάλ',
+            ],
+          },
+          {
+            heading: 'Συνδυασμοί και δικό σας σχέδιο',
+            body: [
+              'Ο πιο συνηθισμένος συνδυασμός είναι η κυπριακή με την ελληνική σημαία, αλλά μπορούμε να φτιάξουμε όποιον συνδυασμό χωρών χρειάζεστε - χρήσιμο σε διεθνείς εκδηλώσεις, αδελφοποιήσεις και φεστιβάλ.',
+              'Μπορούμε επίσης να τυπώσουμε σημαιάκια με το λογότυπο ή το έμβλημά σας, ή σε συνδυασμό λογοτύπου και σημαιών.',
+            ],
+          },
+          {
+            heading: 'Τι αναλαμβάνουμε και τι όχι',
+            body: [
+              'Προμηθεύουμε τα σημαιάκια και τα υλικά. Δεν αναλαμβάνουμε την τοποθέτηση στον χώρο σας.',
+              'Αν σχεδιάζετε σημαιοστολισμό για εθνική επέτειο, υπολογίστε τον χρόνο: για δικό σας σχέδιο χρειαζόμαστε έως δέκα ημέρες, ενώ πριν από την 25η Μαρτίου και την 28η Οκτωβρίου προτείνουμε τρεις εβδομάδες περιθώριο.',
+            ],
+          },
+        ],
+        faqTitle: 'Συχνές ερωτήσεις',
+        faq: [
+          {
+            q: 'Πόσα σημαιάκια έχει το μέτρο;',
+            a: 'Τρία σημαιάκια ανά μέτρο, το καθένα 30 × 20 εκατοστά.',
+          },
+          {
+            q: 'Μπορούμε να διαλέξουμε συνδυασμό χωρών;',
+            a: 'Ναι, όποιον συνδυασμό θέλετε. Μπορούμε επίσης να τυπώσουμε δικό σας σχέδιο ή λογότυπο.',
+          },
+          {
+            q: 'Κάνετε και την τοποθέτηση;',
+            a: 'Όχι. Προμηθεύουμε τα υλικά· η τοποθέτηση γίνεται από εσάς.',
+          },
+          {
+            q: 'Πόσο νωρίς να παραγγείλουμε για εθνική επέτειο;',
+            a: 'Για δικό σας σχέδιο χρειαζόμαστε έως δέκα ημέρες. Πριν από την 25η Μαρτίου και την 28η Οκτωβρίου δώστε μας τρεις εβδομάδες περιθώριο.',
+          },
+        ],
+        relatedTitle: 'Δείτε επίσης',
+      },
+      en: {
+        title: 'Bunting & street decoration',
+        metaTitle: 'Bunting & street flag decoration - Char. Rossides LTD',
+        metaDescription:
+          'Bunting flags at 30 × 20 cm, three per metre, in any combination of countries or your own design. For municipalities, schools and events in Cyprus.',
+        intro: [
+          'We make runs of bunting for decorating streets, squares, school yards, churches and event spaces.',
+          'The flags are 30 × 20 centimetres and run three to the metre. The combination of flags is yours to choose.',
+          'We supply the materials. Installation is carried out by you or your own contractor.',
+        ],
+        specsTitle: 'At a glance',
+        specs: [
+          'Bunting flags 30 × 20 cm',
+          'Three flags per metre',
+          'Any combination of countries, or your own design',
+          'Materials supplied - installation not included',
+        ],
+        sections: [
+          {
+            heading: 'Specification',
+            table: {
+              columns: ['Element', 'Specification'],
+              rows: [
+                ['Flag size', '30 × 20 cm (width × height)'],
+                ['Density', 'Three flags per metre'],
+                ['Fabric', '100% polyester, digitally printed'],
+                ['Designs', 'National flags, combinations, or your own design'],
+              ],
+            },
+          },
+          {
+            heading: 'Where it is used',
+            bullets: [
+              'Municipalities and communities on national anniversaries',
+              'School yards before parades',
+              'Churches and village festivals',
+              'Shop openings and commercial events',
+              'Sporting events and festivals',
+            ],
+          },
+          {
+            heading: 'Combinations and your own design',
+            body: [
+              'The most common combination is the Cypriot and Greek flags, but we can make any combination of countries you need - useful for international events, twinnings and festivals.',
+              'We can also print bunting with your logo or emblem, or combining a logo with national flags.',
+            ],
+          },
+          {
+            heading: 'What we do and do not cover',
+            body: [
+              'We supply the bunting and the materials. We do not carry out installation on your site.',
+              'If you are planning decoration for a national anniversary, allow time: your own design takes up to ten days, and before 25 March and 28 October we suggest three weeks.',
+            ],
+          },
+        ],
+        faqTitle: 'Frequently asked questions',
+        faq: [
+          {
+            q: 'How many flags are there per metre?',
+            a: 'Three flags per metre, each 30 × 20 centimetres.',
+          },
+          {
+            q: 'Can we choose a combination of countries?',
+            a: 'Yes, any combination you like. We can also print your own design or logo.',
+          },
+          {
+            q: 'Do you install it as well?',
+            a: 'No. We supply the materials; installation is carried out by you.',
+          },
+          {
+            q: 'How early should we order for a national anniversary?',
+            a: 'Your own design takes up to ten days. Before 25 March and 28 October, allow us three weeks.',
+          },
+        ],
+        relatedTitle: 'See also',
+      },
+    },
+  },
+  {
+    key: 'sizes',
+    slug: { el: 'odigos-diastaseon', en: 'size-guide' },
+    related: ['national', 'logo', 'parade', 'table'],
+    content: {
+      el: {
+        title: 'Οδηγός διαστάσεων',
+        metaTitle: 'Οδηγός διαστάσεων σημαιών & λαβάρων - Κύπρος',
+        metaDescription:
+          'Όλες οι διαστάσεις σημαιών, λαβάρων, επιτραπέζιων σημαιών και διακριτικών σε έναν πίνακα, με το πού χρησιμοποιείται η καθεμία. Χαρ. Ρωσσίδης ΛΤΔ.',
+        intro: [
+          'Η πιο συχνή ερώτηση στο τηλέφωνο είναι «τι διάσταση να πάρω;». Αυτή η σελίδα συγκεντρώνει όλες τις διαστάσεις που κατασκευάζουμε, σε έναν πίνακα.',
+          'Όλες οι διαστάσεις δίνονται σε εκατοστά και γράφονται πλάτος × ύψος. Αυτό είναι σημαντικό: η ίδια σημαία γράφεται αλλού ως 90 × 150 και αλλού ως 150 × 90, και η σειρά αλλάζει εντελώς το σχήμα.',
+          'Αν δεν βρίσκετε αυτό που θέλετε, κατασκευάζουμε οποιαδήποτε διάσταση κατά παραγγελία.',
+        ],
+        specsTitle: 'Με μια ματιά',
+        specs: [
+          'Οκτώ σταθερές διαστάσεις σημαιών',
+          'Όλες σε απόθεμα',
+          'Πλάτος × ύψος, σε εκατοστά',
+          'Οποιαδήποτε διάσταση κατά παραγγελία',
+        ],
+        sections: [
+          {
+            heading: 'Σημαίες - σταθερές διαστάσεις',
+            table: {
+              columns: ['Διάσταση (Π × Υ)', 'Πού χρησιμοποιείται συνήθως'],
+              rows: [
+                ['60 × 40 εκ.', 'Μικροί ιστοί, διακόσμηση εσωτερικού χώρου'],
+                ['100 × 60 εκ.', 'Μπαλκόνι, πρόσοψη καταστήματος'],
+                ['120 × 70 εκ.', 'Μπαλκόνι, μικρός ιστός'],
+                ['150 × 90 εκ.', 'Η πιο συνηθισμένη επιλογή για ιστό σχολείου ή σπιτιού'],
+                ['180 × 110 εκ.', 'Ψηλότεροι ιστοί, δημόσια κτίρια'],
+                ['240 × 150 εκ.', 'Δήμοι, ξενοδοχεία, μεγάλοι ιστοί'],
+                ['300 × 180 εκ.', 'Μεγάλοι ιστοί και εγκαταστάσεις'],
+                ['500 × 300 εκ.', 'Πολύ μεγάλοι ιστοί και προσόψεις κτιρίων'],
+              ],
+            },
+            footnote: 'Όλες οι σταθερές διαστάσεις κρατούνται σε απόθεμα.',
+          },
+          {
+            heading: 'Μικρές σημαίες',
+            table: {
+              columns: ['Προϊόν', 'Διάσταση'],
+              rows: [
+                ['Επιτραπέζια σημαία', '24 × 16 εκ., συνολικό ύψος 33 εκ., βάση 6 εκ.'],
+                ['Σημαία χειρός', '30 × 20 εκ.'],
+                ['Σημαιάκι σημαιοστολισμού', '30 × 20 εκ., τρία ανά μέτρο'],
+              ],
+            },
+          },
+          {
+            heading: 'Λάβαρα, ιστοί και διακριτικά',
+            table: {
+              columns: ['Είδος', 'Διάσταση'],
+              rows: [
+                ['Λάβαρο σχολείου', '90 × 120 εκ., ή κατά παραγγελία'],
+                ['Ιστός λαβάρου', '3 μέτρα, διάμετρος 39 χιλ., βάρος 2-2,5 κιλά'],
+                ['Ιμάντες τελαμώνα', '100 εκ. και 60 εκ., πλάτος 4 εκ.'],
+                ['Κεντητό διακριτικό', '50 χιλιοστά διάμετρος, ή κατά παραγγελία'],
+              ],
+            },
+          },
+          {
+            heading: 'Πώς να διαλέξετε',
+            body: [
+              'Αν αντικαθιστάτε υπάρχουσα σημαία, μετρήστε την παλιά και δώστε μας τους αριθμούς. Είναι ο ασφαλέστερος τρόπος.',
+              'Αν ο ιστός είναι καινούργιος, πείτε μας το ύψος του και πού βρίσκεται - αυλή σχολείου, μπαλκόνι, πρόσοψη ξενοδοχείου - και θα σας προτείνουμε διάσταση.',
+              'Για οτιδήποτε δεν είναι στους πίνακες, κατασκευάζουμε κατά παραγγελία, χωρίς ελάχιστη ποσότητα.',
+            ],
+          },
+        ],
+        faqTitle: 'Συχνές ερωτήσεις',
+        faq: [
+          {
+            q: 'Γράφετε πλάτος × ύψος ή ύψος × πλάτος;',
+            a: 'Πλάτος × ύψος, σε εκατοστά. Δηλαδή 150 × 90 σημαίνει 150 εκατοστά πλάτος και 90 εκατοστά ύψος.',
+          },
+          {
+            q: 'Ποια είναι η πιο συνηθισμένη διάσταση;',
+            a: '150 × 90 εκατοστά. Είναι η διάσταση που ταιριάζει στους περισσότερους ιστούς σε σχολεία και σπίτια.',
+          },
+          {
+            q: 'Κατασκευάζετε διαστάσεις εκτός πίνακα;',
+            a: 'Ναι, οποιαδήποτε διάσταση κατά παραγγελία, χωρίς ελάχιστη ποσότητα.',
+          },
+          {
+            q: 'Ποια είναι η μεγαλύτερη σημαία που έχετε φτιάξει;',
+            a: '58 × 27 μέτρα. Χρειάστηκαν δεκαπέντε ρολά υφάσματος και τρεις ημέρες δουλειάς, και ήταν τόσο μεγάλη που ξεδιπλώθηκε για πρώτη φορά σε γήπεδο ποδοσφαίρου.',
+          },
+        ],
+        relatedTitle: 'Δείτε επίσης',
+      },
+      en: {
+        title: 'Size guide',
+        metaTitle: 'Flag & banner size guide - Char. Rossides LTD, Cyprus',
+        metaDescription:
+          'Every flag, banner, table flag and badge size we make, in one table, with what each size is typically used for. Made in Nicosia, Cyprus.',
+        intro: [
+          'The most frequent question on the phone is which size to order. This page brings together every size we make, in one place.',
+          'All sizes are given in centimetres and written width × height. That matters: the same flag is written elsewhere as 90 × 150 and as 150 × 90, and the order changes the shape entirely.',
+          'If you cannot find what you need, we make any size to order.',
+        ],
+        specsTitle: 'At a glance',
+        specs: [
+          'Eight standard flag sizes',
+          'All held in stock',
+          'Width × height, in centimetres',
+          'Any size made to order',
+        ],
+        sections: [
+          {
+            heading: 'Flags - standard sizes',
+            table: {
+              columns: ['Size (W × H)', 'Typically used for'],
+              rows: [
+                ['60 × 40 cm', 'Small poles, indoor display'],
+                ['100 × 60 cm', 'Balconies and shopfronts'],
+                ['120 × 70 cm', 'Balconies, small poles'],
+                ['150 × 90 cm', 'The most common choice for a school or home flagpole'],
+                ['180 × 110 cm', 'Taller poles, public buildings'],
+                ['240 × 150 cm', 'Municipalities, hotels, large poles'],
+                ['300 × 180 cm', 'Large poles and installations'],
+                ['500 × 300 cm', 'Very large poles and building façades'],
+              ],
+            },
+            footnote: 'All standard sizes are held in stock.',
+          },
+          {
+            heading: 'Small flags',
+            table: {
+              columns: ['Product', 'Size'],
+              rows: [
+                ['Table flag', '24 × 16 cm, 33 cm total height, 6 cm base'],
+                ['Hand flag', '30 × 20 cm'],
+                ['Bunting flag', '30 × 20 cm, three per metre'],
+              ],
+            },
+          },
+          {
+            heading: 'Banners, poles and badges',
+            table: {
+              columns: ['Item', 'Size'],
+              rows: [
+                ['School banner', '90 × 120 cm, or made to order'],
+                ['Banner pole', '3 metres, 39 mm diameter, 2-2.5 kg'],
+                ['Harness straps', '100 cm and 60 cm, 4 cm wide'],
+                ['Embroidered badge', '50 mm across, or made to order'],
+              ],
+            },
+          },
+          {
+            heading: 'How to choose',
+            body: [
+              'If you are replacing an existing flag, measure the old one and give us the numbers. It is the safest approach.',
+              'If the pole is new, tell us its height and where it stands - a school yard, a balcony, a hotel frontage - and we will suggest a size.',
+              'For anything not in the tables, we make to order, with no minimum quantity.',
+            ],
+          },
+        ],
+        faqTitle: 'Frequently asked questions',
+        faq: [
+          {
+            q: 'Do you write width × height or height × width?',
+            a: 'Width × height, in centimetres. So 150 × 90 means 150 centimetres wide and 90 centimetres tall.',
+          },
+          {
+            q: 'What is the most common size?',
+            a: '150 × 90 centimetres. It suits most flagpoles at schools and homes.',
+          },
+          {
+            q: 'Do you make sizes outside the table?',
+            a: 'Yes, any size to order, with no minimum quantity.',
+          },
+          {
+            q: 'What is the largest flag you have made?',
+            a: '58 × 27 metres. It took fifteen rolls of fabric and three days of work, and was so large it was first unrolled on a football pitch.',
           },
         ],
         relatedTitle: 'See also',

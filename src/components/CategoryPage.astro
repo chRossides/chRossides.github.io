@@ -6,7 +6,7 @@ import Nav from './Nav.astro';
 import CallQuote from './CallQuote.astro';
 import Footer from './Footer.astro';
 import { site, ui, type Lang } from '../i18n/ui';
-import { categories, categoryPath, type Category } from '../i18n/categories';
+import { byKey, categoryPath, type Category } from '../i18n/categories';
 import nationalImg from '../assets/national-flags.jpg';
 import heroFlagImg from '../assets/hero-flag.jpg';
 import logoImg from '../assets/logo-print.jpg';
@@ -24,17 +24,27 @@ const { category, lang } = Astro.props;
 const t = category.content[lang];
 const nav = ui[lang];
 
+// Every page currently reuses the same small stock of workshop photographs.
+// Replace these once the family supplies real photography of finished work.
 const imagesByKey: Record<Category['key'], ImageMetadata[]> = {
   national: [nationalImg, heroFlagImg],
   logo: [logoImg, heroFlagImg],
   parade: [paradeBlueImg, paradeBlackImg],
   embroidery: [embroideryImg, machinesImg],
+  repairs: [paradeBlackImg, embroideryImg],
+  parades: [paradeBlueImg, nationalImg],
+  school: [paradeBlueImg, paradeBlackImg],
+  church: [paradeBlackImg, embroideryImg],
+  table: [nationalImg, heroFlagImg],
+  poles: [paradeBlueImg, paradeBlackImg],
+  bunting: [nationalImg, heroFlagImg],
+  sizes: [nationalImg, logoImg],
 };
 const images = imagesByKey[category.key];
 
 const path = categoryPath(category, lang);
 const altPath = categoryPath(category, lang === 'el' ? 'en' : 'el');
-const related = categories.filter((c) => c.key !== category.key);
+const related = category.related.map(byKey);
 const homeLabel = lang === 'el' ? 'Αρχική' : 'Home';
 const productsLabel = nav.nav.products;
 const home = lang === 'el' ? '/' : '/en/';

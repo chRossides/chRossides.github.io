@@ -91,12 +91,14 @@ export const ui = {
       moreTitle: 'Και κατά παραγγελία',
       moreSub: 'Ό,τι δεν βλέπετε, το κατασκευάζουμε από την αρχή.',
       more: [
-        { t: 'Επιτραπέζιες σημαίες', d: 'Με βάση και ιστό, για γραφεία και συνέδρια.' },
-        { t: 'Σημαιοστολισμός', d: 'Σειρές σημαιάκια για γιορτές και πανηγύρια.' },
-        { t: 'Αθλητικές σημαίες', d: 'Χρώματα και έμβλημα του συλλόγου σας.' },
-        { t: 'Εκκλησιαστικά λάβαρα', d: 'Κεντητά, χειροποίητα, σε σχήμα ασπίδας.' },
-        { t: 'Πηλήκια & στρατιωτικά αξεσουάρ', d: 'Για σώματα ασφαλείας και συλλόγους.' },
-        { t: 'Ιστοί & εξαρτήματα', d: 'Κοντάρια, σφαίρες, σταυροί και βάσεις.' },
+        { t: 'Λάβαρα σχολείων', d: 'Με το έμβλημα και το όνομα του σχολείου.', key: 'school' },
+        { t: 'Επισκευή λαβάρων', d: 'Κρόσσια, φούντες, κεντήματα, ιστός.', key: 'repairs' },
+        { t: 'Επιτραπέζιες σημαίες', d: 'Με βάση και ιστό, για γραφεία και συνέδρια.', key: 'table' },
+        { t: 'Σημαιοστολισμός', d: 'Σειρές σημαιάκια για γιορτές και πανηγύρια.', key: 'bunting' },
+        { t: 'Αθλητικές σημαίες', d: 'Χρώματα και έμβλημα του συλλόγου σας.', key: 'logo' },
+        { t: 'Εκκλησιαστικά λάβαρα', d: 'Χειροποίητα, με κέντημα σε χρυσή κλωστή.', key: 'church' },
+        { t: 'Ιστοί & εξαρτήματα', d: 'Κοντάρια, σφαίρες, σταυροί και τελαμώνες.', key: 'poles' },
+        { t: 'Οδηγός διαστάσεων', d: 'Όλες οι διαστάσεις σε έναν πίνακα.', key: 'sizes' },
       ],
     },
     process: {
@@ -181,6 +183,7 @@ export const ui = {
     footer: {
       company: 'Χαρ. Ρωσσίδης ΛΤΔ',
       tagline: 'Made in Cyprus since 1938',
+      productsLabel: 'Προϊόντα & υπηρεσίες',
     },
   },
   en: {
@@ -224,12 +227,14 @@ export const ui = {
       moreTitle: 'Also made to order',
       moreSub: "Don't see what you need? We make it from scratch.",
       more: [
-        { t: 'Table flags', d: 'With base and pole, for offices and conferences.' },
-        { t: 'Bunting & string flags', d: 'Flag garlands for festivals and celebrations.' },
-        { t: 'Sports flags', d: "Your club's colours and emblem." },
-        { t: 'Church banners', d: 'Embroidered by hand, shield-shaped.' },
-        { t: 'Kepis & military accessories', d: 'For security forces and associations.' },
-        { t: 'Poles & fittings', d: 'Poles, spheres, crosses and bases.' },
+        { t: 'School banners', d: 'With your school emblem and name.', key: 'school' },
+        { t: 'Banner repairs', d: 'Fringing, tassels, embroidery, poles.', key: 'repairs' },
+        { t: 'Table flags', d: 'With base and pole, for offices and conferences.', key: 'table' },
+        { t: 'Bunting & string flags', d: 'Flag garlands for festivals and celebrations.', key: 'bunting' },
+        { t: 'Sports flags', d: "Your club's colours and emblem.", key: 'logo' },
+        { t: 'Church banners', d: 'Handmade, embroidered in gold thread.', key: 'church' },
+        { t: 'Poles & fittings', d: 'Poles, spheres, crosses and harnesses.', key: 'poles' },
+        { t: 'Size guide', d: 'Every size we make, in one table.', key: 'sizes' },
       ],
     },
     process: {
@@ -314,6 +319,7 @@ export const ui = {
     footer: {
       company: 'Charalambos Rossides LTD',
       tagline: 'Made in Cyprus since 1938',
+      productsLabel: 'Products & services',
     },
   },
 } as const;
