@@ -13,11 +13,12 @@ Each of these is confirmed and stateable. The first two are the ones no competit
 1. **Stock and same-day collection.** Standard sizes are held; 1–5 days if out. Hercules publishes **21 days for everything**, and no other Cypriot supplier states a turnaround at all. A buyer who needs a flag for a ceremony next week currently has no visible option in Cyprus.
 2. **Ten days for custom prints, against a published 21.** Less than half the market benchmark, from the only competitor who publishes a number.
 3. **The λάβαρο specified end to end** — velvet in three colours, appliqué lettering, printed or embroidered emblem, gold fringing, tassels in any colour, aluminium pole 39 mm × 3 m at 2–2.5 kg with an optional split, PVC cross or bronze πόμωλο, cow-leather harness with two adjustable straps. Nobody in Cyprus or Greece publishes anything approaching this. It reads as a workshop that makes the thing rather than a shop that orders it in.
-4. **Repairs and restoration of old λάβαρα.** Zero competitors advertise it anywhere. Cheap traffic, high intent, and repair customers commission new work later.
-5. **No minimum order.** Sapo demands 300 pieces; nobody else states a minimum at all.
-6. **Poles and fittings sold separately.** Heavy and expensive to ship from Greece — a structural local moat.
-7. **Local manufacture.** A real factory in Kaimakli, not an importer. Samples to view, and the person who answers the phone is the person who makes it.
-8. **The giant flag** — 58 × 27 m, fifteen rolls of fabric, three days' work, too large to unroll indoors. Unrepeatable by any competitor.
+4. **Military supplies.** Validated by keyword research on 3 August 2026: «στρατιωτικα ειδη» alone returns 500 searches a month and eighteen military terms carry volume — the second-largest cluster after national flags. Three directories already categorise the business this way. See [KEYWORDS.md](KEYWORDS.md).
+5. **Repairs and restoration of old λάβαρα.** No competitor advertises it — but the keyword research found **no search volume either**, so treat it as a differentiator for visitors already on the banner pages rather than as a way to acquire them.
+6. **No minimum order.** Sapo demands 300 pieces; nobody else states a minimum at all.
+7. **Poles and fittings sold separately.** Heavy and expensive to ship from Greece — a structural local moat.
+8. **Local manufacture.** A real factory in Kaimakli, not an importer. Samples to view, and the person who answers the phone is the person who makes it.
+9. **The giant flag** — 58 × 27 m, fifteen rolls of fabric, three days' work, too large to unroll indoors. Unrepeatable by any competitor.
 
 **What we do not lead with:** fabric weight (120 gsm is *below* Hercules' published 140), single-sided show-through printing, and anything resembling a rush service — the owner asked that rush orders never be mentioned.
 
@@ -45,7 +46,7 @@ Seven new pages, Greek and English, all under `/proionta/` and `/en/products/`. 
 
 | New page | URL | Target query | Why it wins |
 |---|---|---|---|
-| **Επισκευή λαβάρων** | `/proionta/episkevi-lavaron/` | `επισκευή λαβάρων` | **Zero competition anywhere.** Parishes and schools hold banners decades old. High intent, and it feeds new orders |
+| **Επισκευή λαβάρων** | `/proionta/episkevi-lavaron/` | `επισκευή λαβάρων` | No competitor covers it. ⚠️ Keyword research since found **no measurable search volume** — value is as an on-site differentiator and a reason for a parish to call, not as a traffic source |
 | **Παραγγελίες για παρελάσεις** | `/proionta/paraggelies-parelaseon/` | `λάβαρα 28ης Οκτωβρίου`, `παρέλαση 25ης Μαρτίου` | The three-week rule, built round the parade calendar with a "call us by" date for each of the four anniversaries |
 | **Λάβαρα σχολείων και εκκλησιών** | `/proionta/lavara-scholeion-ekklision/` | `λάβαρα σχολείων`, `εκκλησιαστικά λάβαρα Κύπρος` | Two gaps on one page. For schools, the top nine results are *directories* with no product page anywhere; for parishes, nine Greek specialists rank and **zero Cypriot**. Originally built as two pages and merged on the owner's instruction — see the note below |
 | **Επιτραπέζιες σημαίες** | `/proionta/epitrapezies-simaies/` | `επιτραπέζιες σημαίες Κύπρος` | Zero table-flag pages. B2B demand from ministries, embassies, conference rooms |
@@ -78,7 +79,14 @@ The site is the fastest and best-structured in the market, but **nothing feeds i
 
 ## Sequencing
 
-**Done:** Phases 1 and 2 — eleven product pages, Greek and English, fully cross-linked.
+**Done:** Phases 1 and 2 — twelve product pages, Greek and English, fully cross-linked, plus a military supplies page added as a fifth main category on 3 August 2026.
+
+**Priority revised after keyword research, 3 August 2026.** Military supplies carries far more search volume than expected. Repairs carries none and should not be treated as an acquisition play. Full numbers and caveats in [KEYWORDS.md](KEYWORDS.md); note the data is coarse (5,000/500/50 buckets) because the account has no spend, so absence of volume is not proof of absence of demand.
+
+**Decided by the owner, 3 August 2026 — do not re-propose:**
+- **No separate boots page.** Footwear carries six terms with volume, but it is not a line the workshop wants to lead on. The single military page stays as it is.
+- **No separate pages for the Greek and Cyprus flags.** Judged overkill; both are covered by the national flags page.
+- **Google Business Profile categories** are being handled directly by the owner and need no further prompting.
 **Next:** Phase 3 story content, and **photographs**, which now block more than anything else. Twenty-four product pages currently share the same two stock workshop images.
 **Alongside, not after:** the reviews push in Phase 4. It is independent of everything else and outranks most of Phase 3 in value.
 **Deadline to watch:** the parade page must be live and indexed before **early September** to be useful for the 1 and 28 October parades. It is written; it needs merging and crawling.
