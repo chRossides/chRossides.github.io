@@ -6,6 +6,7 @@ import nationalImg from '../assets/national-flags.jpg';
 import logoImg from '../assets/logo-print.jpg';
 import paradeImg from '../assets/parade-banners.jpg';
 import embroideryImg from '../assets/embroidery.jpg';
+import kepisImg from '../assets/kepis.jpg';
 
 interface Props {
   lang: Lang;
@@ -13,7 +14,7 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = ui[lang].products;
-const images = [nationalImg, logoImg, paradeImg, embroideryImg];
+const images = [nationalImg, logoImg, paradeImg, embroideryImg, kepisImg];
 const featured = featuredCategories();
 ---
 
@@ -88,8 +89,10 @@ const featured = featuredCategories();
   }
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
-    gap: 18px;
+    /* Five tiles need a narrower minimum than four did, or the fifth orphans
+       onto a row of its own. Below 1180px they reflow two- and one-up. */
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 16px;
   }
   .tile {
     display: block;
@@ -137,6 +140,9 @@ const featured = featuredCategories();
     font-size: 19px;
     line-height: 1.14;
     margin-bottom: 5px;
+    /* Five tiles are narrower than four were, so longer titles wrap. Balance
+       the lines rather than shortening the title - it is homepage anchor text. */
+    text-wrap: balance;
   }
   .desc {
     font-size: 12.5px;

@@ -13,6 +13,7 @@ import paradeBlueImg from '../assets/parade-banner-blue.jpg';
 import paradeBlackImg from '../assets/parade-banner-black.jpg';
 import embroideryImg from '../assets/embroidery.jpg';
 import machinesImg from '../assets/embroidery-machines.jpg';
+import kepisImg from '../assets/kepis.jpg';
 
 interface Props {
   category: Category;
@@ -37,16 +38,19 @@ const imagesByKey: Record<Category['key'], ImageMetadata[]> = {
   poles: [],
   bunting: [],
   sizes: [],
+  military: [kepisImg],
 };
 const images = imagesByKey[category.key];
 
 /*
- * Frame proportions follow the photographs rather than the other way round.
- * A single image gets its own ratio, so nothing is cropped or letterboxed.
- * A pair shares the group average, so the two sit at a matching height, and
- * the small residual is filled by the blurred backdrop.
+ * Frame proportions follow the photographs rather than the other way round, so
+ * nothing is ever cropped. Two portrait images sit side by side and share the
+ * group average ratio, which keeps them level; anything else stacks at full
+ * width, where a wide photograph stays legible instead of shrinking into a
+ * column. The blurred backdrop covers the small residual on a shared ratio.
  */
-const frameRatio =
+const isPair = images.length === 2 && images.every((i) => i.width / i.height < 1);
+const pairRatio =
   images.length === 0 ? 1 : images.reduce((sum, i) => sum + i.width / i.height, 0) / images.length;
 
 /**
@@ -141,15 +145,15 @@ const faqLd = {
       </header>
 
       {images.length > 0 && (
-        <div class:list={['media', { pair: images.length > 1 }]}>
+        <div class:list={['media', { pair: isPair }]}>
           {images.map((img, i) => (
-            <figure class="frame" style={`--r:${images.length > 1 ? frameRatio : img.width / img.height}`}>
+            <figure class="frame" style={`--r:${isPair ? pairRatio : img.width / img.height}`}>
               <div class="backdrop" style={`background-image:url(${img.src})`}></div>
               <Image
                 src={img}
                 alt={`${t.title} ${i + 1}`}
                 widths={[480, 760, 1100]}
-                sizes={images.length > 1 ? '(max-width: 820px) 100vw, 370px' : '(max-width: 820px) 100vw, 760px'}
+                sizes={isPair ? '(max-width: 820px) 100vw, 370px' : '(max-width: 820px) 100vw, 760px'}
                 loading={i === 0 ? 'eager' : 'lazy'}
               />
             </figure>

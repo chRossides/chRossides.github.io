@@ -49,7 +49,8 @@ export type CategoryKey =
   | 'table'
   | 'poles'
   | 'bunting'
-  | 'sizes';
+  | 'sizes'
+  | 'military';
 
 export interface Category {
   key: CategoryKey;
@@ -424,7 +425,7 @@ export const categories: Category[] = [
           {
             heading: 'Γιατί έχει σημασία ότι κατασκευάζονται εδώ',
             body: [
-              'Είμαστε κατασκευαστές, όχι εισαγωγείς. Η εκτύπωση, η ραφή και το τελείωμα γίνονται στο εργοστάσιό μας στο Καϊμακλί, από το 1938.',
+              'Τις σημαίες τις φτιάχνουμε εμείς - δεν τις εισάγουμε. Η εκτύπωση, η ραφή και το τελείωμα γίνονται στο εργοστάσιό μας στο Καϊμακλί, από το 1938.',
               'Πρακτικά αυτό σημαίνει τρία πράγματα: δεν περιμένετε αποστολή από το εξωτερικό, μπορείτε να δείτε δείγματα από κοντά πριν παραγγείλετε, και αν κάτι χρειάζεται προσαρμογή το συζητάμε στο τηλέφωνο με τον άνθρωπο που θα το φτιάξει.',
             ],
           },
@@ -536,7 +537,7 @@ export const categories: Category[] = [
           {
             heading: 'Why it matters that they are made here',
             body: [
-              'We are manufacturers, not importers. Printing, stitching and finishing all happen at our factory in Kaimakli, as they have since 1938.',
+              'We make the flags ourselves - we do not import them. Printing, stitching and finishing all happen at our factory in Kaimakli, as they have since 1938.',
               'In practice that means three things: you are not waiting on a shipment from abroad, you can see samples in person before ordering, and if something needs adjusting you discuss it on the phone with the people who will actually make it.',
             ],
           },
@@ -845,7 +846,7 @@ export const categories: Category[] = [
         metaDescription:
           'Κεντητά διακριτικά βαθμού, εμβλήματα μονάδων και πινακίδες ονομάτων για στολές, καθώς και σήματα συλλόγων. Ετοιμοπαράδοτα σχέδια, παράδοση από 7 ημέρες.',
         intro: [
-          'Κεντάμε διακριτικά, εμβλήματα και σήματα για στολές - διακριτικά βαθμού, εμβλήματα μονάδων και σωμάτων, σήματα αθλητικών σωματείων και συλλόγων.',
+          'Κεντάμε διακριτικά, εμβλήματα και σήματα για στολές - διακριτικά βαθμού, εμβλήματα μονάδων και σωμάτων, επωμίδες, σήματα αθλητικών σωματείων και συλλόγων.',
           'Κατασκευάζουμε επίσης πινακίδες ονομάτων, καθώς και πηλήκια και στρατιωτικά αξεσουάρ κατά παραγγελία.',
           'Η παραγωγή γίνεται στο εργοστάσιό μας στο Καϊμακλί, για μικρές και μεγάλες ποσότητες, χωρίς ελάχιστη παραγγελία.',
         ],
@@ -862,9 +863,10 @@ export const categories: Category[] = [
             bullets: [
               'Κεντητά διακριτικά βαθμού για στολές',
               'Εμβλήματα μονάδων και σωμάτων',
+              'Επωμίδες',
               'Κεντητά σήματα αθλητικών σωματείων, συλλόγων και προσκοπικών συστημάτων',
               'Πινακίδες ονομάτων',
-              'Πηλήκια και στρατιωτικά αξεσουάρ',
+              'Πηλήκια κατά παραγγελία',
             ],
           },
           {
@@ -905,9 +907,9 @@ export const categories: Category[] = [
             ],
           },
           {
-            heading: 'Πηλήκια και στρατιωτικά αξεσουάρ',
+            heading: 'Πηλήκια και στρατιωτικά είδη',
             body: [
-              'Κατασκευάζουμε πηλήκια και στρατιωτικά αξεσουάρ κατά παραγγελία, με τα διακριτικά της μονάδας ή του συλλόγου σας.',
+              'Κατασκευάζουμε πηλήκια κατά παραγγελία, με τα διακριτικά της μονάδας ή του συλλόγου σας. Στο κατάστημα θα βρείτε επίσης μπερέδες, καπέλα τζόκεϊ και εξοπλισμό πεδίου - δείτε τα [[military|στρατιωτικά είδη]].',
             ],
           },
           {
@@ -962,7 +964,7 @@ export const categories: Category[] = [
         metaDescription:
           'Embroidered rank insignia, unit emblems and name tags for uniforms, plus club badges. Standard designs held in stock, lead times from 7 days.',
         intro: [
-          'We embroider badges, emblems and insignia for uniforms - rank insignia, unit and corps emblems, and badges for sports clubs and associations.',
+          'We embroider badges, emblems and insignia for uniforms - rank insignia, unit and corps emblems, epaulettes, and badges for sports clubs and associations.',
           'We also make name tags, along with kepis and military accessories to order.',
           'Production takes place at our factory in Kaimakli, for small and large quantities, with no minimum order.',
         ],
@@ -979,9 +981,10 @@ export const categories: Category[] = [
             bullets: [
               'Embroidered rank insignia for uniforms',
               'Unit and corps emblems',
+              'Epaulettes',
               'Embroidered badges for sports clubs, associations and scout groups',
               'Name tags',
-              'Kepis and military accessories',
+              'Kepis made to order',
             ],
           },
           {
@@ -1022,9 +1025,9 @@ export const categories: Category[] = [
             ],
           },
           {
-            heading: 'Kepis and military accessories',
+            heading: 'Kepis and military supplies',
             body: [
-              'We make kepis and military accessories to order, carrying the insignia of your unit or association.',
+              'We make kepis to order, carrying the insignia of your unit or association. The shop also carries berets, jockey caps and field equipment - see [[military|military supplies]].',
             ],
           },
           {
@@ -2380,6 +2383,190 @@ export const categories: Category[] = [
           {
             q: 'What is the largest flag you have made?',
             a: '58 × 27 metres. It took fifteen rolls of fabric and three days of work, and was so large it was first unrolled on a football pitch.',
+          },
+        ],
+        relatedTitle: 'See also',
+      },
+    },
+  },
+  {
+    key: 'military',
+    slug: { el: 'stratiotika-eidi', en: 'military-supplies' },
+    featured: true,
+    related: ['embroidery', 'parade', 'national'],
+    content: {
+      el: {
+        title: 'Στρατιωτικά είδη & πηλήκια',
+        metaTitle: 'Στρατιωτικά είδη & πηλήκια - Λευκωσία',
+        metaDescription:
+          'Πηλήκια κατά παραγγελία με τα διακριτικά της μονάδας σας, και στρατιωτικά είδη από το κατάστημά μας στη Λευκωσία: μπερέδες, άρβυλα, σακίδια, παγούρια και άλλα.',
+        intro: [
+          'Εκτός από σημαίες και λάβαρα, το κατάστημά μας στην Πινδάρου εφοδιάζει στρατιωτικά είδη - από πηλήκια που κατασκευάζουμε εμείς μέχρι εξοπλισμό που θα βρείτε έτοιμο στο ράφι.',
+          'Τα πηλήκια γίνονται κατά παραγγελία, με τα διακριτικά της μονάδας ή του σώματός σας. Τα υπόλοιπα είδη είναι διαθέσιμα από το κατάστημα.',
+          'Είναι μια σειρά που εξυπηρετεί όσους ψάχνουν εξοπλισμό σε ένα μέρος, χωρίς παραγγελία από το εξωτερικό.',
+        ],
+        specsTitle: 'Με μια ματιά',
+        specs: [
+          'Πηλήκια κατά παραγγελία',
+          'Μπερέδες και καπέλα τζόκεϊ',
+          'Εξοπλισμός πεδίου και είδη καθαρισμού όπλου',
+          'Από το κατάστημα στην Πινδάρου, Λευκωσία',
+        ],
+        sections: [
+          {
+            heading: 'Πηλήκια κατά παραγγελία',
+            body: [
+              'Το πηλήκιο το κατασκευάζουμε εμείς, με τα διακριτικά της μονάδας, του σώματος ή του συλλόγου σας.',
+              'Επειδή γίνεται κατά παραγγελία, τηλεφωνήστε μας με το σώμα, τον βαθμό και το σχέδιο που χρειάζεστε, και θα σας πούμε τι είναι εφικτό και σε πόσο χρόνο.',
+            ],
+          },
+          {
+            heading: 'Καπέλα από το κατάστημα',
+            body: [
+              'Πέρα από τα πηλήκια, στο κατάστημα θα βρείτε έτοιμα:',
+            ],
+            bullets: [
+              'Μπερέδες',
+              'Καπέλα τζόκεϊ',
+            ],
+          },
+          {
+            heading: 'Εξοπλισμός και αξεσουάρ',
+            body: [
+              'Στο κατάστημα στην Πινδάρου θα βρείτε επίσης:',
+            ],
+            bullets: [
+              'Άρβυλα',
+              'Σακίδια πλάτης',
+              'Τσαντάκια μέσης',
+              'Ασκούς νερού και παγούρια',
+              'Φακούς',
+              'Σετ καθαρισμού όπλου',
+              'Μπλούζες και πετσέτες',
+            ],
+            footnote:
+              'Το απόθεμα αλλάζει. Αν ψάχνετε κάτι συγκεκριμένο, τηλεφωνήστε μας πριν έρθετε και θα σας πούμε αν το έχουμε.',
+          },
+          {
+            heading: 'Διακριτικά, εμβλήματα και επωμίδες',
+            body: [
+              'Τα κεντητά διακριτικά βαθμού, τα εμβλήματα μονάδων, οι επωμίδες και οι πινακίδες ονομάτων γίνονται στο εργοστάσιό μας και έχουν δική τους σελίδα - δείτε τα [[embroidery|κεντήματα και διακριτικά]].',
+              'Τα διακριτικά διατίθενται είτε όπως είναι, για να ραφτούν στη στολή, είτε με βέλκρο.',
+            ],
+          },
+          {
+            heading: 'Παράδοση και πληρωμή',
+            bullets: [
+              'Αποστολή με κούριερ σε όλη την Κύπρο',
+              'Χωρίς χρέωση αποστολής για παραγγελίες άνω των €150',
+              'Παραλαβή από το κατάστημα ή το εργοστάσιο',
+              'Χωρίς προκαταβολή - μετρητά ή κάρτα στο κατάστημα',
+            ],
+          },
+        ],
+        faqTitle: 'Συχνές ερωτήσεις',
+        faq: [
+          {
+            q: 'Κατασκευάζετε πηλήκια;',
+            a: 'Ναι, κατά παραγγελία, με τα διακριτικά της μονάδας ή του σώματός σας. Τηλεφωνήστε μας με το τι χρειάζεστε.',
+          },
+          {
+            q: 'Έχετε μπερέδες και καπέλα τζόκεϊ;',
+            a: 'Ναι, διατίθενται έτοιμα από το κατάστημα στην Πινδάρου.',
+          },
+          {
+            q: 'Τι άλλο έχετε στο κατάστημα;',
+            a: 'Άρβυλα, σακίδια πλάτης, τσαντάκια μέσης, ασκούς νερού και παγούρια, φακούς, σετ καθαρισμού όπλου, μπλούζες και πετσέτες. Το απόθεμα αλλάζει, οπότε τηλεφωνήστε πριν έρθετε για κάτι συγκεκριμένο.',
+          },
+          {
+            q: 'Κάνετε και τα διακριτικά για τη στολή;',
+            a: 'Ναι. Τα κεντητά διακριτικά βαθμού, τα εμβλήματα μονάδων, οι επωμίδες και οι πινακίδες ονομάτων γίνονται στο εργοστάσιό μας.',
+          },
+        ],
+        relatedTitle: 'Δείτε επίσης',
+      },
+      en: {
+        title: 'Military supplies & kepis',
+        metaTitle: 'Military supplies & kepis - Nicosia, Cyprus',
+        metaDescription:
+          'Kepis made to order with your unit insignia, plus army supplies from our shop in Nicosia: berets, boots, backpacks, water bottles and more.',
+        intro: [
+          'Alongside flags and banners, our shop on Pindarou supplies military kit - from kepis we make ourselves to equipment you will find ready on the shelf.',
+          'Kepis are made to order, carrying the insignia of your unit or corps. The rest is available from the shop.',
+          'It is a line for anyone who would rather find their kit in one place than order it from abroad.',
+        ],
+        specsTitle: 'At a glance',
+        specs: [
+          'Kepis made to order',
+          'Berets and jockey caps off the shelf',
+          'Field equipment and rifle-cleaning kits',
+          'From the shop on Pindarou, Nicosia',
+        ],
+        sections: [
+          {
+            heading: 'Kepis made to order',
+            body: [
+              'We make the kepi ourselves, carrying the insignia of your unit, corps or association.',
+              'Because it is made to order, call us with the corps, the rank and the design you need, and we will tell you what is possible and how long it will take.',
+            ],
+          },
+          {
+            heading: 'Headwear from the shop',
+            body: ['Besides kepis, the shop carries ready to buy:'],
+            bullets: [
+              'Berets',
+              'Jockey caps',
+            ],
+          },
+          {
+            heading: 'Equipment and accessories',
+            body: ['The shop on Pindarou also carries:'],
+            bullets: [
+              'Boots',
+              'Backpacks',
+              'Waist pouches',
+              'Hydration packs and water bottles',
+              'Torches',
+              'Rifle-cleaning kits',
+              'Shirts and towels',
+            ],
+            footnote:
+              'Stock changes. If you are after something specific, call before coming in and we will tell you whether we have it.',
+          },
+          {
+            heading: 'Insignia, emblems and epaulettes',
+            body: [
+              'Embroidered rank insignia, unit emblems, epaulettes and name tags are made at our factory and have a page of their own - see [[embroidery|embroidery and badges]].',
+              'Badges are supplied either plain, to be sewn onto the uniform, or with velcro.',
+            ],
+          },
+          {
+            heading: 'Delivery and payment',
+            bullets: [
+              'Courier delivery anywhere in Cyprus',
+              'No delivery charge on orders over €150',
+              'Collection from the shop or the factory',
+              'No deposit - cash or card at the shop',
+            ],
+          },
+        ],
+        faqTitle: 'Frequently asked questions',
+        faq: [
+          {
+            q: 'Do you make kepis?',
+            a: 'Yes, to order, carrying the insignia of your unit or corps. Call us with what you need.',
+          },
+          {
+            q: 'Do you have berets and jockey caps?',
+            a: 'Yes, ready to buy from the shop on Pindarou.',
+          },
+          {
+            q: 'What else does the shop carry?',
+            a: 'Boots, backpacks, waist pouches, hydration packs and water bottles, torches, rifle-cleaning kits, shirts and towels. Stock changes, so call ahead if you want something specific.',
+          },
+          {
+            q: 'Do you make the insignia for the uniform as well?',
+            a: 'Yes. Embroidered rank insignia, unit emblems, epaulettes and name tags are all made at our factory.',
           },
         ],
         relatedTitle: 'See also',
