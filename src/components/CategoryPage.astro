@@ -50,6 +50,13 @@ const images = imagesByKey[category.key];
  * column. The blurred backdrop covers the small residual on a shared ratio.
  */
 const isPair = images.length === 2 && images.every((i) => i.width / i.height < 1);
+
+/*
+ * Link previews crop to landscape, so prefer a landscape photograph for sharing
+ * where the page has one. Pages whose only photographs are portrait keep them -
+ * a centre crop of a banner still shows its emblem, which beats a generic shot.
+ */
+const shareImage = images.find((i) => i.width >= i.height) ?? images[0];
 const pairRatio =
   images.length === 0 ? 1 : images.reduce((sum, i) => sum + i.width / i.height, 0) / images.length;
 
@@ -121,7 +128,14 @@ const faqLd = {
 };
 ---
 
-<Base lang={lang} title={t.metaTitle} description={t.metaDescription} path={path} altPath={altPath}>
+<Base
+  lang={lang}
+  title={t.metaTitle}
+  description={t.metaDescription}
+  path={path}
+  altPath={altPath}
+  image={shareImage}
+>
   <Nav lang={lang} altPath={altPath} />
   <main>
     <article class="category">
