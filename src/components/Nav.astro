@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import { ui, type Lang } from '../i18n/ui';
+import logo from '../assets/logo.png';
 
 interface Props {
   lang: Lang;
@@ -20,7 +22,7 @@ const switchLabel = lang === 'el' ? 'EN' : 'ΕΛ';
 
 <header class="nav">
   <a class="brand" href={lang === 'el' ? '/' : '/en/'}>
-    <img src="/android-chrome-192x192.png" alt="Χαρ. Ρωσσίδης ΛΤΔ" width="42" height="42" />
+    <Image src={logo} alt="Χαρ. Ρωσσίδης ΛΤΔ" widths={[42, 84, 126]} sizes="42px" loading="eager" />
     <span class="wordmark">ROSSIDES<span class="dot">.</span></span>
   </a>
   <nav class="links" aria-label="Main">
@@ -54,9 +56,10 @@ const switchLabel = lang === 'el' ? 'EN' : 'ΕΛ';
     flex: none;
   }
   .brand img {
-    width: 42px;
+    /* The mark is not square, so fix the height and let the width follow -
+       forcing a square box would letterbox it back into a visible frame. */
     height: 42px;
-    object-fit: contain;
+    width: auto;
   }
   .wordmark {
     font: 800 18px/1 var(--font-display);
